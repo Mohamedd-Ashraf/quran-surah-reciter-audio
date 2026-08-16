@@ -1,0 +1,241 @@
+name: Ayah Word Alignment
+
+on:
+  workflow_dispatch:
+    inputs:
+      reciter_id:
+        description: EveryAyah reciter id (e.g. ar.alijaber, ar.alafasy). Must exist in tool/ayah_word_alignment/reciters.yaml
+        required: true
+        type: string
+        default: ar.alijaber
+      surahs:
+        description: Surah range (e.g. 1,2,112-114 or 1-114)
+        required: true
+        type: string
+        default: "1,2,112-114"
+      force_rebuild:
+        description: Rebuild even if valid JSON exists
+        required: false
+        type: boolean
+        default: false
+      shard_count:
+        description: Number of parallel shards
+        required: false
+        type: number
+        default: 4
+      only_ayahs:
+        description: Optional comma list e.g. 2:255 (Ayat al-Kursi). Empty = all ayahs in surahs range.
+        required: false
+        type: string
+        default: ""
+      max_fail_rate:
+        description: Max failure rate before merge gate fails
+        required: false
+        type: string
+        default: "0.05"
+      publish_release:
+        description: Publish word-alignment-* release assets (same repo when run on quran-surah-reciter-audio)
+        required: false
+        type: boolean
+        default: true
+
+concurrency:
+  group: ayah-align-${{ inputs.reciter_id }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: write
+
+env:
+  PYTHON_VERSION: "3.11"
+  ALIGN_MODEL: jonatasgrosman/wav2vec2-large-xlsr-53-arabic
+
+jobs:
+  plan:
+    name: Plan shards
+    runs-on: ubuntu-latest
+    outputs:
+      shard_matrix: ${{ steps.matrix.outputs.shard_matrix }}
+    steps:
+      - id: matrix
+        run: |
+          python3 - <<'PY'
+          import json, os
+          n = int("""${{ inputs.shard_count }}""")
+          n = max(1, min(n, 19))
+          matrix = {"include": [{"shard_index": i, "shard_count": n} for i in range(n)]}
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"shard_matrix={json.dumps(matrix)}\n")
+          print(matrix)
+          PY
+
+  align:
+    name: Align shard ${{ matrix.shard_index }}
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.plan.outputs.shard_matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Free disk
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL || true
+          df -h
+
+      - name: Install ffmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg
+          ffmpeg -version | head -1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: tool/ayah_word_alignment/requirements.txt
+
+      - name: Cache HuggingFace models
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-${{ env.ALIGN_MODEL }}-${{ hashFiles('tool/ayah_word_alignment/requirements.txt') }}
+          restore-keys: |
+            hf-${{ env.ALIGN_MODEL }}-
+
+      - name: Install Python deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r tool/ayah_word_alignment/requirements.txt
+          pip install "git+https://github.com/MahmoudAshraf97/ctc-forced-aligner.git"
+
+      - name: Restore prior alignment JSON from release packs (resume)
+        if: ${{ inputs.force_rebuild != true }}
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          ED="${{ inputs.reciter_id }}"
+          TAG="word-alignment-$ED"
+          mkdir -p build/word_alignment/prior
+          gh release download "$TAG" --repo "${{ github.repository }}" --dir build/word_alignment/prior \
+            --pattern "word-alignment-*.zip" || true
+          mkdir -p "build/word_alignment/alignment/$ED"
+          shopt -s nullglob
+          for z in build/word_alignment/prior/word-alignment-*.zip; do
+            base=$(basename "$z" .zip)
+            sss=${base##word-alignment-}
+            mkdir -p "build/word_alignment/alignment/$ED/$sss"
+            unzip -o "$z" -d "build/word_alignment/alignment/$ED/$sss"
+          done
+
+      - name: Run shard
+        working-directory: tool/ayah_word_alignment
+        run: |
+          FORCE=""
+          if [ "${{ inputs.force_rebuild }}" = "true" ]; then FORCE="--force-rebuild"; fi
+          ONLY=""
+          if [ -n "${{ inputs.only_ayahs }}" ]; then ONLY="--only-ayahs ${{ inputs.only_ayahs }}"; fi
+          python runner/run_shard.py \
+            --reciter-id "${{ inputs.reciter_id }}" \
+            --surahs "${{ inputs.surahs }}" \
+            $ONLY \
+            --shard-index "${{ matrix.shard_index }}" \
+            --shard-count "${{ matrix.shard_count }}" \
+            --output-root ../../build/word_alignment/alignment \
+            --failed-root ../../build/word_alignment/failed \
+            --tmp-dir ../../build/word_alignment/tmp \
+            --model "$ALIGN_MODEL" \
+            $FORCE
+
+      - name: Upload shard artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: align-${{ inputs.reciter_id }}-shard${{ matrix.shard_index }}
+          path: |
+            build/word_alignment/alignment/${{ inputs.reciter_id }}/**
+            build/word_alignment/failed/summary_shard${{ matrix.shard_index }}.json
+            build/word_alignment/failed/failures_shard${{ matrix.shard_index }}.csv
+            build/word_alignment/failed/${{ inputs.reciter_id }}/**
+          if-no-files-found: warn
+          retention-days: 14
+
+  merge:
+    name: Merge / pack / gate
+    needs: align
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Download shard artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: align-${{ inputs.reciter_id }}-shard*
+          path: build/word_alignment/shards
+          merge-multiple: true
+
+      - name: Assemble tree, merge reports, build packs
+        run: |
+          set -e
+          ED="${{ inputs.reciter_id }}"
+          mkdir -p "build/word_alignment/alignment/$ED" build/word_alignment/failed
+          if [ -d build/word_alignment/shards/alignment ]; then
+            cp -a build/word_alignment/shards/alignment/. build/word_alignment/alignment/
+          fi
+          find build/word_alignment/shards -name 'summary_shard*.json' -exec cp {} build/word_alignment/failed/ \; || true
+          find build/word_alignment/shards -name 'failures_shard*.csv' -exec cp {} build/word_alignment/failed/ \; || true
+          find build/word_alignment/shards -type d -name "$ED" | while read d; do
+            case "$d" in
+              */alignment/*) cp -a "$d/." "build/word_alignment/alignment/$ED/" ;;
+              */failed/*) mkdir -p "build/word_alignment/failed/$ED"; cp -a "$d/." "build/word_alignment/failed/$ED/" ;;
+            esac
+          done
+          pip install pyyaml -q
+          python tool/ayah_word_alignment/runner/merge_reports.py \
+            --failed-root build/word_alignment/failed \
+            --max-fail-rate "${{ inputs.max_fail_rate }}"
+          python tool/ayah_word_alignment/runner/build_packs.py \
+            --alignment-root "build/word_alignment/alignment/$ED" \
+            --packs-dir build/word_alignment/packs \
+            --surahs "${{ inputs.surahs }}" \
+            --aligner ctc-forced-aligner \
+            --model "$ALIGN_MODEL"
+          if [ -f build/word_alignment/manifest/manifest.json ]; then
+            python tool/ayah_word_alignment/runner/build_packs.py \
+              --alignment-root "build/word_alignment/alignment/$ED" \
+              --packs-dir build/word_alignment/packs \
+              --surahs "${{ inputs.surahs }}" \
+              --manifest-in build/word_alignment/manifest/manifest.json \
+              --manifest-out build/word_alignment/packs/manifest.json \
+              --model "$ALIGN_MODEL"
+          fi
+
+      - name: Upload packs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: word-alignment-packs-${{ inputs.reciter_id }}
+          path: |
+            build/word_alignment/packs/**
+            build/word_alignment/failed/summary.json
+            build/word_alignment/failed/failures.csv
+            build/word_alignment/alignment/${{ inputs.reciter_id }}/**
+          retention-days: 30
+
+      - name: Publish word-alignment release
+        if: ${{ inputs.publish_release == true }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLIC_REPO: ${{ github.repository }}
+        run: |
+          bash tool/ayah_word_alignment/scripts/publish_packs.sh \
+            "${{ inputs.reciter_id }}" \
+            build/word_alignment/packs

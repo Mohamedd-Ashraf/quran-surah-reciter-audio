@@ -100,3 +100,22 @@ The audio content belongs to the respective reciters and is publicly available v
 ## Build
 
 Packages are built by the [Noor Al-Imaan](https://github.com/Mohamedd-Ashraf/Noor-Al-Imaan) CI pipeline (`tool/build_surah_reciter_packages.dart`): per-ayah MP3s are downloaded from the upstream source, concatenated per surah with ffmpeg, transcoded to 64 kbps mono, and verified before publishing. This repository is an automated mirror of the source repo's releases.
+
+## Word alignment packs
+
+Per-ayah CTC word timestamps (EveryAyah audio), independent of `surah-reciter-*` packages.
+
+| Release tag | Contents |
+| --- | --- |
+| `word-alignment-{reciterId}` | `word-alignment-{SSS}.zip` (JSON per ayah) |
+
+Example: `word-alignment-ar.alijaber` / `word-alignment-002.zip`
+
+Base URL:
+
+`
+https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/download/word-alignment-{reciterId}/{filename}
+`
+
+Build via Actions workflow **Ayah Word Alignment** (`workflow_dispatch`).
+
