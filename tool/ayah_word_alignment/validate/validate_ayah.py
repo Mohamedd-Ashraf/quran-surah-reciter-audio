@@ -5,6 +5,16 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
+_WAQF = frozenset("\u06D6\u06D7\u06D8\u06D9\u06DA\u06DB\u06DC")
+
+
+def _has_waqf(text: str) -> bool:
+    return any(c in _WAQF for c in text)
+
+
+def _letter_count(text: str) -> int:
+    return max(1, sum(1 for c in text if c.isalpha() or ("\u0600" <= c <= "\u06FF")))
+
 
 @dataclass
 class ValidationResult:
@@ -19,11 +29,12 @@ def validate_alignment(
     data: dict[str, Any],
     *,
     expected_words: list[str] | None = None,
-    # CTC word scores are sums of log-probs (negative). A mean near 0 is strong;
-    # only reject catastrophic alignments (default floor −50).
-    min_mean_score: float | None = -50.0,
-    max_word_ms: int = 12000,
-    min_word_ms: int = 30,
+    min_mean_score: float | None = -20.0,
+    max_word_ms: int = 15000,
+    min_word_ms: int = 80,
+    max_very_short_frac: float = 0.08,
+    min_coverage: float = 0.48,
+    max_non_waqf_gap_ms: int = 1600,
 ) -> ValidationResult:
     errors: list[str] = []
 
@@ -46,6 +57,8 @@ def validate_alignment(
 
     prev_end = -1
     scores: list[float] = []
+    very_short = 0
+    covered = 0
     for i, w in enumerate(words):
         idx = int(w.get("index", -1))
         if idx != i + 1:
@@ -64,10 +77,21 @@ def validate_alignment(
         if start < prev_end - 30:
             errors.append(f"overlap at {idx}")
         dur = end - start
-        if dur < min_word_ms:
-            errors.append(f"too_short at {idx}: {dur}ms")
+        covered += max(0, dur)
+        soft_min = min(min_word_ms, max(60, _letter_count(text) * 40))
+        if dur < soft_min:
+            very_short += 1
+            if dur < 40:
+                errors.append(f"collapsed at {idx}: {dur}ms")
         if dur > max_word_ms:
             errors.append(f"too_long at {idx}: {dur}ms")
+        if prev_end >= 0:
+            gap = start - prev_end
+            prev_text = words[i - 1].get("text", "")
+            if gap > max_non_waqf_gap_ms and not _has_waqf(prev_text):
+                errors.append(f"large_gap before {idx}: {gap}ms")
+            elif gap > 2800:
+                errors.append(f"huge_gap before {idx}: {gap}ms")
         prev_end = end
         if "score" in w and w["score"] is not None:
             scores.append(float(w["score"]))
@@ -79,6 +103,14 @@ def validate_alignment(
             errors.append("late_start")
         if duration > 0 and last_end < duration - max(3000, int(duration * 0.25)):
             errors.append("early_end")
+
+    frac_short = very_short / max(len(words), 1)
+    if frac_short > max_very_short_frac:
+        errors.append(f"too_many_short:{very_short}/{len(words)}")
+
+    coverage = covered / max(duration, 1)
+    if coverage < min_coverage:
+        errors.append(f"low_coverage:{coverage:.3f}")
 
     if min_mean_score is not None and scores:
         mean = sum(scores) / len(scores)

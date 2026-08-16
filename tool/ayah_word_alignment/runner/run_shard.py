@@ -211,7 +211,7 @@ def main() -> int:
                 vr = validate_alignment(
                     data,
                     expected_words=words,
-                    min_mean_score=None if args.dry_run else -50.0,
+                    min_mean_score=None if args.dry_run else -20.0,
                 )
                 if not result.ok or not vr:
                     reason = result.error or ";".join(vr.errors)
