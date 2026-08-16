@@ -199,7 +199,7 @@ jobs:
               */failed/*) mkdir -p "build/word_alignment/failed/$ED"; cp -a "$d/." "build/word_alignment/failed/$ED/" ;;
             esac
           done
-          pip install pyyaml -q
+          pip install -q -r tool/ayah_word_alignment/requirements.txt
           python tool/ayah_word_alignment/runner/merge_reports.py \
             --failed-root build/word_alignment/failed \
             --max-fail-rate "${{ inputs.max_fail_rate }}"
