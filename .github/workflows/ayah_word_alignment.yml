@@ -34,7 +34,7 @@ on:
         type: string
         default: "0.05"
       commit_tree:
-        description: Commit word-alignment/{reciterId}/SSSAAA.json into this repo (not Releases)
+        description: Commit word-alignment/{reciterId}/{surah}/{ayah}.json into this repo (not Releases)
         required: false
         type: boolean
         default: true
@@ -122,13 +122,13 @@ jobs:
           DEST="build/word_alignment/alignment/$ED"
           mkdir -p "$DEST"
           if [ -d "$SRC" ]; then
-            shopt -s nullglob
-            for f in "$SRC"/*.json; do
-              base=$(basename "$f")
-              [[ "$base" == _meta.json ]] && continue
-              cp -f "$f" "$DEST/$base"
+            # Nested layout: {surah}/{ayah}.json (+ legacy flat SSSAAA.json)
+            find "$SRC" -type f -name '*.json' ! -name '_meta.json' | while read -r f; do
+              rel="${f#$SRC/}"
+              mkdir -p "$DEST/$(dirname "$rel")"
+              cp -f "$f" "$DEST/$rel"
             done
-            echo "Restored $(ls -1 "$DEST"/*.json 2>/dev/null | wc -l) prior files"
+            echo "Restored $(find "$DEST" -type f -name '*.json' | wc -l) prior files"
           else
             echo "No prior tree at $SRC"
           fi

@@ -6,10 +6,18 @@ Unified architecture for **all** EveryAyah reciters in `kEveryAyahFolders`.
 
 | Layer | Uses |
 |-------|------|
-| App picker / `ReelProject.reciterId` | `ar.alafasy`, `ar.alijaber`, … |
+| App picker / `ReelProject.reciterId` | `ar.alafasy`, `ar.alijaber`, `ar.husary`, … |
 | EveryAyah audio | `https://everyayah.com/data/{folder}/{SSSAAA}.mp3` |
-| Word alignment JSON | `word-alignment/{reciterId}/{SSSAAA}.json` |
+| Word alignment JSON | `word-alignment/{reciterId}/{surahNumber}/{ayahNumber}.json` |
 | Pipeline `reciters.yaml` | same keys as `kEveryAyahFolders` |
+
+Examples:
+
+```text
+word-alignment/ar.alijaber/2/255.json
+word-alignment/ar.husary/1/1.json
+word-alignment/ar.minshawi/114/6.json
+```
 
 Keep yaml in sync:
 
@@ -19,14 +27,10 @@ python tool/ayah_word_alignment/scripts/sync_reciters_from_dart.py
 
 ## Public distribution (repo tree, not Releases)
 
-```text
-word-alignment/{reciterId}/{SSSAAA}.json
-```
-
 CDN (app):
 
 ```text
-https://cdn.jsdelivr.net/gh/Mohamedd-Ashraf/quran-surah-reciter-audio@main/word-alignment/{reciterId}/{SSSAAA}.json
+https://cdn.jsdelivr.net/gh/Mohamedd-Ashraf/quran-surah-reciter-audio@main/word-alignment/{reciterId}/{surahNumber}/{ayahNumber}.json
 ```
 
 Fallback: `raw.githubusercontent.com/.../main/...`
@@ -35,25 +39,21 @@ Missing file / unknown reciter → Flutter returns `null` → word-count chunk t
 
 ## Flutter wiring
 
-- [`ReelReciterContract`](../../lib/features/reel_creator/data/services/reel_reciter_contract.dart) — shared stem + URLs + normalize
-- [`WordAlignmentService`](../../lib/features/reel_creator/data/services/word_alignment_service.dart) — per-ayah fetch/cache
-- Preview + Export both use `project.reciterId` with chunking gate
+- `ReelReciterContract` — shared URLs + normalize for every `ar.*` reciter
+- `WordAlignmentService` — per-ayah fetch/cache from the nested path
+- Preview + Export both use `project.reciterId`
 
 ## Local smoke
 
 ```bash
 cd tool/ayah_word_alignment
-python -m unittest tests.test_tokenize -v
-python runner/run_shard.py --reciter-id ar.alijaber --surahs 2 --only-ayahs 2:255 --dry-run \
-  --output-root ../../build/word_alignment/alignment \
-  --failed-root ../../build/word_alignment/failed \
-  --tmp-dir ../../build/word_alignment/tmp --force-rebuild
+python -m unittest tests.test_tokenize tests.test_refine -v
 ```
 
 ## GitHub Actions
 
-**Ayah Word Alignment** workflow commits `word-alignment/{reciterId}/*.json` with `[skip ci]`.
+**Ayah Word Alignment** workflow commits nested JSON under `word-alignment/{reciterId}/` with `[skip ci]`.
 
 ## Model
 
-`jonatasgrosman/wav2vec2-large-xlsr-53-arabic` via ctc-forced-aligner.
+`jonatasgrosman/wav2vec2-large-xlsr-53-arabic` + MMS multi-strategy via ctc-forced-aligner.

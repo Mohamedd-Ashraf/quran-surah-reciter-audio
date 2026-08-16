@@ -34,14 +34,14 @@ def main() -> int:
     header = """# Auto-synced from lib/core/services/ayah_audio_service.dart (kEveryAyahFolders).
 # Unified identity: the same reciterId (e.g. ar.alafasy) is used for:
 #   - EveryAyah audio:  https://everyayah.com/data/{folder}/{SSSAAA}.mp3
-#   - Word alignment:   word-alignment/{reciterId}/{SSSAAA}.json  (git tree)
+#   - Word alignment:   word-alignment/{reciterId}/{surahNumber}/{ayahNumber}.json  (git tree)
 default_model: jonatasgrosman/wav2vec2-large-xlsr-53-arabic
 aligner: ctc-forced-aligner
 dataset_version: "1"
 schema_version: 1
 # Public distribution: repo files (not Releases). App CDN:
 alignment_cdn_base: https://cdn.jsdelivr.net/gh/Mohamedd-Ashraf/quran-surah-reciter-audio@main
-alignment_path_template: word-alignment/{reciterId}/{SSSAAA}.json
+alignment_path_template: word-alignment/{reciterId}/{surahNumber}/{ayahNumber}.json
 reciters:
 """
     lines = [header]

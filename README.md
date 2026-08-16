@@ -101,39 +101,29 @@ The audio content belongs to the respective reciters and is publicly available v
 
 Packages are built by the [Noor Al-Imaan](https://github.com/Mohamedd-Ashraf/Noor-Al-Imaan) CI pipeline (`tool/build_surah_reciter_packages.dart`): per-ayah MP3s are downloaded from the upstream source, concatenated per surah with ffmpeg, transcoded to 64 kbps mono, and verified before publishing. This repository is an automated mirror of the source repo's releases.
 
-## Word alignment packs
-
-Per-ayah CTC word timestamps (EveryAyah audio), independent of `surah-reciter-*` packages.
-
-| Release tag | Contents |
-| --- | --- |
-| `word-alignment-{reciterId}` | `word-alignment-{SSS}.zip` (JSON per ayah) |
-
-Example: `word-alignment-ar.alijaber` / `word-alignment-002.zip`
-
-Base URL:
-
-`
-https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/download/word-alignment-{reciterId}/{filename}
-`
-
-Build via Actions workflow **Ayah Word Alignment** (`workflow_dispatch`).
-
 ## Word alignment (repo tree)
 
-Per-ayah CTC word timestamps live **in this repository** (not Releases), named like EveryAyah MP3s:
+Per-ayah CTC word timestamps live **in this repository** (not Releases). Layout is unified for every EveryAyah reciter id (`ar.alijaber`, `ar.husary`, `ar.minshawi`, …):
 
 ```
-word-alignment/{reciterId}/{SSSAAA}.json
+word-alignment/{reciterId}/{surahNumber}/{ayahNumber}.json
 ```
 
-Example: `word-alignment/ar.alijaber/002255.json`
+Examples:
+
+```
+word-alignment/ar.alijaber/2/255.json
+word-alignment/ar.husary/1/1.json
+word-alignment/ar.minshawi/114/6.json
+```
 
 CDN:
 
 ```
-https://cdn.jsdelivr.net/gh/Mohamedd-Ashraf/quran-surah-reciter-audio@main/word-alignment/{reciterId}/{SSSAAA}.json
+https://cdn.jsdelivr.net/gh/Mohamedd-Ashraf/quran-surah-reciter-audio@main/word-alignment/{reciterId}/{surahNumber}/{ayahNumber}.json
 ```
+
+Fallback: `raw.githubusercontent.com/.../main/...`
 
 Missing files: the app falls back to word-count chunk timing.
 

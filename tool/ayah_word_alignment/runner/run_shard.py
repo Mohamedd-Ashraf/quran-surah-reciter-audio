@@ -83,8 +83,8 @@ def ayah_stem(surah: int, ayah: int) -> str:
 
 
 def json_path(out_root: Path, surah: int, ayah: int) -> Path:
-    """Flat per-reciter tree: {reciterId}/SSSAAA.json"""
-    return out_root / f"{ayah_stem(surah, ayah)}.json"
+    """Public tree: {reciterId}/{surahNumber}/{ayahNumber}.json"""
+    return out_root / str(surah) / f"{ayah}.json"
 
 
 def load_existing_valid(path: Path, expected: list[str]) -> bool:
