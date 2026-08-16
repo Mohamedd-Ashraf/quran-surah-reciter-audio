@@ -77,8 +77,14 @@ def download(url: str, dest: Path) -> None:
                     f.write(chunk)
 
 
+def ayah_stem(surah: int, ayah: int) -> str:
+    """EveryAyah-style stem: SSSAAA (e.g. '002255')."""
+    return f"{surah:03d}{ayah:03d}"
+
+
 def json_path(out_root: Path, surah: int, ayah: int) -> Path:
-    return out_root / f"{surah:03d}" / f"{surah:03d}_{ayah:03d}.json"
+    """Flat per-reciter tree: {reciterId}/SSSAAA.json"""
+    return out_root / f"{ayah_stem(surah, ayah)}.json"
 
 
 def load_existing_valid(path: Path, expected: list[str]) -> bool:
@@ -209,7 +215,7 @@ def main() -> int:
                 )
                 if not result.ok or not vr:
                     reason = result.error or ";".join(vr.errors)
-                    fail_path = failed_root / f"{surah:03d}_{ayah:03d}.json"
+                    fail_path = failed_root / f"{ayah_stem(surah, ayah)}.json"
                     fail_path.write_text(
                         json.dumps(
                             {"error": reason, "partial": data},

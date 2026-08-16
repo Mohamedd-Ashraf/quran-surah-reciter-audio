@@ -2,27 +2,35 @@
 
 Offline CTC pipeline for **EveryAyah per-ayah MP3s** (`SSSAAA.mp3`).
 
-This dataset is **independent** of surah-reciter packages (`001.mp3` / `001.timings.json`).
-Any reciter in `kEveryAyahFolders` / `reciters.yaml` can be aligned — including
-`ar.alijaber` (علي عبد الله جابر) who has no surah-reciter release.
+Alignment JSON uses the **same stem** and lives in the public **git tree**
+(not GitHub Releases).
 
 ## Audio source
 
 ```text
-https://everyayah.com/data/{folder}/{SSS}{AAA}.mp3
+https://everyayah.com/data/{folder}/{SSSAAA}.mp3
 ```
 
-## Public distribution (alignment packs only)
+## Public distribution (repo files)
 
 ```text
-Release tag:  word-alignment-{reciterId}
-Example:      word-alignment-ar.alijaber
-Asset:        word-alignment-002.zip
-URL:          …/releases/download/word-alignment-ar.alijaber/word-alignment-002.zip
+word-alignment/{reciterId}/{SSSAAA}.json
 ```
 
-Hosted on `Mohamedd-Ashraf/quran-surah-reciter-audio` as a **separate tag family** —
-does not modify existing `surah-reciter-*` releases.
+Example:
+
+```text
+word-alignment/ar.alijaber/002255.json
+```
+
+CDN URL (app):
+
+```text
+https://cdn.jsdelivr.net/gh/Mohamedd-Ashraf/quran-surah-reciter-audio@main/word-alignment/{reciterId}/{SSSAAA}.json
+```
+
+Hosted on `Mohamedd-Ashraf/quran-surah-reciter-audio`. Independent of
+`surah-reciter-*` packages. Missing files → app falls back to word-count timing.
 
 ## Local smoke
 
@@ -40,19 +48,14 @@ python runner/run_shard.py --reciter-id ar.alijaber --surahs 2 --only-ayahs 2:25
 
 1. **Ayah Word Alignment** → Run workflow
 2. `reciter_id` = `ar.alijaber` (any EveryAyah id from `reciters.yaml`)
-3. `surahs` = `2`
-4. `only_ayahs` = `2:255` (optional; empty = whole surah range)
-5. Download artifact → publish:
-
-```bash
-PUBLIC_PAT=… bash scripts/publish_packs.sh ar.alijaber /path/to/packs
-```
+3. `surahs` / `only_ayahs` as needed
+4. On success, workflow commits `word-alignment/{reciterId}/*.json` with `[skip ci]`
 
 ## Flutter
 
-`WordAlignmentService` loads packs from `word-alignment-{reciterId}` tags.
-Reel audio stays EveryAyah; enable **Word-aligned timing** in reel settings.
+`WordAlignmentService` GETs each verse JSON from the CDN path above, caches on
+disk, and returns `null` on 404 so Reel chunk timing falls back safely.
 
 ## Model
 
-`jonatasgrosman/wav2vec2-large-xlsr-53-arabic` via ctc-forced-aligner (forced alignment).
+`jonatasgrosman/wav2vec2-large-xlsr-53-arabic` via ctc-forced-aligner.

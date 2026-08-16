@@ -119,3 +119,22 @@ https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/download/w
 
 Build via Actions workflow **Ayah Word Alignment** (`workflow_dispatch`).
 
+## Word alignment (repo tree)
+
+Per-ayah CTC word timestamps live **in this repository** (not Releases), named like EveryAyah MP3s:
+
+```
+word-alignment/{reciterId}/{SSSAAA}.json
+```
+
+Example: `word-alignment/ar.alijaber/002255.json`
+
+CDN:
+
+```
+https://cdn.jsdelivr.net/gh/Mohamedd-Ashraf/quran-surah-reciter-audio@main/word-alignment/{reciterId}/{SSSAAA}.json
+```
+
+Missing files: the app falls back to word-count chunk timing.
+
+Build via Actions workflow **Ayah Word Alignment** (commits into `word-alignment/`).

@@ -33,8 +33,8 @@ on:
         required: false
         type: string
         default: "0.05"
-      publish_release:
-        description: Publish word-alignment-* release assets (same repo when run on quran-surah-reciter-audio)
+      commit_tree:
+        description: Commit word-alignment/{reciterId}/SSSAAA.json into this repo (not Releases)
         required: false
         type: boolean
         default: true
@@ -112,26 +112,26 @@ jobs:
           pip install -r tool/ayah_word_alignment/requirements.txt
           pip install "git+https://github.com/MahmoudAshraf97/ctc-forced-aligner.git"
 
-      - name: Restore prior alignment JSON from release packs (resume)
+      - name: Restore prior alignment JSON from repo tree (resume)
         if: ${{ inputs.force_rebuild != true }}
         continue-on-error: true
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -e
           ED="${{ inputs.reciter_id }}"
-          TAG="word-alignment-$ED"
-          mkdir -p build/word_alignment/prior
-          gh release download "$TAG" --repo "${{ github.repository }}" --dir build/word_alignment/prior \
-            --pattern "word-alignment-*.zip" || true
-          mkdir -p "build/word_alignment/alignment/$ED"
-          shopt -s nullglob
-          for z in build/word_alignment/prior/word-alignment-*.zip; do
-            base=$(basename "$z" .zip)
-            sss=${base##word-alignment-}
-            mkdir -p "build/word_alignment/alignment/$ED/$sss"
-            unzip -o "$z" -d "build/word_alignment/alignment/$ED/$sss"
-          done
+          SRC="word-alignment/$ED"
+          DEST="build/word_alignment/alignment/$ED"
+          mkdir -p "$DEST"
+          if [ -d "$SRC" ]; then
+            shopt -s nullglob
+            for f in "$SRC"/*.json; do
+              base=$(basename "$f")
+              [[ "$base" == _meta.json ]] && continue
+              cp -f "$f" "$DEST/$base"
+            done
+            echo "Restored $(ls -1 "$DEST"/*.json 2>/dev/null | wc -l) prior files"
+          else
+            echo "No prior tree at $SRC"
+          fi
 
       - name: Run shard
         working-directory: tool/ayah_word_alignment
@@ -165,7 +165,7 @@ jobs:
           retention-days: 14
 
   merge:
-    name: Merge / pack / gate
+    name: Merge / sync tree / gate
     needs: align
     runs-on: ubuntu-latest
     timeout-minutes: 30
@@ -183,7 +183,7 @@ jobs:
           path: build/word_alignment/shards
           merge-multiple: true
 
-      - name: Assemble tree, merge reports, build packs
+      - name: Assemble tree, merge reports, sync word-alignment/
         run: |
           set -e
           ED="${{ inputs.reciter_id }}"
@@ -199,43 +199,37 @@ jobs:
               */failed/*) mkdir -p "build/word_alignment/failed/$ED"; cp -a "$d/." "build/word_alignment/failed/$ED/" ;;
             esac
           done
-          pip install -q -r tool/ayah_word_alignment/requirements.txt
+          # Flat artifact layout: files may sit directly under shards/
+          shopt -s nullglob
+          for f in build/word_alignment/shards/*.json; do
+            base=$(basename "$f")
+            [[ "$base" == summary* ]] && continue
+            cp -f "$f" "build/word_alignment/alignment/$ED/$base"
+          done
+          pip install -q pyyaml requests
           python tool/ayah_word_alignment/runner/merge_reports.py \
             --failed-root build/word_alignment/failed \
             --max-fail-rate "${{ inputs.max_fail_rate }}"
-          python tool/ayah_word_alignment/runner/build_packs.py \
+          python tool/ayah_word_alignment/runner/sync_tree.py \
             --alignment-root "build/word_alignment/alignment/$ED" \
-            --packs-dir build/word_alignment/packs \
-            --surahs "${{ inputs.surahs }}" \
-            --aligner ctc-forced-aligner \
-            --model "$ALIGN_MODEL"
-          if [ -f build/word_alignment/manifest/manifest.json ]; then
-            python tool/ayah_word_alignment/runner/build_packs.py \
-              --alignment-root "build/word_alignment/alignment/$ED" \
-              --packs-dir build/word_alignment/packs \
-              --surahs "${{ inputs.surahs }}" \
-              --manifest-in build/word_alignment/manifest/manifest.json \
-              --manifest-out build/word_alignment/packs/manifest.json \
-              --model "$ALIGN_MODEL"
-          fi
+            --tree-dir . \
+            --reciter-id "$ED"
 
-      - name: Upload packs artifact
+      - name: Upload alignment artifact
         uses: actions/upload-artifact@v4
         with:
-          name: word-alignment-packs-${{ inputs.reciter_id }}
+          name: word-alignment-tree-${{ inputs.reciter_id }}
           path: |
-            build/word_alignment/packs/**
+            word-alignment/${{ inputs.reciter_id }}/**
             build/word_alignment/failed/summary.json
             build/word_alignment/failed/failures.csv
-            build/word_alignment/alignment/${{ inputs.reciter_id }}/**
           retention-days: 30
 
-      - name: Publish word-alignment release
-        if: ${{ inputs.publish_release == true }}
+      - name: Commit word-alignment tree to repo
+        if: ${{ inputs.commit_tree == true }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PUBLIC_REPO: ${{ github.repository }}
         run: |
-          bash tool/ayah_word_alignment/scripts/publish_packs.sh \
-            "${{ inputs.reciter_id }}" \
-            build/word_alignment/packs
+          chmod +x tool/ayah_word_alignment/scripts/commit_alignment_tree.sh
+          bash tool/ayah_word_alignment/scripts/commit_alignment_tree.sh \
+            "${{ inputs.reciter_id }}"
