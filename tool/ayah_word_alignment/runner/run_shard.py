@@ -18,6 +18,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from align.align_ayah import AlignmentEngine, write_alignment_json  # noqa: E402
+from align.strategies import DEFAULT_ALIGN_MODE, normalize_align_mode  # noqa: E402
 from text.load_quran import ayah_entry  # noqa: E402
 from text.tokenize import api_words_from_text  # noqa: E402
 from validate.validate_ayah import validate_alignment  # noqa: E402
@@ -116,6 +117,12 @@ def main() -> int:
         default="",
         help="Comma list of surah:ayah to keep (e.g. 2:255). Empty = all in surah range.",
     )
+    ap.add_argument(
+        "--align-mode",
+        default=DEFAULT_ALIGN_MODE,
+        choices=["fast", "balanced", "max"],
+        help="Strategy search: fast (early-exit), balanced (default), max (try all).",
+    )
     args = ap.parse_args()
 
     cfg = yaml.safe_load(args.config.read_text(encoding="utf-8"))
@@ -158,9 +165,14 @@ def main() -> int:
         "failures": [],
     }
 
+    align_mode = normalize_align_mode(args.align_mode)
+    summary["alignMode"] = align_mode
+
     engine = None
     if items and not args.dry_run:
-        engine = AlignmentEngine(model_name=model)
+        engine = AlignmentEngine(model_name=model, align_mode=align_mode)
+        log.info("warmup models for align_mode=%s", align_mode)
+        engine.warmup()
 
     with failures_csv.open("w", newline="", encoding="utf-8") as cf:
         writer = csv.writer(cf)
@@ -234,7 +246,16 @@ def main() -> int:
                 else:
                     write_alignment_json(result, dest)
                     summary["passed"] += 1
-                    log.info("OK %s:%s words=%d", surah, ayah, len(words))
+                    log.info(
+                        "OK %s:%s words=%d strategy=%s q=%s tried=%d early=%s",
+                        surah,
+                        ayah,
+                        len(words),
+                        result.strategy,
+                        None if result.quality is None else round(result.quality, 2),
+                        result.strategies_tried,
+                        result.early_exit,
+                    )
             except Exception as e:  # noqa: BLE001
                 reason = f"exception:{type(e).__name__}:{e}"
                 writer.writerow([surah, ayah, reason])

@@ -8,10 +8,29 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
+from .strategies import (
+    DEFAULT_ALIGN_MODE,
+    DEFAULT_MODEL,
+    MMS_MODEL,
+    early_exit_quality,
+    normalize_align_mode,
+    should_early_exit,
+    strategies_for_mode,
+    warmup_models,
+)
+
 logger = logging.getLogger(__name__)
 
-DEFAULT_MODEL = "jonatasgrosman/wav2vec2-large-xlsr-53-arabic"
-MMS_MODEL = "MahmoudAshraf/mms-300m-1130-forced-aligner"
+# Re-export for callers / tests
+__all__ = [
+    "WordTiming",
+    "AlignResult",
+    "AlignmentEngine",
+    "align_ayah_file",
+    "write_alignment_json",
+    "DEFAULT_MODEL",
+    "MMS_MODEL",
+]
 
 
 @dataclass
@@ -35,8 +54,20 @@ class AlignResult:
     error: str | None = None
     strategy: str | None = None
     quality: float | None = None
+    align_mode: str | None = None
+    strategies_tried: int = 0
+    early_exit: bool = False
 
     def to_json_dict(self) -> dict[str, Any]:
+        meta: dict[str, Any] = {}
+        if self.strategy:
+            meta["strategy"] = self.strategy
+            meta["quality"] = (
+                round(self.quality, 3) if self.quality is not None else None
+            )
+            meta["alignMode"] = self.align_mode
+            meta["strategiesTried"] = self.strategies_tried
+            meta["earlyExit"] = self.early_exit
         return {
             "schemaVersion": 1,
             "reciterId": self.reciter_id,
@@ -54,27 +85,19 @@ class AlignResult:
                 }
                 for w in self.words
             ],
-            **(
-                {
-                    "meta": {
-                        "strategy": self.strategy,
-                        "quality": round(self.quality, 3) if self.quality is not None else None,
-                    }
-                }
-                if self.strategy
-                else {}
-            ),
+            **({"meta": meta} if meta else {}),
         }
 
 
 class AlignmentEngine:
-    """Loads CTC model(s) and aligns ayahs; picks best of several strategies."""
+    """Loads CTC model(s) and aligns ayahs with mode-aware strategy search."""
 
     def __init__(
         self,
         model_name: str = DEFAULT_MODEL,
         device: str | None = None,
         batch_size: int = 4,
+        align_mode: str = DEFAULT_ALIGN_MODE,
     ) -> None:
         import torch
 
@@ -83,7 +106,15 @@ class AlignmentEngine:
         self.device = device
         self.primary_model_name = model_name
         self.batch_size = batch_size
+        self.align_mode = normalize_align_mode(align_mode)
         self._models: dict[str, tuple[Any, Any]] = {}
+        # Per-ayah emissions cache: model_name -> (emissions, stride)
+        self._emissions: dict[str, tuple[Any, Any]] = {}
+
+    def warmup(self) -> None:
+        """Load models used by the current mode once (avoids mid-shard stalls)."""
+        for name in warmup_models(self.align_mode):
+            self._load_model(name)
 
     def _load_model(self, model_name: str):
         import torch
@@ -101,6 +132,20 @@ class AlignmentEngine:
         self._models[model_name] = (model, tokenizer)
         return model, tokenizer
 
+    def _emissions_for(self, model_name: str, waveform):
+        """Cache encoder emissions per model within one ayah (big CPU win)."""
+        from ctc_forced_aligner import generate_emissions
+
+        cached = self._emissions.get(model_name)
+        if cached is not None:
+            return cached
+        model, _ = self._load_model(model_name)
+        emissions, stride = generate_emissions(
+            model, waveform, batch_size=self.batch_size
+        )
+        self._emissions[model_name] = (emissions, stride)
+        return emissions, stride
+
     def _align_once(
         self,
         waveform,
@@ -113,7 +158,6 @@ class AlignmentEngine:
         merge_threshold: float,
     ) -> list[WordTiming] | None:
         from ctc_forced_aligner import (
-            generate_emissions,
             get_alignments,
             get_spans,
             postprocess_results,
@@ -122,11 +166,9 @@ class AlignmentEngine:
 
         from .normalize import join_aligner_words
 
-        model, tokenizer = self._load_model(model_name)
+        _, tokenizer = self._load_model(model_name)
         text = join_aligner_words(canonical_words, keep_diacritics=keep_diacritics)
-        emissions, stride = generate_emissions(
-            model, waveform, batch_size=self.batch_size
-        )
+        emissions, stride = self._emissions_for(model_name, waveform)
         tokens_starred, text_starred = preprocess_text(
             text,
             romanize=romanize,
@@ -146,8 +188,6 @@ class AlignmentEngine:
         timed = list(word_timestamps)
         if len(timed) != len(canonical_words):
             return None
-
-        import torch
 
         n_samples = int(waveform.numel()) if hasattr(waveform, "numel") else len(waveform)
         duration_ms = int(round(n_samples / 16000.0 * 1000))
@@ -191,6 +231,7 @@ class AlignmentEngine:
 
         from .refine import refine_word_timings, timing_quality
 
+        _ = keep_diacritics  # per-strategy flag wins
         audio_path = Path(audio_path)
         audio_file = audio_path.name
         result = AlignResult(
@@ -199,6 +240,7 @@ class AlignmentEngine:
             reciter_id=reciter_id,
             audio_file=audio_file,
             duration_ms=0,
+            align_mode=self.align_mode,
         )
         if not canonical_words:
             result.ok = False
@@ -206,67 +248,32 @@ class AlignmentEngine:
             return result
 
         try:
-            # Load audio with primary model dtype/device
-            primary = self.primary_model_name or DEFAULT_MODEL
-            model, _ = self._load_model(primary)
+            # Prefer MMS dtype/device when mode leads with MMS (avoids reload mismatch).
+            strategies = strategies_for_mode(self.align_mode)
+            lead_model = strategies[0]["model"] if strategies else (
+                self.primary_model_name or DEFAULT_MODEL
+            )
+            model, _ = self._load_model(lead_model)
             waveform = load_audio(str(audio_path), model.dtype, model.device)
-            n_samples = int(waveform.numel()) if hasattr(waveform, "numel") else len(waveform)
+            n_samples = (
+                int(waveform.numel()) if hasattr(waveform, "numel") else len(waveform)
+            )
             duration_ms = int(round(n_samples / 16000.0 * 1000))
             result.duration_ms = duration_ms
 
-            strategies = [
-                {
-                    "name": "xlsr_nodiac_edges",
-                    "model": DEFAULT_MODEL,
-                    "romanize": False,
-                    "keep_diacritics": False,
-                    "star_frequency": "edges",
-                    "merge_threshold": 0.0,
-                },
-                {
-                    "name": "xlsr_diac_edges",
-                    "model": DEFAULT_MODEL,
-                    "romanize": False,
-                    "keep_diacritics": True,
-                    "star_frequency": "edges",
-                    "merge_threshold": 0.0,
-                },
-                {
-                    "name": "xlsr_nodiac_segment",
-                    "model": DEFAULT_MODEL,
-                    "romanize": False,
-                    "keep_diacritics": False,
-                    "star_frequency": "segment",
-                    "merge_threshold": 0.02,
-                },
-                {
-                    "name": "mms_roman_edges",
-                    "model": MMS_MODEL,
-                    "romanize": True,
-                    "keep_diacritics": False,
-                    "star_frequency": "edges",
-                    "merge_threshold": 0.0,
-                },
-                {
-                    "name": "mms_roman_segment",
-                    "model": MMS_MODEL,
-                    "romanize": True,
-                    "keep_diacritics": False,
-                    "star_frequency": "segment",
-                    "merge_threshold": 0.02,
-                },
-            ]
-            # Prefer requested model first
-            strategies.sort(
-                key=lambda s: 0 if s["model"] == primary else 1
-            )
+            # Fresh emissions cache per ayah
+            self._emissions.clear()
 
+            exit_q = early_exit_quality(self.align_mode)
             best_words = None
             best_q = -1e18
             best_name = None
             errors: list[str] = []
+            tried = 0
+            exited_early = False
 
             for strat in strategies:
+                tried += 1
                 try:
                     raw = self._align_once(
                         waveform,
@@ -291,9 +298,21 @@ class AlignmentEngine:
                         best_q = q
                         best_words = refined
                         best_name = strat["name"]
+                    if should_early_exit(q, exit_q):
+                        exited_early = True
+                        logger.info(
+                            "early-exit %s quality=%.3f threshold=%s",
+                            strat["name"],
+                            q,
+                            exit_q,
+                        )
+                        break
                 except Exception as e:  # noqa: BLE001
                     errors.append(f"{strat['name']}:{type(e).__name__}:{e}")
                     logger.warning("strategy %s failed: %s", strat["name"], e)
+
+            result.strategies_tried = tried
+            result.early_exit = exited_early
 
             if best_words is None:
                 result.ok = False
@@ -310,6 +329,8 @@ class AlignmentEngine:
             result.ok = False
             result.error = f"exception:{type(e).__name__}:{e}"
             return result
+        finally:
+            self._emissions.clear()
 
 
 def align_ayah_file(

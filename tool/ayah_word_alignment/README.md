@@ -57,3 +57,16 @@ python -m unittest tests.test_tokenize tests.test_refine -v
 ## Model
 
 `jonatasgrosman/wav2vec2-large-xlsr-53-arabic` + MMS multi-strategy via ctc-forced-aligner.
+
+
+## Align modes (speed vs quality)
+
+| Mode | Behavior | Full mushaf @ 19 shards |
+|------|----------|-------------------------|
+| `balanced` (default) | MMS-first + early-exit at excellent quality; emissions cached per model | ~45–90 min |
+| `fast` | Same order, earlier exit threshold; skips rare diacritic strategy | ~30–60 min |
+| `max` | Try every strategy every ayah (no early-exit) | ~2–4 h |
+
+Optimizations: best-first strategy order, quality early-exit, encoder emissions cache across strategies, model warmup at shard start.
+
+Dispatch tip: `surahs=1-114`, `shard_count=19`, `align_mode=balanced`, `force_rebuild=false`.

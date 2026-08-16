@@ -19,15 +19,24 @@ on:
         type: boolean
         default: false
       shard_count:
-        description: Number of parallel shards
+        description: Parallel shards (use 19 for full 1-114 mushaf)
         required: false
         type: number
-        default: 4
+        default: 19
       only_ayahs:
         description: Optional comma list e.g. 2:255 (Ayat al-Kursi). Empty = all ayahs in surahs range.
         required: false
         type: string
         default: ""
+      align_mode:
+        description: "Strategy search: fast (throughput), balanced (default quality+speed), max (try all)"
+        required: false
+        type: choice
+        options:
+          - balanced
+          - fast
+          - max
+        default: balanced
       max_fail_rate:
         description: Max failure rate before merge gate fails
         required: false
@@ -146,6 +155,7 @@ jobs:
             $ONLY \
             --shard-index "${{ matrix.shard_index }}" \
             --shard-count "${{ matrix.shard_count }}" \
+            --align-mode "${{ inputs.align_mode }}" \
             --output-root ../../build/word_alignment/alignment \
             --failed-root ../../build/word_alignment/failed \
             --tmp-dir ../../build/word_alignment/tmp \
