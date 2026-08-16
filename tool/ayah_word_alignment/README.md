@@ -1,60 +1,58 @@
 # Ayah word-level forced alignment (EveryAyah)
 
-Offline CTC pipeline for **EveryAyah per-ayah MP3s** (`SSSAAA.mp3`).
+Unified architecture for **all** EveryAyah reciters in `kEveryAyahFolders`.
 
-Alignment JSON uses the **same stem** and lives in the public **git tree**
-(not GitHub Releases).
+## Identity (one string everywhere)
 
-## Audio source
+| Layer | Uses |
+|-------|------|
+| App picker / `ReelProject.reciterId` | `ar.alafasy`, `ar.alijaber`, … |
+| EveryAyah audio | `https://everyayah.com/data/{folder}/{SSSAAA}.mp3` |
+| Word alignment JSON | `word-alignment/{reciterId}/{SSSAAA}.json` |
+| Pipeline `reciters.yaml` | same keys as `kEveryAyahFolders` |
 
-```text
-https://everyayah.com/data/{folder}/{SSSAAA}.mp3
+Keep yaml in sync:
+
+```bash
+python tool/ayah_word_alignment/scripts/sync_reciters_from_dart.py
 ```
 
-## Public distribution (repo files)
+## Public distribution (repo tree, not Releases)
 
 ```text
 word-alignment/{reciterId}/{SSSAAA}.json
 ```
 
-Example:
-
-```text
-word-alignment/ar.alijaber/002255.json
-```
-
-CDN URL (app):
+CDN (app):
 
 ```text
 https://cdn.jsdelivr.net/gh/Mohamedd-Ashraf/quran-surah-reciter-audio@main/word-alignment/{reciterId}/{SSSAAA}.json
 ```
 
-Hosted on `Mohamedd-Ashraf/quran-surah-reciter-audio`. Independent of
-`surah-reciter-*` packages. Missing files → app falls back to word-count timing.
+Fallback: `raw.githubusercontent.com/.../main/...`
+
+Missing file / unknown reciter → Flutter returns `null` → word-count chunk timing.
+
+## Flutter wiring
+
+- [`ReelReciterContract`](../../lib/features/reel_creator/data/services/reel_reciter_contract.dart) — shared stem + URLs + normalize
+- [`WordAlignmentService`](../../lib/features/reel_creator/data/services/word_alignment_service.dart) — per-ayah fetch/cache
+- Preview + Export both use `project.reciterId` with chunking gate
 
 ## Local smoke
 
 ```bash
 cd tool/ayah_word_alignment
 python -m unittest tests.test_tokenize -v
-
 python runner/run_shard.py --reciter-id ar.alijaber --surahs 2 --only-ayahs 2:255 --dry-run \
   --output-root ../../build/word_alignment/alignment \
   --failed-root ../../build/word_alignment/failed \
   --tmp-dir ../../build/word_alignment/tmp --force-rebuild
 ```
 
-## GitHub Actions (real CTC)
+## GitHub Actions
 
-1. **Ayah Word Alignment** → Run workflow
-2. `reciter_id` = `ar.alijaber` (any EveryAyah id from `reciters.yaml`)
-3. `surahs` / `only_ayahs` as needed
-4. On success, workflow commits `word-alignment/{reciterId}/*.json` with `[skip ci]`
-
-## Flutter
-
-`WordAlignmentService` GETs each verse JSON from the CDN path above, caches on
-disk, and returns `null` on 404 so Reel chunk timing falls back safely.
+**Ayah Word Alignment** workflow commits `word-alignment/{reciterId}/*.json` with `[skip ci]`.
 
 ## Model
 

@@ -1,12 +1,14 @@
 # Auto-synced from lib/core/services/ayah_audio_service.dart (kEveryAyahFolders).
-# Audio source: EveryAyah per-ayah MP3s — independent of surah-reciter packages.
+# Unified identity: the same reciterId (e.g. ar.alafasy) is used for:
+#   - EveryAyah audio:  https://everyayah.com/data/{folder}/{SSSAAA}.mp3
+#   - Word alignment:   word-alignment/{reciterId}/{SSSAAA}.json  (git tree)
 default_model: jonatasgrosman/wav2vec2-large-xlsr-53-arabic
 aligner: ctc-forced-aligner
 dataset_version: "1"
 schema_version: 1
-# Public distribution of WORD ALIGNMENT packs only (not surah MP3 packages).
-public_release_base: https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/download
-release_tag_prefix: word-alignment-
+# Public distribution: repo files (not Releases). App CDN:
+alignment_cdn_base: https://cdn.jsdelivr.net/gh/Mohamedd-Ashraf/quran-surah-reciter-audio@main
+alignment_path_template: word-alignment/{reciterId}/{SSSAAA}.json
 reciters:
   ar.abdulbasitmujawwad:
     everyayah_folder: Abdul_Basit_Mujawwad_128kbps
