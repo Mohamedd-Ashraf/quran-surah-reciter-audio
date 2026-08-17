@@ -17,10 +17,12 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from align.align_ayah import AlignmentEngine, write_alignment_json  # noqa: E402
+from align.align_ayah import AlignmentEngine  # noqa: E402
 from align.strategies import DEFAULT_ALIGN_MODE, normalize_align_mode  # noqa: E402
 from text.load_quran import ayah_entry  # noqa: E402
 from text.tokenize import api_words_from_text  # noqa: E402
+from timing.analyzer import attach_ayah, write_json  # noqa: E402
+from timing.config import TimingAnalysisConfig  # noqa: E402
 from validate.validate_ayah import validate_alignment  # noqa: E402
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
@@ -123,9 +125,25 @@ def main() -> int:
         choices=["fast", "balanced", "max"],
         help="Strategy search: fast (early-exit), balanced (default), max (try all).",
     )
+    ap.add_argument(
+        "--enable-timing-analysis",
+        dest="enable_timing_analysis",
+        action="store_true",
+        help="Attach duration/Madd/stretch metadata (overrides yaml).",
+    )
+    ap.add_argument(
+        "--no-timing-analysis",
+        dest="enable_timing_analysis",
+        action="store_false",
+        help="Skip timing/Madd/stretch (overrides yaml).",
+    )
+    ap.set_defaults(enable_timing_analysis=None)
     args = ap.parse_args()
 
     cfg = yaml.safe_load(args.config.read_text(encoding="utf-8"))
+    timing_cfg = TimingAnalysisConfig.from_mapping(cfg if isinstance(cfg, dict) else {})
+    if args.enable_timing_analysis is not None:
+        timing_cfg = timing_cfg.with_enabled(args.enable_timing_analysis)
     rec = cfg["reciters"].get(args.reciter_id)
     if not rec:
         log.error("Unknown reciter %s", args.reciter_id)
@@ -185,6 +203,15 @@ def main() -> int:
             dest = json_path(out_root, surah, ayah)
 
             if not args.force_rebuild and load_existing_valid(dest, words):
+                if timing_cfg.enabled:
+                    try:
+                        existing = json.loads(dest.read_text(encoding="utf-8"))
+                    except (OSError, json.JSONDecodeError):
+                        existing = None
+                    if isinstance(existing, dict) and not (
+                        (existing.get("meta") or {}).get("timingAnalysis") or {}
+                    ).get("enabled"):
+                        write_json(attach_ayah(existing, timing_cfg), dest)
                 summary["skipped"] += 1
                 log.info("skip %s:%s", surah, ayah)
                 continue
@@ -220,6 +247,8 @@ def main() -> int:
                         reciter_id=args.reciter_id,
                     )
                 data = result.to_json_dict()
+                if timing_cfg.enabled:
+                    data = attach_ayah(data, timing_cfg)
                 vr = validate_alignment(
                     data,
                     expected_words=words,
@@ -244,7 +273,7 @@ def main() -> int:
                     )
                     log.warning("FAIL %s:%s %s", surah, ayah, reason)
                 else:
-                    write_alignment_json(result, dest)
+                    write_json(data, dest)
                     summary["passed"] += 1
                     log.info(
                         "OK %s:%s words=%d strategy=%s q=%s tried=%d early=%s",

@@ -42,6 +42,15 @@ schema_version: 1
 # Public distribution: repo files (not Releases). App CDN:
 alignment_cdn_base: https://cdn.jsdelivr.net/gh/Mohamedd-Ashraf/quran-surah-reciter-audio@main
 alignment_path_template: word-alignment/{reciterId}/{surahNumber}/{ayahNumber}.json
+enable_timing_analysis: true
+timing_analysis:
+  min_word_baseline_samples: 3
+  min_surah_baseline_words: 8
+  extension_ratios:
+    slightlyExtended: 1.4
+    extended: 1.8
+    highlyExtended: 2.5
+  max_tatweel_per_position: 4
 reciters:
 """
     lines = [header]

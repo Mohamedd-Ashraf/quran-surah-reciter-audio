@@ -47,6 +47,11 @@ on:
         required: false
         type: boolean
         default: true
+      enable_timing_analysis:
+        description: Attach duration, Madd-candidate, and safe-stretch metadata (default on). Disable to keep classic JSON only.
+        required: false
+        type: boolean
+        default: true
 
 concurrency:
   group: ayah-align-${{ inputs.reciter_id }}
@@ -149,6 +154,8 @@ jobs:
           if [ "${{ inputs.force_rebuild }}" = "true" ]; then FORCE="--force-rebuild"; fi
           ONLY=""
           if [ -n "${{ inputs.only_ayahs }}" ]; then ONLY="--only-ayahs ${{ inputs.only_ayahs }}"; fi
+          TIMING="--enable-timing-analysis"
+          if [ "${{ inputs.enable_timing_analysis }}" = "false" ]; then TIMING="--no-timing-analysis"; fi
           python runner/run_shard.py \
             --reciter-id "${{ inputs.reciter_id }}" \
             --surahs "${{ inputs.surahs }}" \
@@ -160,7 +167,8 @@ jobs:
             --failed-root ../../build/word_alignment/failed \
             --tmp-dir ../../build/word_alignment/tmp \
             --model "$ALIGN_MODEL" \
-            $FORCE
+            $FORCE \
+            $TIMING
 
       - name: Upload shard artifacts
         uses: actions/upload-artifact@v4
@@ -220,6 +228,12 @@ jobs:
           python tool/ayah_word_alignment/runner/merge_reports.py \
             --failed-root build/word_alignment/failed \
             --max-fail-rate "${{ inputs.max_fail_rate }}"
+          if [ "${{ inputs.enable_timing_analysis }}" != "false" ]; then
+            python tool/ayah_word_alignment/runner/enrich_timing.py \
+              --alignment-root "build/word_alignment/alignment/$ED" \
+              --config tool/ayah_word_alignment/reciters.yaml \
+              --enable-timing-analysis
+          fi
           python tool/ayah_word_alignment/runner/sync_tree.py \
             --alignment-root "build/word_alignment/alignment/$ED" \
             --tree-dir . \
