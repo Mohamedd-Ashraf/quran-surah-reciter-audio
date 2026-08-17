@@ -65,7 +65,8 @@ Missing ayah file / unknown reciter → Flutter returns `null` → word-count ch
 cd tool/ayah_word_alignment
 python -m unittest tests.test_tokenize tests.test_refine tests.test_strategies \
   tests.test_madd tests.test_stretch tests.test_timing_stats \
-  tests.test_timing_analyzer tests.test_timing_flag -v
+  tests.test_timing_analyzer tests.test_timing_flag \
+  tests.test_validate tests.test_merge_reports -v
 ```
 
 ## Optional timing / Madd / stretch analysis

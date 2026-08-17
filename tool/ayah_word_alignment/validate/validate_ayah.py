@@ -96,19 +96,27 @@ def validate_alignment(
         if "score" in w and w["score"] is not None:
             scores.append(float(w["score"]))
 
-    if words:
-        first_start = int(words[0]["startMs"])
-        last_end = int(words[-1]["endMs"])
-        if duration > 0 and first_start > max(3000, int(duration * 0.25)):
+    first_start = int(words[0]["startMs"]) if words else 0
+    last_end = int(words[-1]["endMs"]) if words else 0
+    if words and duration > 0:
+        edge = max(3000, int(duration * 0.25))
+        leading = first_start
+        trailing = max(0, duration - last_end)
+        # Leading silence alone is common (Bismillah intros). Flag a shifted
+        # pocket only when the alignment is also cut off before the end.
+        if leading > edge and trailing > edge:
             errors.append("late_start")
-        if duration > 0 and last_end < duration - max(3000, int(duration * 0.25)):
+        if last_end < duration - edge:
             errors.append("early_end")
 
     frac_short = very_short / max(len(words), 1)
     if frac_short > max_very_short_frac:
         errors.append(f"too_many_short:{very_short}/{len(words)}")
 
-    coverage = covered / max(duration, 1)
+    # Measure coverage of the aligned span so file-level intro/outro silence
+    # does not fail a tight, sequential word timeline.
+    span = max(last_end - first_start, 1) if words else 1
+    coverage = covered / span
     if coverage < min_coverage:
         errors.append(f"low_coverage:{coverage:.3f}")
 

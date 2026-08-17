@@ -227,7 +227,8 @@ jobs:
           pip install -q pyyaml requests
           python tool/ayah_word_alignment/runner/merge_reports.py \
             --failed-root build/word_alignment/failed \
-            --max-fail-rate "${{ inputs.max_fail_rate }}"
+            --max-fail-rate "${{ inputs.max_fail_rate }}" \
+            --no-gate
           if [ "${{ inputs.enable_timing_analysis }}" != "false" ]; then
             python tool/ayah_word_alignment/runner/enrich_timing.py \
               --alignment-root "build/word_alignment/alignment/$ED" \
@@ -257,3 +258,9 @@ jobs:
           chmod +x tool/ayah_word_alignment/scripts/commit_alignment_tree.sh
           bash tool/ayah_word_alignment/scripts/commit_alignment_tree.sh \
             "${{ inputs.reciter_id }}"
+
+      - name: Fail-rate gate
+        run: |
+          python tool/ayah_word_alignment/runner/merge_reports.py \
+            --failed-root build/word_alignment/failed \
+            --max-fail-rate "${{ inputs.max_fail_rate }}"
