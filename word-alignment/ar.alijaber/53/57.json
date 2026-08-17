@@ -11,14 +11,57 @@
       "text": "أَزِفَتِ",
       "startMs": 420,
       "endMs": 1080,
-      "score": -0.3151
+      "score": -0.3151,
+      "durationMs": 660,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 940.0,
+      "baselineSource": "surah",
+      "durationRatio": 0.702
     },
     {
       "index": 2,
       "text": "ٱلۡأٓزِفَةُ",
       "startMs": 1080,
       "endMs": 2664,
-      "score": -0.4003
+      "score": -0.4003,
+      "durationMs": 1584,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 2,
+            "reason": "maddah"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 4,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 940.0,
+      "baselineSource": "surah",
+      "durationRatio": 1.685,
+      "extensionLevel": "slightlyExtended",
+      "confidence": 0.805
     }
   ],
   "meta": {
@@ -26,6 +69,15 @@
     "quality": 33.515,
     "alignMode": "balanced",
     "strategiesTried": 1,
-    "earlyExit": true
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1122.0,
+    "verseMedianDurationMs": 1122.0,
+    "surahAverageDurationMs": 1019.0,
+    "surahMedianDurationMs": 940.0
   }
 }

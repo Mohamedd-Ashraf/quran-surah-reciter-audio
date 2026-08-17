@@ -11,28 +11,108 @@
       "text": "لَّقَدۡ",
       "startMs": 220,
       "endMs": 700,
-      "score": -0.96
+      "score": -0.96,
+      "durationMs": 480,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 540.0,
+      "baselineSource": "word",
+      "durationRatio": 0.889
     },
     {
       "index": 2,
       "text": "جِئۡتُمۡ",
       "startMs": 940,
       "endMs": 1640,
-      "score": -0.698
+      "score": -0.698,
+      "durationMs": 700,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 730.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.959
     },
     {
       "index": 3,
       "text": "شَيۡـًٔا",
       "startMs": 1840,
       "endMs": 2570,
-      "score": -2.982
+      "score": -2.982,
+      "durationMs": 730,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_lin",
+            "clusterIndex": 1,
+            "reason": "madd_lin"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1100.0,
+      "baselineSource": "word",
+      "durationRatio": 0.664,
+      "extensionLevel": "normal",
+      "confidence": 0.851
     },
     {
       "index": 4,
       "text": "إِدّٗا",
       "startMs": 2570,
       "endMs": 4154,
-      "score": -0.514
+      "score": -0.514,
+      "durationMs": 1584,
+      "baselineMs": 700.0,
+      "baselineSource": "verse",
+      "durationRatio": 2.263
     }
   ],
   "meta": {
@@ -40,6 +120,15 @@
     "quality": 33.0,
     "alignMode": "balanced",
     "strategiesTried": 2,
-    "earlyExit": true
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 873.5,
+    "verseMedianDurationMs": 715.0,
+    "surahAverageDurationMs": 1019.9,
+    "surahMedianDurationMs": 960.0
   }
 }

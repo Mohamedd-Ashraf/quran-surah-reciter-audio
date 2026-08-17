@@ -11,35 +11,157 @@
       "text": "إِنَّ",
       "startMs": 240,
       "endMs": 980,
-      "score": -0.1135
+      "score": -0.1135,
+      "durationMs": 740,
+      "baselineMs": 880.0,
+      "baselineSource": "word",
+      "durationRatio": 0.841
     },
     {
       "index": 2,
       "text": "ٱلۡمُتَّقِينَ",
       "startMs": 980,
       "endMs": 2460,
-      "score": -0.0324
+      "score": -0.0324,
+      "durationMs": 1480,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_madd",
+            "clusterIndex": 5,
+            "reason": "kasra_ya"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 4,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 5,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1770.0,
+      "baselineSource": "word",
+      "durationRatio": 0.836,
+      "extensionLevel": "normal",
+      "confidence": 0.998
     },
     {
       "index": 3,
       "text": "فِي",
       "startMs": 2460,
       "endMs": 2900,
-      "score": -0.0031
+      "score": -0.0031,
+      "durationMs": 440,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_madd",
+            "clusterIndex": 1,
+            "reason": "kasra_ya"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 340.0,
+      "baselineSource": "word",
+      "durationRatio": 1.294,
+      "extensionLevel": "normal",
+      "confidence": 1.0
     },
     {
       "index": 4,
       "text": "جَنَّٰتٖ",
       "startMs": 2900,
       "endMs": 4840,
-      "score": -0.0423
+      "score": -0.0423,
+      "durationMs": 1940,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 1,
+            "reason": "dagger_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1660.0,
+      "baselineSource": "word",
+      "durationRatio": 1.169,
+      "extensionLevel": "normal",
+      "confidence": 0.998
     },
     {
       "index": 5,
       "text": "وَنَهَرٖ",
       "startMs": 4840,
       "endMs": 6322,
-      "score": -0.0202
+      "score": -0.0202,
+      "durationMs": 1482,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1110.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.335
     }
   ],
   "meta": {
@@ -47,6 +169,15 @@
     "quality": 38.46,
     "alignMode": "balanced",
     "strategiesTried": 1,
-    "earlyExit": true
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1216.4,
+    "verseMedianDurationMs": 1480.0,
+    "surahAverageDurationMs": 1115.6,
+    "surahMedianDurationMs": 1060.0
   }
 }

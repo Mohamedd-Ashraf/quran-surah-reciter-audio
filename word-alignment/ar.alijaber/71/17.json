@@ -11,35 +11,142 @@
       "text": "وَٱللَّهُ",
       "startMs": 580,
       "endMs": 1520,
-      "score": -0.0518
+      "score": -0.0518,
+      "durationMs": 940,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1270.0,
+      "baselineSource": "word",
+      "durationRatio": 0.74
     },
     {
       "index": 2,
       "text": "أَنۢبَتَكُم",
       "startMs": 1520,
       "endMs": 3100,
-      "score": -0.0992
+      "score": -0.0992,
+      "durationMs": 1580,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 4,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 850.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.859
     },
     {
       "index": 3,
       "text": "مِّنَ",
       "startMs": 3100,
       "endMs": 3520,
-      "score": -0.0257
+      "score": -0.0257,
+      "durationMs": 420,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 540.0,
+      "baselineSource": "word",
+      "durationRatio": 0.778
     },
     {
       "index": 4,
       "text": "ٱلۡأَرۡضِ",
       "startMs": 3520,
       "endMs": 4280,
-      "score": -0.1462
+      "score": -0.1462,
+      "durationMs": 760,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 840.0,
+      "baselineSource": "word",
+      "durationRatio": 0.905
     },
     {
       "index": 5,
       "text": "نَبَاتٗا",
       "startMs": 4280,
       "endMs": 5669,
-      "score": -0.1787
+      "score": -0.1787,
+      "durationMs": 1389,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 2,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 850.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.634,
+      "extensionLevel": "slightlyExtended",
+      "confidence": 0.761
     }
   ],
   "meta": {
@@ -47,6 +154,15 @@
     "quality": 35.857,
     "alignMode": "balanced",
     "strategiesTried": 1,
-    "earlyExit": true
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1017.8,
+    "verseMedianDurationMs": 940.0,
+    "surahAverageDurationMs": 962.7,
+    "surahMedianDurationMs": 900.0
   }
 }

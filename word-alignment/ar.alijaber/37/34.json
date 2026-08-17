@@ -11,28 +11,156 @@
       "text": "إِنَّا",
       "startMs": 160,
       "endMs": 850,
-      "score": -1.3125
+      "score": -1.3125,
+      "durationMs": 690,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 2,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 980.0,
+      "baselineSource": "word",
+      "durationRatio": 0.704,
+      "extensionLevel": "normal",
+      "confidence": 0.934
     },
     {
       "index": 2,
       "text": "كَذَٰلِكَ",
       "startMs": 850,
       "endMs": 1900,
-      "score": -1.2018
+      "score": -1.2018,
+      "durationMs": 1050,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 1,
+            "reason": "dagger_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1390.0,
+      "baselineSource": "word",
+      "durationRatio": 0.755,
+      "extensionLevel": "normal",
+      "confidence": 0.94
     },
     {
       "index": 3,
       "text": "نَفۡعَلُ",
       "startMs": 1900,
       "endMs": 2810,
-      "score": -0.8511
+      "score": -0.8511,
+      "durationMs": 910,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1050.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.867
     },
     {
       "index": 4,
       "text": "بِٱلۡمُجۡرِمِينَ",
       "startMs": 2810,
       "endMs": 5407,
-      "score": -0.4974
+      "score": -0.4974,
+      "durationMs": 2597,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_madd",
+            "clusterIndex": 7,
+            "reason": "kasra_ya"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 6,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 7,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 0,
+            "priority": 3,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 4,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 910.0,
+      "baselineSource": "verse",
+      "durationRatio": 2.854,
+      "extensionLevel": "highlyExtended",
+      "confidence": 0.714
     }
   ],
   "meta": {
@@ -40,6 +168,15 @@
     "quality": 38.333,
     "alignMode": "balanced",
     "strategiesTried": 2,
-    "earlyExit": true
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1311.8,
+    "verseMedianDurationMs": 980.0,
+    "surahAverageDurationMs": 1095.8,
+    "surahMedianDurationMs": 1000.0
   }
 }

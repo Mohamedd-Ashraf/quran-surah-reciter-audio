@@ -11,21 +11,78 @@
       "text": "وَإِذَا",
       "startMs": 468,
       "endMs": 853,
-      "score": -2.8307
+      "score": -2.8307,
+      "durationMs": 385,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 3,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "baselineMs": 680.0,
+      "baselineSource": "word",
+      "durationRatio": 0.566,
+      "extensionLevel": "normal",
+      "confidence": 0.858
     },
     {
       "index": 2,
       "text": "ٱلۡجَنَّةُ",
       "startMs": 880,
       "endMs": 2440,
-      "score": -0.4688
+      "score": -0.4688,
+      "durationMs": 1560,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1340.0,
+      "baselineSource": "word",
+      "durationRatio": 1.164
     },
     {
       "index": 3,
       "text": "أُزۡلِفَتۡ",
       "startMs": 2440,
       "endMs": 3605,
-      "score": -1.2918
+      "score": -1.2918,
+      "durationMs": 1165,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 972.5,
+      "baselineSource": "verse",
+      "durationRatio": 1.198
     }
   ],
   "meta": {
@@ -33,6 +90,15 @@
     "quality": 33.742,
     "alignMode": "balanced",
     "strategiesTried": 2,
-    "earlyExit": true
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1036.7,
+    "verseMedianDurationMs": 1165.0,
+    "surahAverageDurationMs": 1091.3,
+    "surahMedianDurationMs": 1023.0
   }
 }

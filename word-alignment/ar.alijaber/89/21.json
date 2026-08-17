@@ -11,42 +11,145 @@
       "text": "كـَلَّآۖ",
       "startMs": 480,
       "endMs": 1260,
-      "score": -0.1543
+      "score": -0.1543,
+      "durationMs": 780,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 3,
+            "reason": "maddah"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 2,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 760.0,
+      "baselineSource": "word",
+      "durationRatio": 1.026,
+      "extensionLevel": "normal",
+      "confidence": 0.992
     },
     {
       "index": 2,
       "text": "إِذَا",
       "startMs": 1260,
       "endMs": 1920,
-      "score": -0.5402
+      "score": -0.5402,
+      "durationMs": 660,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 2,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "baselineMs": 580.0,
+      "baselineSource": "word",
+      "durationRatio": 1.138,
+      "extensionLevel": "normal",
+      "confidence": 0.973
     },
     {
       "index": 3,
       "text": "دُكَّتِ",
       "startMs": 1920,
       "endMs": 2760,
-      "score": -0.3306
+      "score": -0.3306,
+      "durationMs": 840,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 900.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.933
     },
     {
       "index": 4,
       "text": "ٱلۡأَرۡضُ",
       "startMs": 2760,
       "endMs": 3660,
-      "score": -0.4017
+      "score": -0.4017,
+      "durationMs": 900,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 840.0,
+      "baselineSource": "word",
+      "durationRatio": 1.071
     },
     {
       "index": 5,
       "text": "دَكّٗا",
       "startMs": 3660,
       "endMs": 4760,
-      "score": -0.1156
+      "score": -0.1156,
+      "durationMs": 1100,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 840.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.31
     },
     {
       "index": 6,
       "text": "دَكّٗا",
       "startMs": 4760,
       "endMs": 6191,
-      "score": -0.0965
+      "score": -0.0965,
+      "durationMs": 1431,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 840.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.704
     }
   ],
   "meta": {
@@ -54,6 +157,15 @@
     "quality": 36.762,
     "alignMode": "balanced",
     "strategiesTried": 1,
-    "earlyExit": true
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 951.8,
+    "verseMedianDurationMs": 870.0,
+    "surahAverageDurationMs": 1085.3,
+    "surahMedianDurationMs": 1040.0
   }
 }

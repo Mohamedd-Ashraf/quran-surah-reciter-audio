@@ -11,28 +11,156 @@
       "text": "أَفَبِهَٰذَا",
       "startMs": 420,
       "endMs": 1600,
-      "score": -0.0302
+      "score": -0.0302,
+      "durationMs": 1180,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 3,
+            "reason": "dagger_alif"
+          },
+          {
+            "type": "alif_madd",
+            "clusterIndex": 5,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 2,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1480.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.797,
+      "extensionLevel": "normal",
+      "confidence": 0.737
     },
     {
       "index": 2,
       "text": "ٱلۡحَدِيثِ",
       "startMs": 1600,
       "endMs": 2740,
-      "score": -0.0493
+      "score": -0.0493,
+      "durationMs": 1140,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_madd",
+            "clusterIndex": 4,
+            "reason": "kasra_ya"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 4,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1060.0,
+      "baselineSource": "word",
+      "durationRatio": 1.075,
+      "extensionLevel": "normal",
+      "confidence": 0.904
     },
     {
       "index": 3,
       "text": "أَنتُم",
       "startMs": 2740,
       "endMs": 4220,
-      "score": -0.0311
+      "score": -0.0311,
+      "durationMs": 1480,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1440.0,
+      "baselineSource": "word",
+      "durationRatio": 1.028
     },
     {
       "index": 4,
       "text": "مُّدۡهِنُونَ",
       "startMs": 4220,
       "endMs": 5799,
-      "score": -0.0094
+      "score": -0.0094,
+      "durationMs": 1579,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_madd",
+            "clusterIndex": 4,
+            "reason": "damma_waw"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 3,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 0,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1180.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.338,
+      "extensionLevel": "normal",
+      "confidence": 0.738
     }
   ],
   "meta": {
@@ -40,6 +168,15 @@
     "quality": 37.088,
     "alignMode": "balanced",
     "strategiesTried": 1,
-    "earlyExit": true
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1344.8,
+    "verseMedianDurationMs": 1330.0,
+    "surahAverageDurationMs": 1245.8,
+    "surahMedianDurationMs": 1200.0
   }
 }

@@ -11,7 +11,32 @@
       "text": "حمٓ",
       "startMs": 300,
       "endMs": 3056,
-      "score": -0.1418
+      "score": -0.1418,
+      "durationMs": 2756,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 1,
+            "reason": "maddah"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 3675.0,
+      "baselineSource": "word",
+      "durationRatio": 0.75,
+      "extensionLevel": "normal",
+      "confidence": 0.868
     }
   ],
   "meta": {
@@ -19,6 +44,15 @@
     "quality": 36.002,
     "alignMode": "balanced",
     "strategiesTried": 2,
-    "earlyExit": true
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 2756.0,
+    "verseMedianDurationMs": 2756.0,
+    "surahAverageDurationMs": 945.3,
+    "surahMedianDurationMs": 880.0
   }
 }

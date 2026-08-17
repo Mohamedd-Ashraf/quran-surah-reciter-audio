@@ -11,35 +11,127 @@
       "text": "قَالَ",
       "startMs": 260,
       "endMs": 780,
-      "score": -0.07
+      "score": -0.07,
+      "durationMs": 520,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 1,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 620.0,
+      "baselineSource": "word",
+      "durationRatio": 0.839,
+      "extensionLevel": "normal",
+      "confidence": 0.996
     },
     {
       "index": 2,
       "text": "رَبِّ",
       "startMs": 780,
       "endMs": 1340,
-      "score": -0.0294
+      "score": -0.0294,
+      "durationMs": 560,
+      "baselineMs": 650.0,
+      "baselineSource": "word",
+      "durationRatio": 0.862
     },
     {
       "index": 3,
       "text": "ٱشۡرَحۡ",
       "startMs": 1340,
       "endMs": 2040,
-      "score": -0.2426
+      "score": -0.2426,
+      "durationMs": 700,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 540.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.296
     },
     {
       "index": 4,
       "text": "لِي",
       "startMs": 2040,
       "endMs": 2400,
-      "score": -0.1259
+      "score": -0.1259,
+      "durationMs": 360,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_madd",
+            "clusterIndex": 1,
+            "reason": "kasra_ya"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 360.0,
+      "baselineSource": "word",
+      "durationRatio": 1.0,
+      "extensionLevel": "normal",
+      "confidence": 0.994
     },
     {
       "index": 5,
       "text": "صَدۡرِي",
       "startMs": 2400,
       "endMs": 3448,
-      "score": -0.1459
+      "score": -0.1459,
+      "durationMs": 1048,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_madd",
+            "clusterIndex": 3,
+            "reason": "kasra_ya"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 540.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.941,
+      "extensionLevel": "extended",
+      "confidence": 0.763
     }
   ],
   "meta": {
@@ -47,6 +139,15 @@
     "quality": 36.922,
     "alignMode": "balanced",
     "strategiesTried": 1,
-    "earlyExit": true
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 637.6,
+    "verseMedianDurationMs": 560.0,
+    "surahAverageDurationMs": 965.8,
+    "surahMedianDurationMs": 900.0
   }
 }

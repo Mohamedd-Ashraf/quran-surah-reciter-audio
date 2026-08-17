@@ -11,21 +11,83 @@
       "text": "وَٱلصُّبۡحِ",
       "startMs": 120,
       "endMs": 1020,
-      "score": -0.2072
+      "score": -0.2072,
+      "durationMs": 900,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 4,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1279.5,
+      "baselineSource": "verse",
+      "durationRatio": 0.703
     },
     {
       "index": 2,
       "text": "إِذَا",
       "startMs": 1020,
       "endMs": 1760,
-      "score": -0.249
+      "score": -0.249,
+      "durationMs": 740,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 2,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "baselineMs": 580.0,
+      "baselineSource": "word",
+      "durationRatio": 1.276,
+      "extensionLevel": "normal",
+      "confidence": 0.988
     },
     {
       "index": 3,
       "text": "تَنَفَّسَ",
       "startMs": 1760,
       "endMs": 3579,
-      "score": -0.0756
+      "score": -0.0756,
+      "durationMs": 1819,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 820.0,
+      "baselineSource": "verse",
+      "durationRatio": 2.218
     }
   ],
   "meta": {
@@ -33,6 +95,15 @@
     "quality": 38.57,
     "alignMode": "balanced",
     "strategiesTried": 1,
-    "earlyExit": true
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1153.0,
+    "verseMedianDurationMs": 900.0,
+    "surahAverageDurationMs": 1091.3,
+    "surahMedianDurationMs": 1023.0
   }
 }

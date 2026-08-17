@@ -11,21 +11,63 @@
       "text": "عُذۡرًا",
       "startMs": 280,
       "endMs": 940,
-      "score": -1.2957
+      "score": -1.2957,
+      "durationMs": 660,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 993.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.665
     },
     {
       "index": 2,
       "text": "أَوۡ",
       "startMs": 940,
       "endMs": 1510,
-      "score": -2.4592
+      "score": -2.4592,
+      "durationMs": 570,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_lin",
+            "clusterIndex": 1,
+            "reason": "madd_lin"
+          }
+        ]
+      },
+      "baselineMs": 440.0,
+      "baselineSource": "word",
+      "durationRatio": 1.295,
+      "extensionLevel": "normal",
+      "confidence": 0.877
     },
     {
       "index": 3,
       "text": "نُذۡرًا",
       "startMs": 1510,
       "endMs": 2926,
-      "score": -0.4886
+      "score": -0.4886,
+      "durationMs": 1416,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 615.0,
+      "baselineSource": "verse",
+      "durationRatio": 2.302
     }
   ],
   "meta": {
@@ -33,6 +75,15 @@
     "quality": 35.465,
     "alignMode": "balanced",
     "strategiesTried": 2,
-    "earlyExit": true
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 882.0,
+    "verseMedianDurationMs": 660.0,
+    "surahAverageDurationMs": 1196.3,
+    "surahMedianDurationMs": 1080.0
   }
 }

@@ -11,21 +11,77 @@
       "text": "إِنَّهُۥ",
       "startMs": 1200,
       "endMs": 1640,
-      "score": -0.5083
+      "score": -0.5083,
+      "durationMs": 440,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_madd",
+            "clusterIndex": 2,
+            "reason": "sila_waw"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1277.5,
+      "baselineSource": "word",
+      "durationRatio": 0.344,
+      "extensionLevel": "normal",
+      "confidence": 0.975
     },
     {
       "index": 2,
       "text": "فَكَّرَ",
       "startMs": 1640,
       "endMs": 2540,
-      "score": -0.2327
+      "score": -0.2327,
+      "durationMs": 900,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 739.5,
+      "baselineSource": "verse",
+      "durationRatio": 1.217
     },
     {
       "index": 3,
       "text": "وَقَدَّرَ",
       "startMs": 2540,
       "endMs": 3579,
-      "score": -0.2394
+      "score": -0.2394,
+      "durationMs": 1039,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 670.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.551
     }
   ],
   "meta": {
@@ -33,6 +89,15 @@
     "quality": 26.425,
     "alignMode": "balanced",
     "strategiesTried": 5,
-    "earlyExit": false
+    "earlyExit": false,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 793.0,
+    "verseMedianDurationMs": 900.0,
+    "surahAverageDurationMs": 984.8,
+    "surahMedianDurationMs": 900.0
   }
 }

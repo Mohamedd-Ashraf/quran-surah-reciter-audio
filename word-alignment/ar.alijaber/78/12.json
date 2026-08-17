@@ -11,28 +11,156 @@
       "text": "وَبَنَيۡنَا",
       "startMs": 660,
       "endMs": 1970,
-      "score": -0.1143
+      "score": -0.1143,
+      "durationMs": 1310,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_lin",
+            "clusterIndex": 3,
+            "reason": "madd_lin"
+          },
+          {
+            "type": "alif_madd",
+            "clusterIndex": 5,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 2,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 4,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1230.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.065,
+      "extensionLevel": "normal",
+      "confidence": 0.733
     },
     {
       "index": 2,
       "text": "فَوۡقَكُمۡ",
       "startMs": 1970,
       "endMs": 3200,
-      "score": -0.2501
+      "score": -0.2501,
+      "durationMs": 1230,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_lin",
+            "clusterIndex": 1,
+            "reason": "madd_lin"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1310.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.939,
+      "extensionLevel": "normal",
+      "confidence": 0.726
     },
     {
       "index": 3,
       "text": "سَبۡعٗا",
       "startMs": 3438,
       "endMs": 4331,
-      "score": -1.7081
+      "score": -1.7081,
+      "durationMs": 893,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1310.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.682
     },
     {
       "index": 4,
       "text": "شِدَادٗا",
       "startMs": 4331,
       "endMs": 6714,
-      "score": -0.3263
+      "score": -0.3263,
+      "durationMs": 2383,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 2,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1230.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.937,
+      "extensionLevel": "extended",
+      "confidence": 0.722
     }
   ],
   "meta": {
@@ -40,6 +168,15 @@
     "quality": 34.35,
     "alignMode": "balanced",
     "strategiesTried": 2,
-    "earlyExit": true
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1454.0,
+    "verseMedianDurationMs": 1270.0,
+    "surahAverageDurationMs": 1334.4,
+    "surahMedianDurationMs": 1260.0
   }
 }

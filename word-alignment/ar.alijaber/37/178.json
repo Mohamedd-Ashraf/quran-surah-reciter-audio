@@ -11,28 +11,124 @@
       "text": "وَتَوَلَّ",
       "startMs": 980,
       "endMs": 1740,
-      "score": -0.0124
+      "score": -0.0124,
+      "durationMs": 760,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 710.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.07
     },
     {
       "index": 2,
       "text": "عَنۡهُمۡ",
       "startMs": 1940,
       "endMs": 2640,
-      "score": -0.0711
+      "score": -0.0711,
+      "durationMs": 700,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 880.0,
+      "baselineSource": "word",
+      "durationRatio": 0.795
     },
     {
       "index": 3,
       "text": "حَتَّىٰ",
       "startMs": 2760,
       "endMs": 3470,
-      "score": -0.2701
+      "score": -0.2701,
+      "durationMs": 710,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 2,
+            "reason": "dagger_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 860.0,
+      "baselineSource": "word",
+      "durationRatio": 0.826,
+      "extensionLevel": "normal",
+      "confidence": 0.986
     },
     {
       "index": 4,
       "text": "حِينٖ",
       "startMs": 3470,
       "endMs": 5146,
-      "score": -0.0552
+      "score": -0.0552,
+      "durationMs": 1676,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_madd",
+            "clusterIndex": 1,
+            "reason": "kasra_ya"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1331.0,
+      "baselineSource": "word",
+      "durationRatio": 1.259,
+      "extensionLevel": "normal",
+      "confidence": 0.997
     }
   ],
   "meta": {
@@ -40,6 +136,15 @@
     "quality": 29.844,
     "alignMode": "balanced",
     "strategiesTried": 5,
-    "earlyExit": false
+    "earlyExit": false,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 961.5,
+    "verseMedianDurationMs": 735.0,
+    "surahAverageDurationMs": 1095.8,
+    "surahMedianDurationMs": 1000.0
   }
 }

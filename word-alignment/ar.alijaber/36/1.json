@@ -11,7 +11,32 @@
       "text": "يسٓ",
       "startMs": 280,
       "endMs": 4049,
-      "score": -0.1106
+      "score": -0.1106,
+      "durationMs": 3769,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 1,
+            "reason": "maddah"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 940.0,
+      "baselineSource": "surah",
+      "durationRatio": 4.01,
+      "extensionLevel": "highlyExtended",
+      "confidence": 0.819
     }
   ],
   "meta": {
@@ -19,6 +44,15 @@
     "quality": 37.179,
     "alignMode": "balanced",
     "strategiesTried": 2,
-    "earlyExit": true
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 3769.0,
+    "verseMedianDurationMs": 3769.0,
+    "surahAverageDurationMs": 999.6,
+    "surahMedianDurationMs": 940.0
   }
 }

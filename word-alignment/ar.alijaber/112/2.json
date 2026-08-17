@@ -11,14 +11,55 @@
       "text": "ٱللَّهُ",
       "startMs": 520,
       "endMs": 1460,
-      "score": -0.0422
+      "score": -0.0422,
+      "durationMs": 940,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 880.0,
+      "baselineSource": "word",
+      "durationRatio": 1.068
     },
     {
       "index": 2,
       "text": "ٱلصَّمَدُ",
       "startMs": 1460,
       "endMs": 2795,
-      "score": -0.3419
+      "score": -0.3419,
+      "durationMs": 1335,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 597.0,
+      "baselineSource": "surah",
+      "durationRatio": 2.236
     }
   ],
   "meta": {
@@ -26,6 +67,15 @@
     "quality": 32.462,
     "alignMode": "balanced",
     "strategiesTried": 1,
-    "earlyExit": true
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1137.5,
+    "verseMedianDurationMs": 1137.5,
+    "surahAverageDurationMs": 794.4,
+    "surahMedianDurationMs": 597.0
   }
 }

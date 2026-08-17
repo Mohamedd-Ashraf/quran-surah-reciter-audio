@@ -11,28 +11,124 @@
       "text": "وَمَآ",
       "startMs": 120,
       "endMs": 680,
-      "score": -1.1731
+      "score": -1.1731,
+      "durationMs": 560,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 2,
+            "reason": "maddah"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 620.0,
+      "baselineSource": "word",
+      "durationRatio": 0.903,
+      "extensionLevel": "normal",
+      "confidence": 0.941
     },
     {
       "index": 2,
       "text": "أَدۡرَىٰكَ",
       "startMs": 680,
       "endMs": 1640,
-      "score": -1.0085
+      "score": -1.0085,
+      "durationMs": 960,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 3,
+            "reason": "dagger_alif"
+          }
+        ]
+      },
+      "baselineMs": 1190.0,
+      "baselineSource": "word",
+      "durationRatio": 0.807,
+      "extensionLevel": "normal",
+      "confidence": 0.95
     },
     {
       "index": 3,
       "text": "مَا",
       "startMs": 1880,
       "endMs": 2222,
-      "score": -5.2399
+      "score": -5.2399,
+      "durationMs": 342,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 1,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 380.0,
+      "baselineSource": "word",
+      "durationRatio": 0.9,
+      "extensionLevel": "normal",
+      "confidence": 0.738
     },
     {
       "index": 4,
       "text": "ٱلطَّارِقُ",
       "startMs": 2222,
       "endMs": 3056,
-      "score": -1.6891
+      "score": -1.6891,
+      "durationMs": 834,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 3,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 2,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 560.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.489,
+      "extensionLevel": "slightlyExtended",
+      "confidence": 0.654
     }
   ],
   "meta": {
@@ -40,6 +136,15 @@
     "quality": 34.149,
     "alignMode": "balanced",
     "strategiesTried": 2,
-    "earlyExit": true
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 674.0,
+    "verseMedianDurationMs": 697.0,
+    "surahAverageDurationMs": 1019.6,
+    "surahMedianDurationMs": 940.0
   }
 }

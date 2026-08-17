@@ -11,35 +11,133 @@
       "text": "قَالَ",
       "startMs": 480,
       "endMs": 1100,
-      "score": -0.0276
+      "score": -0.0276,
+      "durationMs": 620,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 1,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 620.0,
+      "baselineSource": "word",
+      "durationRatio": 1.0,
+      "extensionLevel": "normal",
+      "confidence": 0.999
     },
     {
       "index": 2,
       "text": "رَبِّ",
       "startMs": 1100,
       "endMs": 1780,
-      "score": -0.0236
+      "score": -0.0236,
+      "durationMs": 680,
+      "baselineMs": 640.0,
+      "baselineSource": "word",
+      "durationRatio": 1.062
     },
     {
       "index": 3,
       "text": "إِنَّ",
       "startMs": 1780,
       "endMs": 2640,
-      "score": -0.112
+      "score": -0.112,
+      "durationMs": 860,
+      "baselineMs": 880.0,
+      "baselineSource": "word",
+      "durationRatio": 0.977
     },
     {
       "index": 4,
       "text": "قَوۡمِي",
       "startMs": 2640,
       "endMs": 3540,
-      "score": -0.0596
+      "score": -0.0596,
+      "durationMs": 900,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_lin",
+            "clusterIndex": 1,
+            "reason": "madd_lin"
+          },
+          {
+            "type": "ya_madd",
+            "clusterIndex": 3,
+            "reason": "kasra_ya"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 770.0,
+      "baselineSource": "word",
+      "durationRatio": 1.169,
+      "extensionLevel": "normal",
+      "confidence": 0.872
     },
     {
       "index": 5,
       "text": "كَذَّبُونِ",
       "startMs": 3540,
       "endMs": 5016,
-      "score": -0.0762
+      "score": -0.0762,
+      "durationMs": 1476,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_madd",
+            "clusterIndex": 3,
+            "reason": "damma_waw"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 2,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 0,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 770.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.917,
+      "extensionLevel": "extended",
+      "confidence": 0.766
     }
   ],
   "meta": {
@@ -47,6 +145,15 @@
     "quality": 36.142,
     "alignMode": "balanced",
     "strategiesTried": 1,
-    "earlyExit": true
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 907.2,
+    "verseMedianDurationMs": 860.0,
+    "surahAverageDurationMs": 1095.4,
+    "surahMedianDurationMs": 960.0
   }
 }

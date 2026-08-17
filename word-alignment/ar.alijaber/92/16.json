@@ -11,21 +11,89 @@
       "text": "ٱلَّذِي",
       "startMs": 208,
       "endMs": 836,
-      "score": -0.9008
+      "score": -0.9008,
+      "durationMs": 628,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_madd",
+            "clusterIndex": 3,
+            "reason": "kasra_ya"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 760.0,
+      "baselineSource": "word",
+      "durationRatio": 0.826,
+      "extensionLevel": "normal",
+      "confidence": 0.955
     },
     {
       "index": 2,
       "text": "كَذَّبَ",
       "startMs": 836,
       "endMs": 1822,
-      "score": -2.8732
+      "score": -2.8732,
+      "durationMs": 986,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 880.0,
+      "baselineSource": "word",
+      "durationRatio": 1.12
     },
     {
       "index": 3,
       "text": "وَتَوَلَّىٰ",
       "startMs": 1822,
       "endMs": 3579,
-      "score": -0.8195
+      "score": -0.8195,
+      "durationMs": 1757,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 4,
+            "reason": "dagger_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 3,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1314.5,
+      "baselineSource": "word",
+      "durationRatio": 1.337,
+      "extensionLevel": "normal",
+      "confidence": 0.834
     }
   ],
   "meta": {
@@ -33,6 +101,15 @@
     "quality": 36.91,
     "alignMode": "balanced",
     "strategiesTried": 2,
-    "earlyExit": true
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1123.7,
+    "verseMedianDurationMs": 986.0,
+    "surahAverageDurationMs": 1095.1,
+    "surahMedianDurationMs": 980.0
   }
 }

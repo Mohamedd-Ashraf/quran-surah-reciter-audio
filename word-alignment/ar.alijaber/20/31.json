@@ -11,21 +11,80 @@
       "text": "ٱشۡدُدۡ",
       "startMs": 588,
       "endMs": 1164,
-      "score": -0.6538
+      "score": -0.6538,
+      "durationMs": 576,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 881.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.654
     },
     {
       "index": 2,
       "text": "بِهِۦٓ",
       "startMs": 1164,
       "endMs": 1892,
-      "score": -0.3301
+      "score": -0.3301,
+      "durationMs": 728,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 1,
+            "reason": "maddah"
+          },
+          {
+            "type": "ya_madd",
+            "clusterIndex": 1,
+            "reason": "sila_yeh"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 620.0,
+      "baselineSource": "word",
+      "durationRatio": 1.174,
+      "extensionLevel": "normal",
+      "confidence": 0.983
     },
     {
       "index": 3,
       "text": "أَزۡرِي",
       "startMs": 1892,
       "endMs": 2926,
-      "score": -0.2562
+      "score": -0.2562,
+      "durationMs": 1034,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_madd",
+            "clusterIndex": 3,
+            "reason": "kasra_ya"
+          }
+        ]
+      },
+      "baselineMs": 652.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.586,
+      "extensionLevel": "slightlyExtended",
+      "confidence": 0.695
     }
   ],
   "meta": {
@@ -33,6 +92,15 @@
     "quality": 31.755,
     "alignMode": "balanced",
     "strategiesTried": 5,
-    "earlyExit": false
+    "earlyExit": false,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 779.3,
+    "verseMedianDurationMs": 728.0,
+    "surahAverageDurationMs": 965.8,
+    "surahMedianDurationMs": 900.0
   }
 }

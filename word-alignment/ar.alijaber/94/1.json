@@ -11,28 +11,85 @@
       "text": "أَلَمۡ",
       "startMs": 260,
       "endMs": 640,
-      "score": -0.0792
+      "score": -0.0792,
+      "durationMs": 380,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 440.0,
+      "baselineSource": "word",
+      "durationRatio": 0.864
     },
     {
       "index": 2,
       "text": "نَشۡرَحۡ",
       "startMs": 640,
       "endMs": 1380,
-      "score": -0.1646
+      "score": -0.1646,
+      "durationMs": 740,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 420.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.762
     },
     {
       "index": 3,
       "text": "لَكَ",
       "startMs": 1380,
       "endMs": 1800,
-      "score": -0.075
+      "score": -0.075,
+      "durationMs": 420,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 440.0,
+      "baselineSource": "word",
+      "durationRatio": 0.955
     },
     {
       "index": 4,
       "text": "صَدۡرَكَ",
       "startMs": 1800,
       "endMs": 3082,
-      "score": -0.129
+      "score": -0.129,
+      "durationMs": 1282,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 420.0,
+      "baselineSource": "verse",
+      "durationRatio": 3.052
     }
   ],
   "meta": {
@@ -40,6 +97,15 @@
     "quality": 36.57,
     "alignMode": "balanced",
     "strategiesTried": 1,
-    "earlyExit": true
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 705.5,
+    "verseMedianDurationMs": 580.0,
+    "surahAverageDurationMs": 907.1,
+    "surahMedianDurationMs": 860.0
   }
 }

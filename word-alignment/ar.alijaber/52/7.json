@@ -11,28 +11,100 @@
       "text": "إِنَّ",
       "startMs": 1000,
       "endMs": 1740,
-      "score": -0.1028
+      "score": -0.1028,
+      "durationMs": 740,
+      "baselineMs": 880.0,
+      "baselineSource": "word",
+      "durationRatio": 0.841
     },
     {
       "index": 2,
       "text": "عَذَابَ",
       "startMs": 1740,
       "endMs": 2680,
-      "score": -0.0467
+      "score": -0.0467,
+      "durationMs": 940,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 2,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 900.0,
+      "baselineSource": "word",
+      "durationRatio": 1.044,
+      "extensionLevel": "normal",
+      "confidence": 0.998
     },
     {
       "index": 3,
       "text": "رَبِّكَ",
       "startMs": 2680,
       "endMs": 3600,
-      "score": -0.0136
+      "score": -0.0136,
+      "durationMs": 920,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 880.0,
+      "baselineSource": "word",
+      "durationRatio": 1.045
     },
     {
       "index": 4,
       "text": "لَوَٰقِعٞ",
       "startMs": 3600,
       "endMs": 5016,
-      "score": -0.0767
+      "score": -0.0767,
+      "durationMs": 1416,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 1,
+            "reason": "dagger_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 920.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.539,
+      "extensionLevel": "slightlyExtended",
+      "confidence": 0.735
     }
   ],
   "meta": {
@@ -40,6 +112,15 @@
     "quality": 31.996,
     "alignMode": "balanced",
     "strategiesTried": 5,
-    "earlyExit": false
+    "earlyExit": false,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1004.0,
+    "verseMedianDurationMs": 930.0,
+    "surahAverageDurationMs": 1102.4,
+    "surahMedianDurationMs": 1020.0
   }
 }

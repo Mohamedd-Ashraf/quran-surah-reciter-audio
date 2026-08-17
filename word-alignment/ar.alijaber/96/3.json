@@ -11,21 +11,65 @@
       "text": "ٱقۡرَأۡ",
       "startMs": 140,
       "endMs": 680,
-      "score": -0.3773
+      "score": -0.3773,
+      "durationMs": 540,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1123.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.481
     },
     {
       "index": 2,
       "text": "وَرَبُّكَ",
       "startMs": 680,
       "endMs": 1720,
-      "score": -0.2838
+      "score": -0.2838,
+      "durationMs": 1040,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1000.0,
+      "baselineSource": "word",
+      "durationRatio": 1.04
     },
     {
       "index": 3,
       "text": "ٱلۡأَكۡرَمُ",
       "startMs": 1720,
       "endMs": 2926,
-      "score": -0.9932
+      "score": -0.9932,
+      "durationMs": 1206,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 790.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.527
     }
   ],
   "meta": {
@@ -33,6 +77,15 @@
     "quality": 37.81,
     "alignMode": "balanced",
     "strategiesTried": 1,
-    "earlyExit": true
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 928.7,
+    "verseMedianDurationMs": 1040.0,
+    "surahAverageDurationMs": 962.7,
+    "surahMedianDurationMs": 860.0
   }
 }

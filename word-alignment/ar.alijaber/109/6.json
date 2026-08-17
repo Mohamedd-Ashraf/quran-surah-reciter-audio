@@ -11,28 +11,119 @@
       "text": "لَكُمۡ",
       "startMs": 280,
       "endMs": 920,
-      "score": -0.9097
+      "score": -0.9097,
+      "durationMs": 640,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 700.0,
+      "baselineSource": "word",
+      "durationRatio": 0.914
     },
     {
       "index": 2,
       "text": "دِينُكُمۡ",
       "startMs": 920,
       "endMs": 2100,
-      "score": -0.8233
+      "score": -0.8233,
+      "durationMs": 1180,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_madd",
+            "clusterIndex": 1,
+            "reason": "kasra_ya"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 750.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.573,
+      "extensionLevel": "slightlyExtended",
+      "confidence": 0.698
     },
     {
       "index": 3,
       "text": "وَلِيَ",
       "startMs": 2100,
       "endMs": 2850,
-      "score": -0.9298
+      "score": -0.9298,
+      "durationMs": 750,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1180.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.636
     },
     {
       "index": 4,
       "text": "دِينِ",
       "startMs": 2850,
       "endMs": 4807,
-      "score": -0.4109
+      "score": -0.4109,
+      "durationMs": 1957,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_madd",
+            "clusterIndex": 1,
+            "reason": "kasra_ya"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 710.0,
+      "baselineSource": "word",
+      "durationRatio": 2.756,
+      "extensionLevel": "highlyExtended",
+      "confidence": 0.854
     }
   ],
   "meta": {
@@ -40,6 +131,15 @@
     "quality": 37.286,
     "alignMode": "balanced",
     "strategiesTried": 2,
-    "earlyExit": true
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1131.8,
+    "verseMedianDurationMs": 965.0,
+    "surahAverageDurationMs": 1223.8,
+    "surahMedianDurationMs": 1150.0
   }
 }

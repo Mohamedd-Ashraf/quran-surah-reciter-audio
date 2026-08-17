@@ -11,7 +11,37 @@
       "text": "وَٱلطُّورِ",
       "startMs": 300,
       "endMs": 2273,
-      "score": -0.3994
+      "score": -0.3994,
+      "durationMs": 1973,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_madd",
+            "clusterIndex": 4,
+            "reason": "damma_waw"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 3,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1020.0,
+      "baselineSource": "surah",
+      "durationRatio": 1.934,
+      "extensionLevel": "extended",
+      "confidence": 0.805
     }
   ],
   "meta": {
@@ -19,6 +49,15 @@
     "quality": 34.521,
     "alignMode": "balanced",
     "strategiesTried": 2,
-    "earlyExit": true
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1973.0,
+    "verseMedianDurationMs": 1973.0,
+    "surahAverageDurationMs": 1102.4,
+    "surahMedianDurationMs": 1020.0
   }
 }

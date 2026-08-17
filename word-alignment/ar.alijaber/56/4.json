@@ -11,28 +11,83 @@
       "text": "إِذَا",
       "startMs": 280,
       "endMs": 680,
-      "score": -0.2811
+      "score": -0.2811,
+      "durationMs": 400,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 2,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "baselineMs": 580.0,
+      "baselineSource": "word",
+      "durationRatio": 0.69,
+      "extensionLevel": "normal",
+      "confidence": 0.986
     },
     {
       "index": 2,
       "text": "رُجَّتِ",
       "startMs": 680,
       "endMs": 1620,
-      "score": -0.0899
+      "score": -0.0899,
+      "durationMs": 940,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 860.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.093
     },
     {
       "index": 3,
       "text": "ٱلۡأَرۡضُ",
       "startMs": 1620,
       "endMs": 2480,
-      "score": -0.121
+      "score": -0.121,
+      "durationMs": 860,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 840.0,
+      "baselineSource": "word",
+      "durationRatio": 1.024
     },
     {
       "index": 4,
       "text": "رَجّٗا",
       "startMs": 2480,
       "endMs": 3840,
-      "score": -0.0789
+      "score": -0.0789,
+      "durationMs": 1360,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 860.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.581
     }
   ],
   "meta": {
@@ -40,6 +95,15 @@
     "quality": 37.012,
     "alignMode": "balanced",
     "strategiesTried": 1,
-    "earlyExit": true
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 890.0,
+    "verseMedianDurationMs": 900.0,
+    "surahAverageDurationMs": 1245.8,
+    "surahMedianDurationMs": 1200.0
   }
 }
