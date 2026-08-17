@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.minshawimujawwad",
+  "surah": 68,
+  "ayah": 9,
+  "audioFile": "068009.mp3",
+  "durationMs": 10083,
+  "words": [
+    {
+      "index": 1,
+      "text": "وَدُّواْ",
+      "startMs": 20,
+      "endMs": 1780,
+      "score": -0.2016,
+      "durationMs": 1760,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_madd",
+            "clusterIndex": 2,
+            "reason": "damma_waw"
+          }
+        ]
+      },
+      "baselineMs": 1855.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.949,
+      "extensionLevel": "normal",
+      "confidence": 0.729
+    },
+    {
+      "index": 2,
+      "text": "لَوۡ",
+      "startMs": 1870,
+      "endMs": 2425,
+      "score": -1.1451,
+      "durationMs": 555,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_lin",
+            "clusterIndex": 1,
+            "reason": "madd_lin"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 860.0,
+      "baselineSource": "word",
+      "durationRatio": 0.645,
+      "extensionLevel": "normal",
+      "confidence": 0.943
+    },
+    {
+      "index": 3,
+      "text": "تُدۡهِنُ",
+      "startMs": 2425,
+      "endMs": 4280,
+      "score": -0.2281,
+      "durationMs": 1855,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 0,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1760.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.054
+    },
+    {
+      "index": 4,
+      "text": "فَيُدۡهِنُونَ",
+      "startMs": 4280,
+      "endMs": 10083,
+      "score": -0.1655,
+      "durationMs": 5803,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_madd",
+            "clusterIndex": 5,
+            "reason": "damma_waw"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 4,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1760.0,
+      "baselineSource": "verse",
+      "durationRatio": 3.297,
+      "extensionLevel": "highlyExtended",
+      "confidence": 0.73
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 39.346,
+    "alignMode": "balanced",
+    "strategiesTried": 2,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 2493.2,
+    "verseMedianDurationMs": 1807.5,
+    "surahAverageDurationMs": 2240.3,
+    "surahMedianDurationMs": 1820.0
+  }
+}
