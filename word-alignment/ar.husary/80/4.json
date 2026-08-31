@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.husary",
+  "surah": 80,
+  "ayah": 4,
+  "audioFile": "080004.mp3",
+  "durationMs": 8333,
+  "words": [
+    {
+      "index": 1,
+      "text": "أَوۡ",
+      "startMs": 280,
+      "endMs": 520,
+      "score": -0.9046,
+      "durationMs": 240,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_lin",
+            "clusterIndex": 1,
+            "reason": "madd_lin"
+          }
+        ]
+      },
+      "baselineMs": 680.0,
+      "baselineSource": "word",
+      "durationRatio": 0.353,
+      "extensionLevel": "normal",
+      "confidence": 0.955
+    },
+    {
+      "index": 2,
+      "text": "يَذَّكَّرُ",
+      "startMs": 740,
+      "endMs": 2680,
+      "score": -0.1995,
+      "durationMs": 1940,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 3,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 2760.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.703
+    },
+    {
+      "index": 3,
+      "text": "فَتَنفَعَهُ",
+      "startMs": 2680,
+      "endMs": 5440,
+      "score": -0.3074,
+      "durationMs": 2760,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 4,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1940.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.423
+    },
+    {
+      "index": 4,
+      "text": "ٱلذِّكۡرَىٰٓ",
+      "startMs": 5440,
+      "endMs": 8333,
+      "score": -0.233,
+      "durationMs": 2893,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 5,
+            "reason": "dagger_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1940.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.491,
+      "extensionLevel": "slightlyExtended",
+      "confidence": 0.727
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 37.394,
+    "alignMode": "balanced",
+    "strategiesTried": 2,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1958.2,
+    "verseMedianDurationMs": 2350.0,
+    "surahAverageDurationMs": 1860.0,
+    "surahMedianDurationMs": 1795.0
+  }
+}

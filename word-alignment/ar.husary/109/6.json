@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.husary",
+  "surah": 109,
+  "ayah": 6,
+  "audioFile": "109006.mp3",
+  "durationMs": 7053,
+  "words": [
+    {
+      "index": 1,
+      "text": "لَكُمۡ",
+      "startMs": 580,
+      "endMs": 1480,
+      "score": -0.1258,
+      "durationMs": 900,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1060.0,
+      "baselineSource": "word",
+      "durationRatio": 0.849
+    },
+    {
+      "index": 2,
+      "text": "دِينُكُمۡ",
+      "startMs": 1700,
+      "endMs": 3460,
+      "score": -0.1192,
+      "durationMs": 1760,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_madd",
+            "clusterIndex": 1,
+            "reason": "kasra_ya"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1030.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.709,
+      "extensionLevel": "slightlyExtended",
+      "confidence": 0.733
+    },
+    {
+      "index": 3,
+      "text": "وَلِيَ",
+      "startMs": 3460,
+      "endMs": 4490,
+      "score": -0.1453,
+      "durationMs": 1030,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1760.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.585
+    },
+    {
+      "index": 4,
+      "text": "دِينِ",
+      "startMs": 4490,
+      "endMs": 7053,
+      "score": -0.1135,
+      "durationMs": 2563,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_madd",
+            "clusterIndex": 1,
+            "reason": "kasra_ya"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1020.0,
+      "baselineSource": "word",
+      "durationRatio": 2.513,
+      "extensionLevel": "highlyExtended",
+      "confidence": 0.869
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 35.4,
+    "alignMode": "balanced",
+    "strategiesTried": 2,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1563.2,
+    "verseMedianDurationMs": 1395.0,
+    "surahAverageDurationMs": 1857.2,
+    "surahMedianDurationMs": 1760.0
+  }
+}

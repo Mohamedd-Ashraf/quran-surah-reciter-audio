@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.husary",
+  "surah": 84,
+  "ayah": 3,
+  "audioFile": "084003.mp3",
+  "durationMs": 4963,
+  "words": [
+    {
+      "index": 1,
+      "text": "وَإِذَا",
+      "startMs": 558,
+      "endMs": 1081,
+      "score": -1.5825,
+      "durationMs": 523,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 3,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "baselineMs": 1000.0,
+      "baselineSource": "word",
+      "durationRatio": 0.523,
+      "extensionLevel": "normal",
+      "confidence": 0.921
+    },
+    {
+      "index": 2,
+      "text": "ٱلۡأَرۡضُ",
+      "startMs": 1081,
+      "endMs": 2650,
+      "score": -0.897,
+      "durationMs": 1569,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1300.0,
+      "baselineSource": "word",
+      "durationRatio": 1.207
+    },
+    {
+      "index": 3,
+      "text": "مُدَّتۡ",
+      "startMs": 2650,
+      "endMs": 4963,
+      "score": -0.4402,
+      "durationMs": 2313,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1046.0,
+      "baselineSource": "verse",
+      "durationRatio": 2.211
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 35.016,
+    "alignMode": "balanced",
+    "strategiesTried": 2,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1468.3,
+    "verseMedianDurationMs": 1569.0,
+    "surahAverageDurationMs": 1885.5,
+    "surahMedianDurationMs": 1600.0
+  }
+}

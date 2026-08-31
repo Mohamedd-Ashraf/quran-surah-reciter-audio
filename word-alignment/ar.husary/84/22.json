@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.husary",
+  "surah": 84,
+  "ayah": 22,
+  "audioFile": "084022.mp3",
+  "durationMs": 7732,
+  "words": [
+    {
+      "index": 1,
+      "text": "بَلِ",
+      "startMs": 960,
+      "endMs": 1280,
+      "score": -1.0055,
+      "durationMs": 320,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 400.0,
+      "baselineSource": "word",
+      "durationRatio": 0.8
+    },
+    {
+      "index": 2,
+      "text": "ٱلَّذِينَ",
+      "startMs": 1400,
+      "endMs": 2436,
+      "score": -1.0356,
+      "durationMs": 1036,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_madd",
+            "clusterIndex": 3,
+            "reason": "kasra_ya"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 3,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1540.0,
+      "baselineSource": "word",
+      "durationRatio": 0.673,
+      "extensionLevel": "normal",
+      "confidence": 0.948
+    },
+    {
+      "index": 3,
+      "text": "كَفَرُواْ",
+      "startMs": 2436,
+      "endMs": 3604,
+      "score": -1.719,
+      "durationMs": 1168,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_madd",
+            "clusterIndex": 3,
+            "reason": "damma_waw"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1320.0,
+      "baselineSource": "word",
+      "durationRatio": 0.885,
+      "extensionLevel": "normal",
+      "confidence": 0.914
+    },
+    {
+      "index": 4,
+      "text": "يُكَذِّبُونَ",
+      "startMs": 3604,
+      "endMs": 7732,
+      "score": -0.3415,
+      "durationMs": 4128,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_madd",
+            "clusterIndex": 4,
+            "reason": "damma_waw"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 3,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1036.0,
+      "baselineSource": "verse",
+      "durationRatio": 3.985,
+      "extensionLevel": "highlyExtended",
+      "confidence": 0.722
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 33.9,
+    "alignMode": "balanced",
+    "strategiesTried": 2,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1663.0,
+    "verseMedianDurationMs": 1102.0,
+    "surahAverageDurationMs": 1885.5,
+    "surahMedianDurationMs": 1600.0
+  }
+}
