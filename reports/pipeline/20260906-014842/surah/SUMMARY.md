@@ -1,11 +1,11 @@
 # Batch summary — surah
 
 - **runId:** `20260906-014842`
-- **generatedAt:** 2026-09-06T11:39:36Z
+- **generatedAt:** 2026-09-06T12:05:26Z
 - **success:** 10
 - **failed:** 2
 - **skipped:** 23
-- **totalDurationSec:** 15855
+- **totalDurationSec:** 16725
 
 ## Ordered results
 
@@ -13,7 +13,7 @@
 |------|----|--------|-------------|-------|
 | 0 | `ar.abdulsamad` | success | 379 | https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah- |
 | 1 | `ar.abdulbasitmujawwad` | success | 2122 | https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah- |
-| 2 | `ar.warsh.abdulbasit` | failed | 677 | exit 255: <asynchronous suspension> #6      _buildEdition (file:///home/mohamed_ |
+| 2 | `ar.warsh.abdulbasit` | failed | 1547 | exit 255: <asynchronous suspension> #6      _buildEdition (file:///home/mohamed_ |
 | 3 | `ar.minshawi` | success | 1378 | https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah- |
 | 4 | `ar.minshawimujawwad` | success | 2217 | https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah- |
 | 5 | `ar.minshawiteacher` | success | 1447 | https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah- |
