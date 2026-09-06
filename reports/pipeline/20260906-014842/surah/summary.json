@@ -1,14 +1,14 @@
 {
   "runId": "20260906-014842",
   "pipeline": "surah",
-  "generatedAt": "2026-09-06T12:19:55Z",
+  "generatedAt": "2026-09-06T12:31:27Z",
   "totals": {
-    "success": 11,
+    "success": 12,
     "failed": 2,
     "skipped": 23,
-    "processed": 13,
-    "listed": 36,
-    "durationSec": 17473
+    "processed": 14,
+    "listed": 37,
+    "durationSec": 18162
   },
   "reciters": [
     {
@@ -194,6 +194,30 @@
       "error": null,
       "logTail": null,
       "skippedReason": "no EveryAyah folder (e.g. qiraat / mp3quran-only)"
+    },
+    {
+      "runId": "20260906-014842",
+      "pipeline": "surah",
+      "reciterId": "ar.mahermuaiqly",
+      "popularityRank": 13,
+      "status": "success",
+      "startedAt": "2026-09-06T12:19:57Z",
+      "finishedAt": "2026-09-06T12:31:26Z",
+      "durationSec": 689,
+      "publish": {
+        "url": "https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah-reciter-ar.mahermuaiqly",
+        "path": null,
+        "commit": null,
+        "releaseTag": "surah-reciter-ar.mahermuaiqly"
+      },
+      "metrics": {
+        "totalSurahs": 114,
+        "assetCount": 114,
+        "totalBytes": 612613211
+      },
+      "error": null,
+      "logTail": "  File I/O: 8.0%\nBuilt ar.mahermuaiqly :: 114 surahs :: 612613211 bytes\nbuild_summary ok\n[12:26:30] Validating manifest SHA-256 + sizes...\nvalidation ok: 114/114 surahs\n[12:26:31] Publishing to Mohamedd-Ashraf/quran-surah-reciter-audio tag surah-reciter-ar.mahermuaiqly...\nhttps://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah-reciter-ar.mahermuaiqly\n[12:30:35] Uploaded manifest + 228 audio/timing assets to Mohamedd-Ashraf/quran-surah-reciter-audio\n[12:30:35] Public smoke test...\n[12:30:35] Waiting for public manifest: https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/download/surah-reciter-ar.mahermuaiqly/manifest.json\n[12:30:35] manifest fetched after 10s\nmanifest ok ar.mahermuaiqly 114\nchecking 228 files are live...\nall 228 files are live\n{\n  \"edition\": \"ar.mahermuaiqly\",\n  \"baseUrl\": \"https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/download/surah-reciter-ar.mahermuaiqly\",\n  \"sampleSize\": 3,\n  \"allPassed\": true,\n  \"results\": [\n    {\n      \"surah\": 82,\n      \"ok\": true,\n      \"bytes\": 676084\n    },\n    {\n      \"surah\": 15,\n      \"ok\": true,\n      \"bytes\": 5076742\n    },\n    {\n      \"surah\": 4,\n      \"ok\": true,\n      \"bytes\": 29508086\n    }\n  ]\n}\n[12:31:26] Smoke PASSED for ar.mahermuaiqly\n[12:31:26] DONE surah packages for ar.mahermuaiqly \u2192 https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah-reciter-ar.mahermuaiqly\n[12:31:26] Remember: gcloud compute instances stop surah-packages-worker --zone=us-central1-a --project=quraan-dd543",
+      "skippedReason": null
     },
     {
       "runId": "20260906-014842",
