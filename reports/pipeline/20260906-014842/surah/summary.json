@@ -1,14 +1,14 @@
 {
   "runId": "20260906-014842",
   "pipeline": "surah",
-  "generatedAt": "2026-09-06T13:14:27Z",
+  "generatedAt": "2026-09-06T13:34:57Z",
   "totals": {
-    "success": 14,
+    "success": 15,
     "failed": 2,
     "skipped": 23,
-    "processed": 16,
-    "listed": 39,
-    "durationSec": 20738
+    "processed": 17,
+    "listed": 40,
+    "durationSec": 21965
   },
   "reciters": [
     {
@@ -381,6 +381,30 @@
       "metrics": {},
       "error": "exit 255: <asynchronous suspension> #6      _buildEdition (file:///home/mohamed_ashraf_1177s_gmail_com/quraan/tool/build_surah_reciter_packages.dart:255:3) <asynchronous suspension> #7      main (file:///home/m",
       "logTail": "[12:07:59] Building packages for ar.mustafaismail (workers=4)...\nFetching https://everyayah.com/data/Mustafa_Ismail_48kbps/003001.mp3 (attempt 1/3)\nFetching https://everyayah.com/data/Mustafa_Ismail_48kbps/004001.mp3 (attempt 1/3)\nFetching https://everyayah.com/data/Mustafa_Ismail_48kbps/003001.mp3 (attempt 2/3)\nFetching https://everyayah.com/data/Mustafa_Ismail_48kbps/004001.mp3 (attempt 2/3)\nSurah 001:   7/7 ayahs | overall 14/6236 | cache hits=7 misses=0\nFetching https://everyayah.com/data/Mustafa_Ismail_48kbps/005001.mp3 (attempt 1/3)\nFetching https://everyayah.com/data/Mustafa_Ismail_48kbps/003001.mp3 (attempt 3/3)\nFetching https://everyayah.com/data/Mustafa_Ismail_48kbps/004001.mp3 (attempt 3/3)\nFetching https://everyayah.com/data/Mustafa_Ismail_48kbps/005001.mp3 (attempt 2/3)\nFetching https://everyayah.com/data/Mustafa_Ismail_48kbps/005001.mp3 (attempt 3/3)\nSurah 002:  50/286 ayahs | overall 57/6236 | cache hits=50 misses=0\nSurah 002: 100/286 ayahs | overall 107/6236 | cache hits=100 misses=0\nSurah 002: 150/286 ayahs | overall 157/6236 | cache hits=150 misses=0\nSurah 002: 200/286 ayahs | overall 207/6236 | cache hits=200 misses=0\nSurah 002: 250/286 ayahs | overall 257/6236 | cache hits=250 misses=0\nSurah 002: 286/286 ayahs | overall 293/6236 | cache hits=286 misses=0\nFetching https://everyayah.com/data/Mustafa_Ismail_48kbps/006001.mp3 (attempt 1/3)\nFetching https://everyayah.com/data/Mustafa_Ismail_48kbps/006001.mp3 (attempt 2/3)\nFetching https://everyayah.com/data/Mustafa_Ismail_48kbps/006001.mp3 (attempt 3/3)\nUnhandled exception:\nHttpException: HTTP 404 for https://everyayah.com/data/Mustafa_Ismail_48kbps/003001.mp3\n#0      BuildAudioCache._downloadWithRetry (file:///home/mohamed_ashraf_1177s_gmail_com/quraan/tool/build_audio_cache.dart:193:5)\n<asynchronous suspension>\n#1      BuildAudioCache._materializeLocked (file:///home/mohamed_ashraf_1177s_gmail_com/quraan/tool/build_audio_cache.dart:98:19)\n<asynchronous suspension>\n#2      BuildAudioCache.materializeWithStatus (file:///home/mohamed_ashraf_1177s_gmail_com/quraan/tool/build_audio_cache.dart:77:21)\n<asynchronous suspension>\n#3      _buildSurahFile (file:///home/mohamed_ashraf_1177s_gmail_com/quraan/tool/build_surah_reciter_packages.dart:507:24)\n<asynchronous suspension>\n#4      _buildEdition.runWorker (file:///home/mohamed_ashraf_1177s_gmail_com/quraan/tool/build_surah_reciter_packages.dart:230:22)\n<asynchronous suspension>\n#5      Future.wait.<anonymous closure> (dart:async/future.dart:567:21)\n<asynchronous suspension>\n#6      _buildEdition (file:///home/mohamed_ashraf_1177s_gmail_com/quraan/tool/build_surah_reciter_packages.dart:255:3)\n<asynchronous suspension>\n#7      main (file:///home/mohamed_ashraf_1177s_gmail_com/quraan/tool/build_surah_reciter_packages.dart:144:20)\n<asynchronous suspension>",
+      "skippedReason": null
+    },
+    {
+      "runId": "20260906-014842",
+      "pipeline": "surah",
+      "reciterId": "ar.nasserqatami",
+      "popularityRank": 16,
+      "status": "success",
+      "startedAt": "2026-09-06T13:14:29Z",
+      "finishedAt": "2026-09-06T13:34:56Z",
+      "durationSec": 1227,
+      "publish": {
+        "url": "https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah-reciter-ar.nasserqatami",
+        "path": null,
+        "commit": null,
+        "releaseTag": "surah-reciter-ar.nasserqatami"
+      },
+      "metrics": {
+        "totalSurahs": 114,
+        "assetCount": 114,
+        "totalBytes": 769115901
+      },
+      "error": null,
+      "logTail": "  File I/O: 3.3%\nBuilt ar.nasserqatami :: 114 surahs :: 769115901 bytes\nbuild_summary ok\n[13:29:54] Validating manifest SHA-256 + sizes...\nvalidation ok: 114/114 surahs\n[13:29:55] Publishing to Mohamedd-Ashraf/quran-surah-reciter-audio tag surah-reciter-ar.nasserqatami...\nhttps://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah-reciter-ar.nasserqatami\n[13:34:08] Uploaded manifest + 228 audio/timing assets to Mohamedd-Ashraf/quran-surah-reciter-audio\n[13:34:08] Public smoke test...\n[13:34:08] Waiting for public manifest: https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/download/surah-reciter-ar.nasserqatami/manifest.json\n[13:34:08] manifest fetched after 10s\nmanifest ok ar.nasserqatami 114\nchecking 228 files are live...\nall 228 files are live\n{\n  \"edition\": \"ar.nasserqatami\",\n  \"baseUrl\": \"https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/download/surah-reciter-ar.nasserqatami\",\n  \"sampleSize\": 3,\n  \"allPassed\": true,\n  \"results\": [\n    {\n      \"surah\": 82,\n      \"ok\": true,\n      \"bytes\": 1120592\n    },\n    {\n      \"surah\": 15,\n      \"ok\": true,\n      \"bytes\": 6728141\n    },\n    {\n      \"surah\": 4,\n      \"ok\": true,\n      \"bytes\": 35189490\n    }\n  ]\n}\n[13:34:56] Smoke PASSED for ar.nasserqatami\n[13:34:56] DONE surah packages for ar.nasserqatami \u2192 https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah-reciter-ar.nasserqatami\n[13:34:56] Remember: gcloud compute instances stop surah-packages-worker --zone=us-central1-a --project=quraan-dd543",
       "skippedReason": null
     },
     {
