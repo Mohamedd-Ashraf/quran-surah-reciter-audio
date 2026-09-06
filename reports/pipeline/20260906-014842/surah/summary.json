@@ -1,14 +1,14 @@
 {
   "runId": "20260906-014842",
   "pipeline": "surah",
-  "generatedAt": "2026-09-06T12:51:58Z",
+  "generatedAt": "2026-09-06T13:14:27Z",
   "totals": {
-    "success": 13,
+    "success": 14,
     "failed": 2,
     "skipped": 23,
-    "processed": 15,
-    "listed": 38,
-    "durationSec": 19391
+    "processed": 16,
+    "listed": 39,
+    "durationSec": 20738
   },
   "reciters": [
     {
@@ -821,6 +821,30 @@
       "metrics": {},
       "error": "exit 255: <asynchronous suspension> #6      _buildEdition (file:///home/mohamed_ashraf_1177s_gmail_com/quraan/tool/build_surah_reciter_packages.dart:255:3) <asynchronous suspension> #7      main (file:///home/m",
       "logTail": "Surah 010: 109/109 ayahs | overall 1471/6236 | cache hits=109 misses=0\nSurah 011:  50/123 ayahs | overall 1521/6236 | cache hits=50 misses=0\nSurah 011: 100/123 ayahs | overall 1571/6236 | cache hits=100 misses=0\nFetching https://everyayah.com/data/warsh/warsh_Abdul_Basit_128kbps/011122.mp3 (attempt 1/3)\nFetching https://everyayah.com/data/warsh/warsh_Abdul_Basit_128kbps/011122.mp3 (attempt 2/3)\nFetching https://everyayah.com/data/warsh/warsh_Abdul_Basit_128kbps/011122.mp3 (attempt 3/3)\nSurah 012:  50/111 ayahs | overall 1642/6236 | cache hits=50 misses=0\nSurah 012: 100/111 ayahs | overall 1692/6236 | cache hits=100 misses=0\nSurah 012: 111/111 ayahs | overall 1703/6236 | cache hits=111 misses=0\nSurah 013:  43/43 ayahs | overall 1746/6236 | cache hits=43 misses=0\nSurah 014:  50/52 ayahs | overall 1796/6236 | cache hits=50 misses=0\nSurah 014:  52/52 ayahs | overall 1798/6236 | cache hits=52 misses=0\nSurah 015:  50/99 ayahs | overall 1848/6236 | cache hits=50 misses=0\nSurah 015:  99/99 ayahs | overall 1897/6236 | cache hits=99 misses=0\nSurah 016:  50/128 ayahs | overall 1947/6236 | cache hits=50 misses=0\nSurah 016: 100/128 ayahs | overall 1997/6236 | cache hits=100 misses=0\nSurah 016: 128/128 ayahs | overall 2025/6236 | cache hits=128 misses=0\nSurah 017:  50/111 ayahs | overall 2075/6236 | cache hits=50 misses=0\nSurah 017: 100/111 ayahs | overall 2125/6236 | cache hits=100 misses=0\nFetching https://everyayah.com/data/warsh/warsh_Abdul_Basit_128kbps/017111.mp3 (attempt 1/3)\nFetching https://everyayah.com/data/warsh/warsh_Abdul_Basit_128kbps/017111.mp3 (attempt 2/3)\nFetching https://everyayah.com/data/warsh/warsh_Abdul_Basit_128kbps/017111.mp3 (attempt 3/3)\nUnhandled exception:\nHttpException: HTTP 404 for https://everyayah.com/data/warsh/warsh_Abdul_Basit_128kbps/004176.mp3\n#0      BuildAudioCache._downloadWithRetry (file:///home/mohamed_ashraf_1177s_gmail_com/quraan/tool/build_audio_cache.dart:193:5)\n<asynchronous suspension>\n#1      BuildAudioCache._materializeLocked (file:///home/mohamed_ashraf_1177s_gmail_com/quraan/tool/build_audio_cache.dart:98:19)\n<asynchronous suspension>\n#2      BuildAudioCache.materializeWithStatus (file:///home/mohamed_ashraf_1177s_gmail_com/quraan/tool/build_audio_cache.dart:77:21)\n<asynchronous suspension>\n#3      _buildSurahFile (file:///home/mohamed_ashraf_1177s_gmail_com/quraan/tool/build_surah_reciter_packages.dart:507:24)\n<asynchronous suspension>\n#4      _buildEdition.runWorker (file:///home/mohamed_ashraf_1177s_gmail_com/quraan/tool/build_surah_reciter_packages.dart:230:22)\n<asynchronous suspension>\n#5      Future.wait.<anonymous closure> (dart:async/future.dart:567:21)\n<asynchronous suspension>\n#6      _buildEdition (file:///home/mohamed_ashraf_1177s_gmail_com/quraan/tool/build_surah_reciter_packages.dart:255:3)\n<asynchronous suspension>\n#7      main (file:///home/mohamed_ashraf_1177s_gmail_com/quraan/tool/build_surah_reciter_packages.dart:144:20)\n<asynchronous suspension>",
+      "skippedReason": null
+    },
+    {
+      "runId": "20260906-014842",
+      "pipeline": "surah",
+      "reciterId": "ar.yasiradussary",
+      "popularityRank": 15,
+      "status": "success",
+      "startedAt": "2026-09-06T12:52:00Z",
+      "finishedAt": "2026-09-06T13:14:27Z",
+      "durationSec": 1347,
+      "publish": {
+        "url": "https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah-reciter-ar.yasiradussary",
+        "path": null,
+        "commit": null,
+        "releaseTag": "surah-reciter-ar.yasiradussary"
+      },
+      "metrics": {
+        "totalSurahs": 114,
+        "assetCount": 114,
+        "totalBytes": 743492918
+      },
+      "error": null,
+      "logTail": "  File I/O: 4.6%\nBuilt ar.yasiradussary :: 114 surahs :: 743492918 bytes\nbuild_summary ok\n[13:09:19] Validating manifest SHA-256 + sizes...\nvalidation ok: 114/114 surahs\n[13:09:20] Publishing to Mohamedd-Ashraf/quran-surah-reciter-audio tag surah-reciter-ar.yasiradussary...\nhttps://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah-reciter-ar.yasiradussary\n[13:13:39] Uploaded manifest + 228 audio/timing assets to Mohamedd-Ashraf/quran-surah-reciter-audio\n[13:13:39] Public smoke test...\n[13:13:39] Waiting for public manifest: https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/download/surah-reciter-ar.yasiradussary/manifest.json\n[13:13:40] manifest fetched after 10s\nmanifest ok ar.yasiradussary 114\nchecking 228 files are live...\nall 228 files are live\n{\n  \"edition\": \"ar.yasiradussary\",\n  \"baseUrl\": \"https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/download/surah-reciter-ar.yasiradussary\",\n  \"sampleSize\": 3,\n  \"allPassed\": true,\n  \"results\": [\n    {\n      \"surah\": 82,\n      \"ok\": true,\n      \"bytes\": 1012132\n    },\n    {\n      \"surah\": 15,\n      \"ok\": true,\n      \"bytes\": 6465036\n    },\n    {\n      \"surah\": 4,\n      \"ok\": true,\n      \"bytes\": 35335567\n    }\n  ]\n}\n[13:14:27] Smoke PASSED for ar.yasiradussary\n[13:14:27] DONE surah packages for ar.yasiradussary \u2192 https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah-reciter-ar.yasiradussary\n[13:14:27] Remember: gcloud compute instances stop surah-packages-worker --zone=us-central1-a --project=quraan-dd543",
       "skippedReason": null
     }
   ],
