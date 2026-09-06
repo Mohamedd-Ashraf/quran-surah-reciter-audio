@@ -1,6 +1,6 @@
 # Latest pipeline batch runs
 
-- **updatedAt:** 2026-09-06T12:05:26Z
+- **updatedAt:** 2026-09-06T12:09:14Z
 - **surah runId:** `20260906-014842`
 - **align runId:** `n/a`
 

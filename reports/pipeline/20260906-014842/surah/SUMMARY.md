@@ -1,11 +1,11 @@
 # Batch summary — surah
 
 - **runId:** `20260906-014842`
-- **generatedAt:** 2026-09-06T12:05:26Z
+- **generatedAt:** 2026-09-06T12:09:14Z
 - **success:** 10
 - **failed:** 2
 - **skipped:** 23
-- **totalDurationSec:** 16725
+- **totalDurationSec:** 16834
 
 ## Ordered results
 
@@ -20,7 +20,7 @@
 | 6 | `ar.husary` | success | 1717 | https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah- |
 | 7 | `ar.husarymujawwad` | success | 1780 | https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah- |
 | 8 | `ar.husarymuallim` | success | 1839 | https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah- |
-| 9 | `ar.mustafaismail` | failed | 115 | exit 255: <asynchronous suspension> #6      _buildEdition (file:///home/mohamed_ |
+| 9 | `ar.mustafaismail` | failed | 224 | exit 255: <asynchronous suspension> #6      _buildEdition (file:///home/mohamed_ |
 | 10 | `ar.mohammadaltablawi` | success | 1347 | https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah- |
 | 11 | `ar.mahmoudbanna` | success | 837 | https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah- |
 | 22 | `ar.khaledjleel` | skipped | 0 | no EveryAyah folder (e.g. qiraat / mp3quran-only) |
