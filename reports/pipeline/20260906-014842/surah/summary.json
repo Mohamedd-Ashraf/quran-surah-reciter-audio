@@ -1,14 +1,14 @@
 {
   "runId": "20260906-014842",
   "pipeline": "surah",
-  "generatedAt": "2026-09-06T13:34:57Z",
+  "generatedAt": "2026-09-06T13:48:11Z",
   "totals": {
-    "success": 15,
+    "success": 16,
     "failed": 2,
     "skipped": 23,
-    "processed": 17,
-    "listed": 40,
-    "durationSec": 21965
+    "processed": 18,
+    "listed": 41,
+    "durationSec": 22757
   },
   "reciters": [
     {
@@ -101,6 +101,30 @@
       },
       "error": null,
       "logTail": "  File I/O: 13.3%\nBuilt ar.alijaber :: 114 surahs :: 727429537 bytes\nbuild_summary ok\n[12:14:48] Validating manifest SHA-256 + sizes...\nvalidation ok: 114/114 surahs\n[12:14:49] Publishing to Mohamedd-Ashraf/quran-surah-reciter-audio tag surah-reciter-ar.alijaber...\nhttps://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah-reciter-ar.alijaber\n[12:18:57] Uploaded manifest + 228 audio/timing assets to Mohamedd-Ashraf/quran-surah-reciter-audio\n[12:18:57] Public smoke test...\n[12:18:57] Waiting for public manifest: https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/download/surah-reciter-ar.alijaber/manifest.json\n[12:18:57] manifest fetched after 10s\nmanifest ok ar.alijaber 114\nchecking 228 files are live...\nall 228 files are live\n{\n  \"edition\": \"ar.alijaber\",\n  \"baseUrl\": \"https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/download/surah-reciter-ar.alijaber\",\n  \"sampleSize\": 3,\n  \"allPassed\": true,\n  \"results\": [\n    {\n      \"surah\": 82,\n      \"ok\": true,\n      \"bytes\": 733146\n    },\n    {\n      \"surah\": 15,\n      \"ok\": true,\n      \"bytes\": 6812568\n    },\n    {\n      \"surah\": 4,\n      \"ok\": true,\n      \"bytes\": 37522959\n    }\n  ]\n}\n[12:19:55] Smoke PASSED for ar.alijaber\n[12:19:55] DONE surah packages for ar.alijaber \u2192 https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah-reciter-ar.alijaber\n[12:19:55] Remember: gcloud compute instances stop surah-packages-worker --zone=us-central1-a --project=quraan-dd543",
+      "skippedReason": null
+    },
+    {
+      "runId": "20260906-014842",
+      "pipeline": "surah",
+      "reciterId": "ar.ghamadi",
+      "popularityRank": 17,
+      "status": "success",
+      "startedAt": "2026-09-06T13:34:59Z",
+      "finishedAt": "2026-09-06T13:48:11Z",
+      "durationSec": 792,
+      "publish": {
+        "url": "https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah-reciter-ar.ghamadi",
+        "path": null,
+        "commit": null,
+        "releaseTag": "surah-reciter-ar.ghamadi"
+      },
+      "metrics": {
+        "totalSurahs": 114,
+        "assetCount": 114,
+        "totalBytes": 706902878
+      },
+      "error": null,
+      "logTail": "  File I/O: 5.4%\nBuilt ar.ghamadi :: 114 surahs :: 706902878 bytes\nbuild_summary ok\n[13:43:12] Validating manifest SHA-256 + sizes...\nvalidation ok: 114/114 surahs\n[13:43:13] Publishing to Mohamedd-Ashraf/quran-surah-reciter-audio tag surah-reciter-ar.ghamadi...\nhttps://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah-reciter-ar.ghamadi\n[13:47:19] Uploaded manifest + 228 audio/timing assets to Mohamedd-Ashraf/quran-surah-reciter-audio\n[13:47:19] Public smoke test...\n[13:47:19] Waiting for public manifest: https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/download/surah-reciter-ar.ghamadi/manifest.json\n[13:47:19] manifest fetched after 10s\nmanifest ok ar.ghamadi 114\nchecking 228 files are live...\nall 228 files are live\n{\n  \"edition\": \"ar.ghamadi\",\n  \"baseUrl\": \"https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/download/surah-reciter-ar.ghamadi\",\n  \"sampleSize\": 3,\n  \"allPassed\": true,\n  \"results\": [\n    {\n      \"surah\": 82,\n      \"ok\": true,\n      \"bytes\": 763864\n    },\n    {\n      \"surah\": 15,\n      \"ok\": true,\n      \"bytes\": 6610486\n    },\n    {\n      \"surah\": 4,\n      \"ok\": true,\n      \"bytes\": 35035054\n    }\n  ]\n}\n[13:48:11] Smoke PASSED for ar.ghamadi\n[13:48:11] DONE surah packages for ar.ghamadi \u2192 https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah-reciter-ar.ghamadi\n[13:48:11] Remember: gcloud compute instances stop surah-packages-worker --zone=us-central1-a --project=quraan-dd543",
       "skippedReason": null
     },
     {
