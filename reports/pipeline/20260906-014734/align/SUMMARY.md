@@ -1,7 +1,7 @@
 # Batch summary — align
 
 - **runId:** `20260906-014734`
-- **generatedAt:** 2026-09-06T11:41:45Z
+- **generatedAt:** 2026-09-06T15:17:58Z
 - **success:** 0
 - **failed:** 0
 - **skipped:** 23
