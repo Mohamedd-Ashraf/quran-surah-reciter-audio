@@ -1,11 +1,11 @@
 # Batch summary — surah
 
 - **runId:** `20260906-014842`
-- **generatedAt:** 2026-09-06T13:48:11Z
-- **success:** 16
+- **generatedAt:** 2026-09-06T13:59:26Z
+- **success:** 17
 - **failed:** 2
 - **skipped:** 23
-- **totalDurationSec:** 22757
+- **totalDurationSec:** 23430
 
 ## Ordered results
 
@@ -29,6 +29,7 @@
 | 15 | `ar.yasiradussary` | success | 1347 | https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah- |
 | 16 | `ar.nasserqatami` | success | 1227 | https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah- |
 | 17 | `ar.ghamadi` | success | 792 | https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah- |
+| 18 | `ar.faresabbad` | success | 673 | https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah- |
 | 22 | `ar.khaledjleel` | skipped | 0 | no EveryAyah folder (e.g. qiraat / mp3quran-only) |
 | 42 | `ar.raadialkurdi` | skipped | 0 | no EveryAyah folder (e.g. qiraat / mp3quran-only) |
 | 43 | `ar.abdulaziahahmad` | skipped | 0 | no EveryAyah folder (e.g. qiraat / mp3quran-only) |
