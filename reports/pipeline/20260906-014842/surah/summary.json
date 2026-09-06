@@ -1,13 +1,13 @@
 {
   "runId": "20260906-014842",
   "pipeline": "surah",
-  "generatedAt": "2026-09-06T14:39:31Z",
+  "generatedAt": "2026-09-06T15:16:20Z",
   "totals": {
     "success": 19,
-    "failed": 2,
+    "failed": 3,
     "skipped": 23,
-    "processed": 21,
-    "listed": 44,
+    "processed": 22,
+    "listed": 45,
     "durationSec": 25830
   },
   "reciters": [
@@ -101,6 +101,26 @@
       },
       "error": null,
       "logTail": "  File I/O: 0.0%\nBuilt ar.abdulsamad :: 114 surahs :: 902298168 bytes\nbuild_summary ok\n[01:49:00] Validating manifest SHA-256 + sizes...\nvalidation ok: 114/114 surahs\n[01:49:02] Publishing to Mohamedd-Ashraf/quran-surah-reciter-audio tag surah-reciter-ar.abdulsamad...\n[01:49:03] Release surah-reciter-ar.abdulsamad exists on Mohamedd-Ashraf/quran-surah-reciter-audio; clobbering assets\n[01:54:14] Uploaded manifest + 228 audio/timing assets to Mohamedd-Ashraf/quran-surah-reciter-audio\n[01:54:15] Public smoke test...\n[01:54:15] Waiting for public manifest: https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/download/surah-reciter-ar.abdulsamad/manifest.json\n[01:54:15] manifest fetched after 10s\nmanifest ok ar.abdulsamad 114\nchecking 228 files are live...\nall 228 files are live\n{\n  \"edition\": \"ar.abdulsamad\",\n  \"baseUrl\": \"https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/download/surah-reciter-ar.abdulsamad\",\n  \"sampleSize\": 3,\n  \"allPassed\": true,\n  \"results\": [\n    {\n      \"surah\": 82,\n      \"ok\": true,\n      \"bytes\": 922886\n    },\n    {\n      \"surah\": 15,\n      \"ok\": true,\n      \"bytes\": 6706353\n    },\n    {\n      \"surah\": 4,\n      \"ok\": true,\n      \"bytes\": 43234079\n    }\n  ]\n}\n[01:55:03] Smoke PASSED for ar.abdulsamad\n[01:55:03] DONE surah packages for ar.abdulsamad \u2192 https://github.com/Mohamedd-Ashraf/quran-surah-reciter-audio/releases/tag/surah-reciter-ar.abdulsamad\n[01:55:03] Remember: gcloud compute instances stop surah-packages-worker --zone=us-central1-a --project=quraan-dd543",
+      "skippedReason": null
+    },
+    {
+      "runId": "20260906-014842",
+      "pipeline": "surah",
+      "reciterId": "ar.ahmedajamy",
+      "popularityRank": 21,
+      "status": "failed",
+      "startedAt": null,
+      "finishedAt": "2026-09-06T15:16:20Z",
+      "durationSec": 0,
+      "publish": {
+        "url": null,
+        "path": null,
+        "commit": null,
+        "releaseTag": null
+      },
+      "metrics": {},
+      "error": "interrupted (exit 143)",
+      "logTail": "Surah 009:  50/129 ayahs | overall 1285/6236 | cache hits=50 misses=0\nSurah 009: 100/129 ayahs | overall 1335/6236 | cache hits=100 misses=0\nSurah 009: 129/129 ayahs | overall 1391/6236 | cache hits=129 misses=0\nSurah 010:  50/109 ayahs | overall 1439/6236 | cache hits=50 misses=0\nSurah 011:  50/123 ayahs | overall 1490/6236 | cache hits=50 misses=0\nSurah 010: 100/109 ayahs | overall 1539/6236 | cache hits=100 misses=0\nSurah 010: 109/109 ayahs | overall 1557/6236 | cache hits=109 misses=0\nSurah 011: 100/123 ayahs | overall 1573/6236 | cache hits=100 misses=0\nSurah 011: 123/123 ayahs | overall 1596/6236 | cache hits=123 misses=0\nSurah 012:  50/111 ayahs | overall 1646/6236 | cache hits=50 misses=0\nSurah 012: 100/111 ayahs | overall 1696/6236 | cache hits=100 misses=0\nSurah 012: 111/111 ayahs | overall 1707/6236 | cache hits=111 misses=0\nSurah 013:  43/43 ayahs | overall 1750/6236 | cache hits=43 misses=0\nSurah 014:  50/52 ayahs | overall 1837/6236 | cache hits=50 misses=0\nSurah 014:  52/52 ayahs | overall 1841/6236 | cache hits=52 misses=0\nSurah 015:  50/99 ayahs | overall 1852/6236 | cache hits=50 misses=0\nSurah 015:  99/99 ayahs | overall 1901/6236 | cache hits=99 misses=0\nSurah 016:  50/128 ayahs | overall 1952/6236 | cache hits=50 misses=0\nSurah 017:  50/111 ayahs | overall 2054/6236 | cache hits=50 misses=0\nSurah 016: 100/128 ayahs | overall 2055/6236 | cache hits=100 misses=0\nSurah 016: 128/128 ayahs | overall 2139/6236 | cache hits=128 misses=0\nSurah 018:  50/110 ayahs | overall 2193/6236 | cache hits=50 misses=0\nSurah 017: 100/111 ayahs | overall 2201/6236 | cache hits=100 misses=0\nSurah 017: 111/111 ayahs | overall 2234/6236 | cache hits=111 misses=0\nSurah 019:  50/98 ayahs | overall 2275/6236 | cache hits=50 misses=0\nSurah 018: 100/110 ayahs | overall 2306/6236 | cache hits=100 misses=0\nSurah 018: 110/110 ayahs | overall 2326/6236 | cache hits=110 misses=0\nSurah 019:  98/98 ayahs | overall 2348/6236 | cache hits=98 misses=0\nSurah 020:  50/135 ayahs | overall 2398/6236 | cache hits=50 misses=0\nSurah 020: 100/135 ayahs | overall 2492/6236 | cache hits=100 misses=0\nSurah 021:  50/112 ayahs | overall 2523/6236 | cache hits=50 misses=0\nSurah 020: 135/135 ayahs | overall 2596/6236 | cache hits=135 misses=0\nSurah 022:  50/78 ayahs | overall 2627/6236 | cache hits=50 misses=0\nSurah 021: 100/112 ayahs | overall 2667/6236 | cache hits=100 misses=0\nSurah 021: 112/112 ayahs | overall 2703/6236 | cache hits=112 misses=0\nSurah 022:  78/78 ayahs | overall 2707/6236 | cache hits=78 misses=0\nSurah 023:  50/118 ayahs | overall 2723/6236 | cache hits=50 misses=0\nSurah 023: 100/118 ayahs | overall 2773/6236 | cache hits=100 misses=0\nSurah 023: 118/118 ayahs | overall 2791/6236 | cache hits=118 misses=0\nSurah 024:  50/64 ayahs | overall 2853/6236 | cache hits=50 misses=0",
       "skippedReason": null
     },
     {
@@ -969,6 +989,7 @@
     }
   ],
   "failedIds": [
+    "ar.ahmedajamy",
     "ar.mustafaismail",
     "ar.warsh.abdulbasit"
   ],
