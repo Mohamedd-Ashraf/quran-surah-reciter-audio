@@ -1,17 +1,18 @@
 # Batch summary — align
 
 - **runId:** `20260906-014734`
-- **generatedAt:** 2026-09-06T17:44:44Z
-- **success:** 1
+- **generatedAt:** 2026-09-07T06:08:56Z
+- **success:** 2
 - **failed:** 0
 - **skipped:** 23
-- **totalDurationSec:** 8798
+- **totalDurationSec:** 53446
 
 ## Ordered results
 
 | rank | id | status | durationSec | notes |
 |------|----|--------|-------------|-------|
 | 0 | `ar.abdulsamad` | success | 8798 | https://raw.githubusercontent.com/Mohamedd-Ashraf/quran-surah-reciter-audio/main |
+| 1 | `ar.abdulbasitmujawwad` | success | 44648 | https://raw.githubusercontent.com/Mohamedd-Ashraf/quran-surah-reciter-audio/main |
 | 22 | `ar.khaledjleel` | skipped | 0 | not in tool/ayah_word_alignment/reciters.yaml |
 | 42 | `ar.raadialkurdi` | skipped | 0 | not in tool/ayah_word_alignment/reciters.yaml |
 | 43 | `ar.abdulaziahahmad` | skipped | 0 | not in tool/ayah_word_alignment/reciters.yaml |
