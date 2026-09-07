@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.warsh.abdulbasit",
+  "surah": 77,
+  "ayah": 4,
+  "audioFile": "077004.mp3",
+  "durationMs": 4049,
+  "words": [
+    {
+      "index": 1,
+      "text": "فَٱلۡفَٰرِقَٰتِ",
+      "startMs": 860,
+      "endMs": 2490,
+      "score": -0.3811,
+      "durationMs": 1630,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 3,
+            "reason": "dagger_alif"
+          },
+          {
+            "type": "alif_madd",
+            "clusterIndex": 5,
+            "reason": "dagger_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 2,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 5,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 0,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1420.0,
+      "baselineSource": "surah",
+      "durationRatio": 1.148,
+      "extensionLevel": "normal",
+      "confidence": 0.806
+    },
+    {
+      "index": 2,
+      "text": "فَرۡقٗا",
+      "startMs": 2490,
+      "endMs": 4049,
+      "score": -0.3452,
+      "durationMs": 1559,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 3,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1420.0,
+      "baselineSource": "surah",
+      "durationRatio": 1.098
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 31.322,
+    "alignMode": "balanced",
+    "strategiesTried": 5,
+    "earlyExit": false,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1594.5,
+    "verseMedianDurationMs": 1594.5,
+    "surahAverageDurationMs": 1603.9,
+    "surahMedianDurationMs": 1420.0
+  }
+}

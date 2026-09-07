@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.warsh.abdulbasit",
+  "surah": 84,
+  "ayah": 3,
+  "audioFile": "084003.mp3",
+  "durationMs": 3318,
+  "words": [
+    {
+      "index": 1,
+      "text": "وَإِذَا",
+      "startMs": 800,
+      "endMs": 1360,
+      "score": -0.3295,
+      "durationMs": 560,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 3,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "baselineMs": 664.0,
+      "baselineSource": "word",
+      "durationRatio": 0.843,
+      "extensionLevel": "normal",
+      "confidence": 0.984
+    },
+    {
+      "index": 2,
+      "text": "ٱلۡأَرۡضُ",
+      "startMs": 1360,
+      "endMs": 2040,
+      "score": -0.1851,
+      "durationMs": 680,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 728.5,
+      "baselineSource": "word",
+      "durationRatio": 0.933
+    },
+    {
+      "index": 3,
+      "text": "مُدَّتۡ",
+      "startMs": 2040,
+      "endMs": 3318,
+      "score": -0.0823,
+      "durationMs": 1278,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 620.0,
+      "baselineSource": "verse",
+      "durationRatio": 2.061
+    }
+  ],
+  "meta": {
+    "strategy": "mms_roman_edges",
+    "quality": 30.256,
+    "alignMode": "balanced",
+    "strategiesTried": 5,
+    "earlyExit": false,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 839.3,
+    "verseMedianDurationMs": 680.0,
+    "surahAverageDurationMs": 1435.0,
+    "surahMedianDurationMs": 1240.0
+  }
+}
