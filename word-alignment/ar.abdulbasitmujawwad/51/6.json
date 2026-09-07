@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.abdulbasitmujawwad",
+  "surah": 51,
+  "ayah": 6,
+  "audioFile": "051006.mp3",
+  "durationMs": 10397,
+  "words": [
+    {
+      "index": 1,
+      "text": "وَإِنَّ",
+      "startMs": 2315,
+      "endMs": 2700,
+      "score": -0.5715,
+      "durationMs": 385,
+      "baselineMs": 1900.0,
+      "baselineSource": "word",
+      "durationRatio": 0.203
+    },
+    {
+      "index": 2,
+      "text": "ٱلدِّينَ",
+      "startMs": 2700,
+      "endMs": 5640,
+      "score": -0.1881,
+      "durationMs": 2940,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_madd",
+            "clusterIndex": 3,
+            "reason": "kasra_ya"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 3,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 2320.0,
+      "baselineSource": "word",
+      "durationRatio": 1.267,
+      "extensionLevel": "normal",
+      "confidence": 0.991
+    },
+    {
+      "index": 3,
+      "text": "لَوَٰقِعٞ",
+      "startMs": 5640,
+      "endMs": 10397,
+      "score": -0.1258,
+      "durationMs": 4757,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 1,
+            "reason": "dagger_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1662.5,
+      "baselineSource": "verse",
+      "durationRatio": 2.861,
+      "extensionLevel": "highlyExtended",
+      "confidence": 0.701
+    }
+  ],
+  "meta": {
+    "strategy": "mms_roman_segment",
+    "quality": 30.946,
+    "alignMode": "balanced",
+    "strategiesTried": 5,
+    "earlyExit": false,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 2694.0,
+    "verseMedianDurationMs": 2940.0,
+    "surahAverageDurationMs": 2368.7,
+    "surahMedianDurationMs": 1877.5
+  }
+}
