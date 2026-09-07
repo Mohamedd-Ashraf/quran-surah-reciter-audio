@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.minshawi",
+  "surah": 53,
+  "ayah": 6,
+  "audioFile": "053006.mp3",
+  "durationMs": 3709,
+  "words": [
+    {
+      "index": 1,
+      "text": "ذُو",
+      "startMs": 478,
+      "endMs": 643,
+      "score": -2.184,
+      "durationMs": 165,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_madd",
+            "clusterIndex": 1,
+            "reason": "damma_waw"
+          }
+        ]
+      },
+      "baselineMs": 300.0,
+      "baselineSource": "word",
+      "durationRatio": 0.55,
+      "extensionLevel": "normal",
+      "confidence": 0.891
+    },
+    {
+      "index": 2,
+      "text": "مِرَّةٖ",
+      "startMs": 820,
+      "endMs": 1840,
+      "score": -0.908,
+      "durationMs": 1020,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1017.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.003
+    },
+    {
+      "index": 3,
+      "text": "فَٱسۡتَوَىٰ",
+      "startMs": 1840,
+      "endMs": 3709,
+      "score": -0.7587,
+      "durationMs": 1869,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 5,
+            "reason": "dagger_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 0,
+            "priority": 3,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 592.5,
+      "baselineSource": "verse",
+      "durationRatio": 3.154,
+      "extensionLevel": "highlyExtended",
+      "confidence": 0.67
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 32.294,
+    "alignMode": "balanced",
+    "strategiesTried": 2,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1018.0,
+    "verseMedianDurationMs": 1020.0,
+    "surahAverageDurationMs": 1042.6,
+    "surahMedianDurationMs": 900.0
+  }
+}

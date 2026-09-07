@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.minshawi",
+  "surah": 52,
+  "ayah": 1,
+  "audioFile": "052001.mp3",
+  "durationMs": 1776,
+  "words": [
+    {
+      "index": 1,
+      "text": "وَٱلطُّورِ",
+      "startMs": 200,
+      "endMs": 1776,
+      "score": -0.616,
+      "durationMs": 1576,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_madd",
+            "clusterIndex": 4,
+            "reason": "damma_waw"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 3,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1020.0,
+      "baselineSource": "surah",
+      "durationRatio": 1.545,
+      "extensionLevel": "slightlyExtended",
+      "confidence": 0.794
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 35.188,
+    "alignMode": "balanced",
+    "strategiesTried": 2,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1576.0,
+    "verseMedianDurationMs": 1576.0,
+    "surahAverageDurationMs": 1110.8,
+    "surahMedianDurationMs": 1020.0
+  }
+}
