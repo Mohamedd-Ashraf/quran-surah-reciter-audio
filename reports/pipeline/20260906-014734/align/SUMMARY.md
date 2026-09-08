@@ -1,11 +1,11 @@
 # Batch summary — align
 
 - **runId:** `20260906-014734`
-- **generatedAt:** 2026-09-08T11:37:36Z
-- **success:** 5
+- **generatedAt:** 2026-09-08T11:41:09Z
+- **success:** 6
 - **failed:** 1
 - **skipped:** 23
-- **totalDurationSec:** 159552
+- **totalDurationSec:** 159762
 
 ## Ordered results
 
@@ -17,6 +17,7 @@
 | 3 | `ar.minshawi` | success | 18611 | https://raw.githubusercontent.com/Mohamedd-Ashraf/quran-surah-reciter-audio/main |
 | 4 | `ar.minshawimujawwad` | success | 3595 | https://raw.githubusercontent.com/Mohamedd-Ashraf/quran-surah-reciter-audio/main |
 | 5 | `ar.minshawiteacher` | failed | 54072 | exit 1:       "reason": "empty_word_list"     }   ] } FAIL: failRate 0.059 > 0.0 |
+| 6 | `ar.husary` | success | 210 | https://raw.githubusercontent.com/Mohamedd-Ashraf/quran-surah-reciter-audio/main |
 | 22 | `ar.khaledjleel` | skipped | 0 | not in tool/ayah_word_alignment/reciters.yaml |
 | 42 | `ar.raadialkurdi` | skipped | 0 | not in tool/ayah_word_alignment/reciters.yaml |
 | 43 | `ar.abdulaziahahmad` | skipped | 0 | not in tool/ayah_word_alignment/reciters.yaml |
