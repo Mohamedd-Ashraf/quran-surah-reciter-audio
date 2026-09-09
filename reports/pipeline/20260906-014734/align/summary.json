@@ -1,14 +1,14 @@
 {
   "runId": "20260906-014734",
   "pipeline": "align",
-  "generatedAt": "2026-09-09T11:57:41Z",
+  "generatedAt": "2026-09-09T13:44:40Z",
   "totals": {
     "success": 8,
-    "failed": 1,
+    "failed": 2,
     "skipped": 23,
-    "processed": 9,
-    "listed": 32,
-    "durationSec": 247145
+    "processed": 10,
+    "listed": 33,
+    "durationSec": 253561
   },
   "reciters": [
     {
@@ -241,6 +241,30 @@
       },
       "error": "exit 1:       \"reason\": \"empty_word_list\"     }   ] } FAIL: failRate 0.059 > 0.05 ",
       "logTail": "      \"reason\": \"too_long at 10: 19720ms;too_long at 25: 16120ms\"\n    },\n    {\n      \"surah\": 37,\n      \"ayah\": 102,\n      \"reason\": \"too_long at 15: 15800ms\"\n    },\n    {\n      \"surah\": 42,\n      \"ayah\": 8,\n      \"reason\": \"too_long at 12: 16080ms\"\n    },\n    {\n      \"surah\": 48,\n      \"ayah\": 27,\n      \"reason\": \"too_long at 18: 16200ms\"\n    },\n    {\n      \"surah\": 57,\n      \"ayah\": 25,\n      \"reason\": \"too_long at 12: 15660ms;too_long at 13: 15980ms\"\n    },\n    {\n      \"surah\": 60,\n      \"ayah\": 10,\n      \"reason\": \"too_long at 8: 17280ms\"\n    },\n    {\n      \"surah\": 90,\n      \"ayah\": 17,\n      \"reason\": \"too_long at 9: 15236ms\"\n    },\n    {\n      \"surah\": 93,\n      \"ayah\": 1,\n      \"reason\": \"empty_word_list\"\n    }\n  ]\n}\nFAIL: failRate 0.059 > 0.05",
+      "skippedReason": null
+    },
+    {
+      "runId": "20260906-014734",
+      "pipeline": "align",
+      "reciterId": "ar.mustafaismail",
+      "popularityRank": 9,
+      "status": "failed",
+      "startedAt": "2026-09-09T11:57:44Z",
+      "finishedAt": "2026-09-09T13:44:40Z",
+      "durationSec": 6416,
+      "publish": {
+        "url": null,
+        "path": "word-alignment/ar.mustafaismail",
+        "commit": null,
+        "releaseTag": null
+      },
+      "metrics": {
+        "ayahJsonCount": 2011,
+        "failRate": null,
+        "failedMarkerCount": 1
+      },
+      "error": "exit 1:       \"reason\": \"empty_word_list\"     }   ] } FAIL: failRate 0.678 > 0.05 ",
+      "logTail": "      \"reason\": \"exception:HTTPError:404 Client Error: Not Found for url: https://everyayah.com/data/Mustafa_Ismail_48kbps/044046.mp3\"\n    },\n    {\n      \"surah\": 44,\n      \"ayah\": 56,\n      \"reason\": \"exception:HTTPError:404 Client Error: Not Found for url: https://everyayah.com/data/Mustafa_Ismail_48kbps/044056.mp3\"\n    },\n    {\n      \"surah\": 45,\n      \"ayah\": 7,\n      \"reason\": \"exception:HTTPError:404 Client Error: Not Found for url: https://everyayah.com/data/Mustafa_Ismail_48kbps/045007.mp3\"\n    },\n    {\n      \"surah\": 45,\n      \"ayah\": 17,\n      \"reason\": \"exception:HTTPError:404 Client Error: Not Found for url: https://everyayah.com/data/Mustafa_Ismail_48kbps/045017.mp3\"\n    },\n    {\n      \"surah\": 45,\n      \"ayah\": 27,\n      \"reason\": \"exception:HTTPError:404 Client Error: Not Found for url: https://everyayah.com/data/Mustafa_Ismail_48kbps/045027.mp3\"\n    },\n    {\n      \"surah\": 45,\n      \"ayah\": 37,\n      \"reason\": \"exception:HTTPError:404 Client Error: Not Found for url: https://everyayah.com/data/Mustafa_Ismail_48kbps/045037.mp3\"\n    },\n    {\n      \"surah\": 74,\n      \"ayah\": 55,\n      \"reason\": \"exception:HTTPError:404 Client Error: Not Found for url: https://everyayah.com/data/Mustafa_Ismail_48kbps/074055.mp3\"\n    },\n    {\n      \"surah\": 93,\n      \"ayah\": 1,\n      \"reason\": \"empty_word_list\"\n    }\n  ]\n}\nFAIL: failRate 0.678 > 0.05",
       "skippedReason": null
     },
     {
@@ -689,7 +713,8 @@
     }
   ],
   "failedIds": [
-    "ar.minshawiteacher"
+    "ar.minshawiteacher",
+    "ar.mustafaismail"
   ],
   "skippedIds": [
     "ar.abdulaziahahmad",
