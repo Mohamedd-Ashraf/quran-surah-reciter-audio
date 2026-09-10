@@ -1,9 +1,9 @@
 # Batch summary — align
 
 - **runId:** `20260906-014734`
-- **generatedAt:** 2026-09-10T18:01:35Z
+- **generatedAt:** 2026-09-10T19:21:58Z
 - **success:** 15
-- **failed:** 2
+- **failed:** 3
 - **skipped:** 23
 - **totalDurationSec:** 355349
 
@@ -28,6 +28,7 @@
 | 14 | `ar.mahermuaiqly128` | success | 14763 | https://raw.githubusercontent.com/Mohamedd-Ashraf/quran-surah-reciter-audio/main |
 | 15 | `ar.yasiradussary` | success | 17241 | https://raw.githubusercontent.com/Mohamedd-Ashraf/quran-surah-reciter-audio/main |
 | 16 | `ar.nasserqatami` | success | 18128 | https://raw.githubusercontent.com/Mohamedd-Ashraf/quran-surah-reciter-audio/main |
+| 17 | `ar.ghamadi` | failed | 0 | interrupted (exit 143) |
 | 22 | `ar.khaledjleel` | skipped | 0 | not in tool/ayah_word_alignment/reciters.yaml |
 | 42 | `ar.raadialkurdi` | skipped | 0 | not in tool/ayah_word_alignment/reciters.yaml |
 | 43 | `ar.abdulaziahahmad` | skipped | 0 | not in tool/ayah_word_alignment/reciters.yaml |
@@ -54,5 +55,6 @@
 
 ## Failures
 
+- `ar.ghamadi`
 - `ar.minshawiteacher`
 - `ar.mustafaismail`
