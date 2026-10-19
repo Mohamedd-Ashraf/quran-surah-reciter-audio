@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.alafasy",
+  "surah": 87,
+  "ayah": 15,
+  "audioFile": "087015.mp3",
+  "durationMs": 4180,
+  "words": [
+    {
+      "index": 1,
+      "text": "وَذَكَرَ",
+      "startMs": 160,
+      "endMs": 800,
+      "score": -0.9536,
+      "durationMs": 640,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 2,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1261.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.508
+    },
+    {
+      "index": 2,
+      "text": "ٱسۡمَ",
+      "startMs": 923,
+      "endMs": 1379,
+      "score": -0.852,
+      "durationMs": 456,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1261.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.362
+    },
+    {
+      "index": 3,
+      "text": "رَبِّهِۦ",
+      "startMs": 1379,
+      "endMs": 2640,
+      "score": -0.3854,
+      "durationMs": 1261,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_madd",
+            "clusterIndex": 2,
+            "reason": "sila_yeh"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 640.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.97,
+      "extensionLevel": "extended",
+      "confidence": 0.719
+    },
+    {
+      "index": 4,
+      "text": "فَصَلَّىٰ",
+      "startMs": 2640,
+      "endMs": 4180,
+      "score": -1.3404,
+      "durationMs": 1540,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 3,
+            "reason": "dagger_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 2,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 640.0,
+      "baselineSource": "verse",
+      "durationRatio": 2.406,
+      "extensionLevel": "extended",
+      "confidence": 0.672
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 36.85,
+    "alignMode": "balanced",
+    "strategiesTried": 2,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 974.2,
+    "verseMedianDurationMs": 950.5
+  }
+}
