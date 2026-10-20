@@ -1,0 +1,75 @@
+name: Quiz Bot Month Catch-up
+
+# One job that applies one daily bot tick per UTC date in [from, to].
+# Use this to replay missed private-repo days. Do not include dates that
+# already succeeded (Oct 1-19 2026 already ran on Noor-Al-Imaan).
+on:
+  workflow_dispatch:
+    inputs:
+      from_date:
+        description: First UTC date YYYY-MM-DD (inclusive)
+        required: true
+        type: string
+        default: '2026-10-20'
+      to_date:
+        description: Last UTC date YYYY-MM-DD (inclusive). Empty = today UTC.
+        required: false
+        type: string
+        default: ''
+      dry_run:
+        description: 'Dry run (no writes to Firestore)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+
+permissions:
+  contents: read
+
+jobs:
+  catchup:
+    name: Replay missed daily bot days
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install --quiet firebase-admin
+
+      - name: Write service-account key
+        env:
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          python -c "import os,pathlib; pathlib.Path('/tmp/sa.json').write_text(os.environ['FIREBASE_SERVICE_ACCOUNT_JSON'], encoding='utf-8')"
+
+      - name: Replay each day
+        run: |
+          set -euo pipefail
+          python - <<PY
+          import datetime as dt
+          import subprocess
+          import sys
+
+          from_s = """${{ github.event.inputs.from_date }}""".strip()
+          to_s = """${{ github.event.inputs.to_date }}""".strip()
+          dry = "${{ github.event.inputs.dry_run }}" == "true"
+          start = dt.date.fromisoformat(from_s)
+          end = dt.date.fromisoformat(to_s) if to_s else dt.datetime.now(dt.timezone.utc).date()
+          if end < start:
+              raise SystemExit(f"to_date {end} is before from_date {start}")
+          day = start
+          while day <= end:
+              cmd = [sys.executable, "scripts/update_quiz_bots.py", "-s", "/tmp/sa.json", "--as-of", day.isoformat()]
+              if dry:
+                  cmd.append("--dry-run")
+              print(f"=== catch-up {day.isoformat()} ===", flush=True)
+              subprocess.check_call(cmd)
+              day += dt.timedelta(days=1)
+          PY

@@ -1,0 +1,52 @@
+name: Daily Bot Score Updater
+
+on:
+  schedule:
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (no writes to Firestore)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+      as_of:
+        description: 'UTC date YYYY-MM-DD (empty = today). Use to replay a missed day.'
+        required: false
+        default: ''
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  update-bots:
+    name: Update bot scores
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install --quiet firebase-admin
+
+      - name: Write service-account key
+        env:
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          python -c "import os,pathlib; pathlib.Path('/tmp/sa.json').write_text(os.environ['FIREBASE_SERVICE_ACCOUNT_JSON'], encoding='utf-8')"
+
+      - name: Run daily bot updater
+        run: |
+          DRY_FLAG=""
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then DRY_FLAG="--dry-run"; fi
+          AS_OF=""
+          if [ -n "${{ github.event.inputs.as_of }}" ]; then AS_OF="--as-of ${{ github.event.inputs.as_of }}"; fi
+          python scripts/update_quiz_bots.py -s /tmp/sa.json $DRY_FLAG $AS_OF
