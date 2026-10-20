@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.ghamadi",
+  "surah": 30,
+  "ayah": 2,
+  "audioFile": "030002.mp3",
+  "durationMs": 2638,
+  "words": [
+    {
+      "index": 1,
+      "text": "غُلِبَتِ",
+      "startMs": 80,
+      "endMs": 1040,
+      "score": -3.1263,
+      "durationMs": 960,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 920.0,
+      "baselineSource": "surah",
+      "durationRatio": 1.043
+    },
+    {
+      "index": 2,
+      "text": "ٱلرُّومُ",
+      "startMs": 1040,
+      "endMs": 2638,
+      "score": -2.8121,
+      "durationMs": 1598,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_madd",
+            "clusterIndex": 3,
+            "reason": "damma_waw"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 920.0,
+      "baselineSource": "surah",
+      "durationRatio": 1.737,
+      "extensionLevel": "slightlyExtended",
+      "confidence": 0.684
+    }
+  ],
+  "meta": {
+    "strategy": "mms_roman_edges",
+    "quality": 37.302,
+    "alignMode": "balanced",
+    "strategiesTried": 1,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1279.0,
+    "verseMedianDurationMs": 1279.0,
+    "surahAverageDurationMs": 1038.4,
+    "surahMedianDurationMs": 920.0
+  }
+}
