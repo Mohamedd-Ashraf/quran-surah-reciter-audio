@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.hanirifai",
+  "surah": 44,
+  "ayah": 43,
+  "audioFile": "044043.mp3",
+  "durationMs": 3187,
+  "words": [
+    {
+      "index": 1,
+      "text": "إِنَّ",
+      "startMs": 1020,
+      "endMs": 1295,
+      "score": -3.0598,
+      "durationMs": 275,
+      "baselineMs": 1040.0,
+      "baselineSource": "word",
+      "durationRatio": 0.264
+    },
+    {
+      "index": 2,
+      "text": "شَجَرَتَ",
+      "startMs": 1320,
+      "endMs": 1860,
+      "score": -0.703,
+      "durationMs": 540,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 801.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.674
+    },
+    {
+      "index": 3,
+      "text": "ٱلزَّقُّومِ",
+      "startMs": 1860,
+      "endMs": 3187,
+      "score": -2.6895,
+      "durationMs": 1327,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_madd",
+            "clusterIndex": 4,
+            "reason": "damma_waw"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 3,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 407.5,
+      "baselineSource": "verse",
+      "durationRatio": 3.256,
+      "extensionLevel": "highlyExtended",
+      "confidence": 0.573
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_edges",
+    "quality": 25.809,
+    "alignMode": "balanced",
+    "strategiesTried": 5,
+    "earlyExit": false,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 714.0,
+    "verseMedianDurationMs": 540.0,
+    "surahAverageDurationMs": 1285.9,
+    "surahMedianDurationMs": 1060.0
+  }
+}

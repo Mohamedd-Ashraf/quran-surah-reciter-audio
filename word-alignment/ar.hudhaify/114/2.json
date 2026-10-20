@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.hudhaify",
+  "surah": 114,
+  "ayah": 2,
+  "audioFile": "114002.mp3",
+  "durationMs": 4284,
+  "words": [
+    {
+      "index": 1,
+      "text": "مَلِكِ",
+      "startMs": 940,
+      "endMs": 1520,
+      "score": -0.4676,
+      "durationMs": 580,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 810.0,
+      "baselineSource": "surah",
+      "durationRatio": 0.716
+    },
+    {
+      "index": 2,
+      "text": "ٱلنَّاسِ",
+      "startMs": 1520,
+      "endMs": 4284,
+      "score": -0.3637,
+      "durationMs": 2764,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 3,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 2,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1460.0,
+      "baselineSource": "word",
+      "durationRatio": 1.893,
+      "extensionLevel": "extended",
+      "confidence": 0.982
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_edges",
+    "quality": 31.015,
+    "alignMode": "balanced",
+    "strategiesTried": 5,
+    "earlyExit": false,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1672.0,
+    "verseMedianDurationMs": 1672.0,
+    "surahAverageDurationMs": 1501.8,
+    "surahMedianDurationMs": 810.0
+  }
+}

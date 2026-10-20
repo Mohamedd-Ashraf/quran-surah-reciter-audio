@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.abdullahjuhani",
+  "surah": 84,
+  "ayah": 3,
+  "audioFile": "084003.mp3",
+  "durationMs": 1725,
+  "words": [
+    {
+      "index": 1,
+      "text": "وَإِذَا",
+      "startMs": 455,
+      "endMs": 840,
+      "score": -2.3821,
+      "durationMs": 385,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 3,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "baselineMs": 480.0,
+      "baselineSource": "word",
+      "durationRatio": 0.802,
+      "extensionLevel": "normal",
+      "confidence": 0.881
+    },
+    {
+      "index": 2,
+      "text": "ٱلۡأَرۡضُ",
+      "startMs": 840,
+      "endMs": 1080,
+      "score": -1.7349,
+      "durationMs": 240,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 661.5,
+      "baselineSource": "word",
+      "durationRatio": 0.363
+    },
+    {
+      "index": 3,
+      "text": "مُدَّتۡ",
+      "startMs": 1080,
+      "endMs": 1725,
+      "score": -4.8192,
+      "durationMs": 645,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 312.5,
+      "baselineSource": "verse",
+      "durationRatio": 2.064
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_edges",
+    "quality": 27.96,
+    "alignMode": "balanced",
+    "strategiesTried": 5,
+    "earlyExit": false,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 423.3,
+    "verseMedianDurationMs": 385.0,
+    "surahAverageDurationMs": 758.2,
+    "surahMedianDurationMs": 715.0
+  }
+}

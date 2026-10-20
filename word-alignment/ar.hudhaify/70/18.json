@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.hudhaify",
+  "surah": 70,
+  "ayah": 18,
+  "audioFile": "070018.mp3",
+  "durationMs": 3004,
+  "words": [
+    {
+      "index": 1,
+      "text": "وَجَمَعَ",
+      "startMs": 420,
+      "endMs": 1270,
+      "score": -0.7512,
+      "durationMs": 850,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1080.0,
+      "baselineSource": "surah",
+      "durationRatio": 0.787
+    },
+    {
+      "index": 2,
+      "text": "فَأَوۡعَىٰٓ",
+      "startMs": 1270,
+      "endMs": 3004,
+      "score": -0.8514,
+      "durationMs": 1734,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_lin",
+            "clusterIndex": 2,
+            "reason": "madd_lin"
+          },
+          {
+            "type": "alif_madd",
+            "clusterIndex": 4,
+            "reason": "dagger_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 3,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 0,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1080.0,
+      "baselineSource": "surah",
+      "durationRatio": 1.606,
+      "extensionLevel": "slightlyExtended",
+      "confidence": 0.782
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 34.007,
+    "alignMode": "balanced",
+    "strategiesTried": 2,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1292.0,
+    "verseMedianDurationMs": 1292.0,
+    "surahAverageDurationMs": 1372.1,
+    "surahMedianDurationMs": 1080.0
+  }
+}

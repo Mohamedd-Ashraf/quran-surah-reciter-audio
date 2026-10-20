@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.shaatree",
+  "surah": 69,
+  "ayah": 30,
+  "audioFile": "069030.mp3",
+  "durationMs": 3840,
+  "words": [
+    {
+      "index": 1,
+      "text": "خُذُوهُ",
+      "startMs": 300,
+      "endMs": 1190,
+      "score": -0.0026,
+      "durationMs": 890,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_madd",
+            "clusterIndex": 2,
+            "reason": "damma_waw"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1160.0,
+      "baselineSource": "surah",
+      "durationRatio": 0.767,
+      "extensionLevel": "normal",
+      "confidence": 0.825
+    },
+    {
+      "index": 2,
+      "text": "فَغُلُّوهُ",
+      "startMs": 1190,
+      "endMs": 3840,
+      "score": -0.1241,
+      "durationMs": 2650,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_madd",
+            "clusterIndex": 3,
+            "reason": "damma_waw"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 2,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1160.0,
+      "baselineSource": "surah",
+      "durationRatio": 2.284,
+      "extensionLevel": "extended",
+      "confidence": 0.819
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 36.843,
+    "alignMode": "balanced",
+    "strategiesTried": 2,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1770.0,
+    "verseMedianDurationMs": 1770.0,
+    "surahAverageDurationMs": 1257.8,
+    "surahMedianDurationMs": 1160.0
+  }
+}

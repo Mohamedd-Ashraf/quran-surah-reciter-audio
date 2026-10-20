@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.hanirifai",
+  "surah": 19,
+  "ayah": 91,
+  "audioFile": "019091.mp3",
+  "durationMs": 4206,
+  "words": [
+    {
+      "index": 1,
+      "text": "أَن",
+      "startMs": 400,
+      "endMs": 860,
+      "score": -0.2496,
+      "durationMs": 460,
+      "baselineMs": 620.0,
+      "baselineSource": "word",
+      "durationRatio": 0.742
+    },
+    {
+      "index": 2,
+      "text": "دَعَوۡاْ",
+      "startMs": 860,
+      "endMs": 1560,
+      "score": -0.6287,
+      "durationMs": 700,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_lin",
+            "clusterIndex": 2,
+            "reason": "madd_lin"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1266.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.553,
+      "extensionLevel": "normal",
+      "confidence": 0.707
+    },
+    {
+      "index": 3,
+      "text": "لِلرَّحۡمَٰنِ",
+      "startMs": 1560,
+      "endMs": 2940,
+      "score": -0.66,
+      "durationMs": 1380,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 4,
+            "reason": "dagger_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 3,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 4,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1560.0,
+      "baselineSource": "word",
+      "durationRatio": 0.885,
+      "extensionLevel": "normal",
+      "confidence": 0.967
+    },
+    {
+      "index": 4,
+      "text": "وَلَدٗا",
+      "startMs": 2940,
+      "endMs": 4206,
+      "score": -0.297,
+      "durationMs": 1266,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1100.0,
+      "baselineSource": "word",
+      "durationRatio": 1.151
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_edges",
+    "quality": 35.966,
+    "alignMode": "balanced",
+    "strategiesTried": 3,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 951.5,
+    "verseMedianDurationMs": 983.0,
+    "surahAverageDurationMs": 1077.2,
+    "surahMedianDurationMs": 1000.0
+  }
+}

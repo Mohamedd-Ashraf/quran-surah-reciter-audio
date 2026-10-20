@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.shaatree",
+  "surah": 86,
+  "ayah": 12,
+  "audioFile": "086012.mp3",
+  "durationMs": 2664,
+  "words": [
+    {
+      "index": 1,
+      "text": "وَٱلۡأَرۡضِ",
+      "startMs": 120,
+      "endMs": 920,
+      "score": -0.0792,
+      "durationMs": 800,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 2,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 980.0,
+      "baselineSource": "word",
+      "durationRatio": 0.816
+    },
+    {
+      "index": 2,
+      "text": "ذَاتِ",
+      "startMs": 920,
+      "endMs": 1460,
+      "score": -0.4995,
+      "durationMs": 540,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 1,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "baselineMs": 540.0,
+      "baselineSource": "word",
+      "durationRatio": 1.0,
+      "extensionLevel": "normal",
+      "confidence": 0.975
+    },
+    {
+      "index": 3,
+      "text": "ٱلصَّدۡعِ",
+      "startMs": 1460,
+      "endMs": 2664,
+      "score": -0.1674,
+      "durationMs": 1204,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 670.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.797
+    }
+  ],
+  "meta": {
+    "strategy": "mms_roman_edges",
+    "quality": 38.074,
+    "alignMode": "balanced",
+    "strategiesTried": 1,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 848.0,
+    "verseMedianDurationMs": 800.0,
+    "surahAverageDurationMs": 1018.2,
+    "surahMedianDurationMs": 980.0
+  }
+}
