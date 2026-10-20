@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.parhizgar",
+  "surah": 81,
+  "ayah": 1,
+  "audioFile": "081001.mp3",
+  "durationMs": 7445,
+  "words": [
+    {
+      "index": 1,
+      "text": "إِذَا",
+      "startMs": 5025,
+      "endMs": 5300,
+      "score": -0.4068,
+      "durationMs": 275,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 2,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "baselineMs": 1072.5,
+      "baselineSource": "verse",
+      "durationRatio": 0.256,
+      "extensionLevel": "normal",
+      "confidence": 0.687
+    },
+    {
+      "index": 2,
+      "text": "ٱلشَّمۡسُ",
+      "startMs": 5300,
+      "endMs": 5980,
+      "score": -0.1146,
+      "durationMs": 680,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 870.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.782
+    },
+    {
+      "index": 3,
+      "text": "كُوِّرَتۡ",
+      "startMs": 5980,
+      "endMs": 7445,
+      "score": -0.1778,
+      "durationMs": 1465,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_madd",
+            "clusterIndex": 1,
+            "reason": "damma_before_shadda_waw"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 477.5,
+      "baselineSource": "verse",
+      "durationRatio": 3.068,
+      "extensionLevel": "highlyExtended",
+      "confidence": 0.699
+    }
+  ],
+  "meta": {
+    "strategy": "mms_roman_edges",
+    "quality": 12.885,
+    "alignMode": "balanced",
+    "strategiesTried": 5,
+    "earlyExit": false,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 806.7,
+    "verseMedianDurationMs": 680.0
+  }
+}

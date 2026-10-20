@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.parhizgar",
+  "surah": 84,
+  "ayah": 3,
+  "audioFile": "084003.mp3",
+  "durationMs": 2769,
+  "words": [
+    {
+      "index": 1,
+      "text": "وَإِذَا",
+      "startMs": 160,
+      "endMs": 580,
+      "score": -1.4815,
+      "durationMs": 420,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 3,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "baselineMs": 1048.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.401,
+      "extensionLevel": "normal",
+      "confidence": 0.633
+    },
+    {
+      "index": 2,
+      "text": "ٱلۡأَرۡضُ",
+      "startMs": 673,
+      "endMs": 1494,
+      "score": -1.022,
+      "durationMs": 821,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 847.5,
+      "baselineSource": "verse",
+      "durationRatio": 0.969
+    },
+    {
+      "index": 3,
+      "text": "مُدَّتۡ",
+      "startMs": 1494,
+      "endMs": 2769,
+      "score": -0.6493,
+      "durationMs": 1275,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 620.5,
+      "baselineSource": "verse",
+      "durationRatio": 2.055
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 35.82,
+    "alignMode": "balanced",
+    "strategiesTried": 2,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 838.7,
+    "verseMedianDurationMs": 821.0
+  }
+}

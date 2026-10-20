@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.abdurrahmaansudais",
+  "surah": 26,
+  "ayah": 48,
+  "audioFile": "026048.mp3",
+  "durationMs": 2664,
+  "words": [
+    {
+      "index": 1,
+      "text": "رَبِّ",
+      "startMs": 320,
+      "endMs": 640,
+      "score": -0.4035,
+      "durationMs": 320,
+      "baselineMs": 1012.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.316
+    },
+    {
+      "index": 2,
+      "text": "مُوسَىٰ",
+      "startMs": 640,
+      "endMs": 1380,
+      "score": -0.3149,
+      "durationMs": 740,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_madd",
+            "clusterIndex": 1,
+            "reason": "damma_waw"
+          },
+          {
+            "type": "alif_madd",
+            "clusterIndex": 3,
+            "reason": "dagger_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 802.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.923,
+      "extensionLevel": "normal",
+      "confidence": 0.692
+    },
+    {
+      "index": 3,
+      "text": "وَهَٰرُونَ",
+      "startMs": 1380,
+      "endMs": 2664,
+      "score": -0.1058,
+      "durationMs": 1284,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 1,
+            "reason": "dagger_alif"
+          },
+          {
+            "type": "waw_madd",
+            "clusterIndex": 3,
+            "reason": "damma_waw"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 530.0,
+      "baselineSource": "verse",
+      "durationRatio": 2.423,
+      "extensionLevel": "extended",
+      "confidence": 0.702
+    }
+  ],
+  "meta": {
+    "strategy": "mms_roman_edges",
+    "quality": 35.058,
+    "alignMode": "balanced",
+    "strategiesTried": 1,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 781.3,
+    "verseMedianDurationMs": 740.0
+  }
+}

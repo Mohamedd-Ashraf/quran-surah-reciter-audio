@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.parhizgar",
+  "surah": 37,
+  "ayah": 179,
+  "audioFile": "037179.mp3",
+  "durationMs": 3161,
+  "words": [
+    {
+      "index": 1,
+      "text": "وَأَبۡصِرۡ",
+      "startMs": 160,
+      "endMs": 820,
+      "score": -0.4416,
+      "durationMs": 660,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1000.5,
+      "baselineSource": "verse",
+      "durationRatio": 0.66
+    },
+    {
+      "index": 2,
+      "text": "فَسَوۡفَ",
+      "startMs": 980,
+      "endMs": 1520,
+      "score": -0.0638,
+      "durationMs": 540,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_lin",
+            "clusterIndex": 2,
+            "reason": "madd_lin"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1060.5,
+      "baselineSource": "verse",
+      "durationRatio": 0.509,
+      "extensionLevel": "normal",
+      "confidence": 0.704
+    },
+    {
+      "index": 3,
+      "text": "يُبۡصِرُونَ",
+      "startMs": 1700,
+      "endMs": 3161,
+      "score": -0.1691,
+      "durationMs": 1461,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_madd",
+            "clusterIndex": 4,
+            "reason": "damma_waw"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 600.0,
+      "baselineSource": "verse",
+      "durationRatio": 2.435,
+      "extensionLevel": "extended",
+      "confidence": 0.699
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 33.56,
+    "alignMode": "balanced",
+    "strategiesTried": 2,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 887.0,
+    "verseMedianDurationMs": 660.0
+  }
+}

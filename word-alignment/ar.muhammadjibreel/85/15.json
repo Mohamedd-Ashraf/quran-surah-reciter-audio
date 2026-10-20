@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.muhammadjibreel",
+  "surah": 85,
+  "ayah": 15,
+  "audioFile": "085015.mp3",
+  "durationMs": 3082,
+  "words": [
+    {
+      "index": 1,
+      "text": "ذُو",
+      "startMs": 415,
+      "endMs": 580,
+      "score": -4.1349,
+      "durationMs": 165,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_madd",
+            "clusterIndex": 1,
+            "reason": "damma_waw"
+          }
+        ]
+      },
+      "baselineMs": 1251.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.132,
+      "extensionLevel": "normal",
+      "confidence": 0.501
+    },
+    {
+      "index": 2,
+      "text": "ٱلۡعَرۡشِ",
+      "startMs": 580,
+      "endMs": 1120,
+      "score": -0.7481,
+      "durationMs": 540,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1063.5,
+      "baselineSource": "verse",
+      "durationRatio": 0.508
+    },
+    {
+      "index": 3,
+      "text": "ٱلۡمَجِيدُ",
+      "startMs": 1120,
+      "endMs": 3082,
+      "score": -0.3002,
+      "durationMs": 1962,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_madd",
+            "clusterIndex": 4,
+            "reason": "kasra_ya"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 3,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 4,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 352.5,
+      "baselineSource": "verse",
+      "durationRatio": 5.566,
+      "extensionLevel": "highlyExtended",
+      "confidence": 0.692
+    }
+  ],
+  "meta": {
+    "strategy": "mms_roman_edges",
+    "quality": 33.75,
+    "alignMode": "balanced",
+    "strategiesTried": 1,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 889.0,
+    "verseMedianDurationMs": 540.0
+  }
+}

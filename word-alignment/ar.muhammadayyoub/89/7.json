@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.muhammadayyoub",
+  "surah": 89,
+  "ayah": 7,
+  "audioFile": "089007.mp3",
+  "durationMs": 4859,
+  "words": [
+    {
+      "index": 1,
+      "text": "إِرَمَ",
+      "startMs": 140,
+      "endMs": 540,
+      "score": -0.6286,
+      "durationMs": 400,
+      "baselineMs": 1949.5,
+      "baselineSource": "verse",
+      "durationRatio": 0.205
+    },
+    {
+      "index": 2,
+      "text": "ذَاتِ",
+      "startMs": 780,
+      "endMs": 1180,
+      "score": -1.0043,
+      "durationMs": 400,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 1,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "baselineMs": 1949.5,
+      "baselineSource": "verse",
+      "durationRatio": 0.205,
+      "extensionLevel": "normal",
+      "confidence": 0.657
+    },
+    {
+      "index": 3,
+      "text": "ٱلۡعِمَادِ",
+      "startMs": 1360,
+      "endMs": 4859,
+      "score": -0.0868,
+      "durationMs": 3499,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 4,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 3,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 400.0,
+      "baselineSource": "verse",
+      "durationRatio": 8.748,
+      "extensionLevel": "highlyExtended",
+      "confidence": 0.703
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 35.103,
+    "alignMode": "balanced",
+    "strategiesTried": 2,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1433.0,
+    "verseMedianDurationMs": 400.0
+  }
+}

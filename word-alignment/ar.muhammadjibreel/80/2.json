@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.muhammadjibreel",
+  "surah": 80,
+  "ayah": 2,
+  "audioFile": "080002.mp3",
+  "durationMs": 4467,
+  "words": [
+    {
+      "index": 1,
+      "text": "أَن",
+      "startMs": 360,
+      "endMs": 960,
+      "score": -0.1376,
+      "durationMs": 600,
+      "baselineMs": 1753.5,
+      "baselineSource": "verse",
+      "durationRatio": 0.342
+    },
+    {
+      "index": 2,
+      "text": "جَآءَهُ",
+      "startMs": 960,
+      "endMs": 2920,
+      "score": -0.148,
+      "durationMs": 1960,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 1,
+            "reason": "maddah"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1073.5,
+      "baselineSource": "verse",
+      "durationRatio": 1.826,
+      "extensionLevel": "extended",
+      "confidence": 0.7
+    },
+    {
+      "index": 3,
+      "text": "ٱلۡأَعۡمَىٰ",
+      "startMs": 2920,
+      "endMs": 4467,
+      "score": -0.5569,
+      "durationMs": 1547,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 5,
+            "reason": "dagger_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 4,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1280.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.209,
+      "extensionLevel": "normal",
+      "confidence": 0.68
+    }
+  ],
+  "meta": {
+    "strategy": "mms_roman_edges",
+    "quality": 36.636,
+    "alignMode": "balanced",
+    "strategiesTried": 1,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1369.0,
+    "verseMedianDurationMs": 1547.0
+  }
+}

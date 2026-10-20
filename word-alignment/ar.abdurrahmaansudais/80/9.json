@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.abdurrahmaansudais",
+  "surah": 80,
+  "ayah": 9,
+  "audioFile": "080009.mp3",
+  "durationMs": 1202,
+  "words": [
+    {
+      "index": 1,
+      "text": "وَهُوَ",
+      "startMs": 80,
+      "endMs": 540,
+      "score": -0.2438,
+      "durationMs": 460,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "text": "يَخۡشَىٰ",
+      "startMs": 540,
+      "endMs": 1202,
+      "score": -0.9987,
+      "durationMs": 662,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 3,
+            "reason": "dagger_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 2,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      }
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_edges",
+    "quality": 37.027,
+    "alignMode": "balanced",
+    "strategiesTried": 3,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 561.0,
+    "verseMedianDurationMs": 561.0
+  }
+}

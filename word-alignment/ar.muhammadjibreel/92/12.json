@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.muhammadjibreel",
+  "surah": 92,
+  "ayah": 12,
+  "audioFile": "092012.mp3",
+  "durationMs": 3579,
+  "words": [
+    {
+      "index": 1,
+      "text": "إِنَّ",
+      "startMs": 1185,
+      "endMs": 1460,
+      "score": -0.6286,
+      "durationMs": 275,
+      "baselineMs": 1059.5,
+      "baselineSource": "verse",
+      "durationRatio": 0.26
+    },
+    {
+      "index": 2,
+      "text": "عَلَيۡنَا",
+      "startMs": 1460,
+      "endMs": 2160,
+      "score": -0.5789,
+      "durationMs": 700,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_lin",
+            "clusterIndex": 2,
+            "reason": "madd_lin"
+          },
+          {
+            "type": "alif_madd",
+            "clusterIndex": 4,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 847.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.826,
+      "extensionLevel": "normal",
+      "confidence": 0.679
+    },
+    {
+      "index": 3,
+      "text": "لَلۡهُدَىٰ",
+      "startMs": 2160,
+      "endMs": 3579,
+      "score": -0.4262,
+      "durationMs": 1419,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 4,
+            "reason": "dagger_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 487.5,
+      "baselineSource": "verse",
+      "durationRatio": 2.911,
+      "extensionLevel": "highlyExtended",
+      "confidence": 0.686
+    }
+  ],
+  "meta": {
+    "strategy": "mms_roman_edges",
+    "quality": 26.484,
+    "alignMode": "balanced",
+    "strategiesTried": 5,
+    "earlyExit": false,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 798.0,
+    "verseMedianDurationMs": 700.0
+  }
+}

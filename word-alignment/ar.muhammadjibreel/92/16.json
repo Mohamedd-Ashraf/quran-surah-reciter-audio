@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.muhammadjibreel",
+  "surah": 92,
+  "ayah": 16,
+  "audioFile": "092016.mp3",
+  "durationMs": 3605,
+  "words": [
+    {
+      "index": 1,
+      "text": "ٱلَّذِي",
+      "startMs": 440,
+      "endMs": 1239,
+      "score": -1.0545,
+      "durationMs": 799,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_madd",
+            "clusterIndex": 3,
+            "reason": "kasra_ya"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1183.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.675,
+      "extensionLevel": "normal",
+      "confidence": 0.655
+    },
+    {
+      "index": 2,
+      "text": "كَذَّبَ",
+      "startMs": 1239,
+      "endMs": 2401,
+      "score": -1.5035,
+      "durationMs": 1162,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1001.5,
+      "baselineSource": "verse",
+      "durationRatio": 1.16
+    },
+    {
+      "index": 3,
+      "text": "وَتَوَلَّىٰ",
+      "startMs": 2401,
+      "endMs": 3605,
+      "score": -3.4001,
+      "durationMs": 1204,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 4,
+            "reason": "dagger_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 3,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 980.5,
+      "baselineSource": "verse",
+      "durationRatio": 1.228,
+      "extensionLevel": "normal",
+      "confidence": 0.537
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 34.125,
+    "alignMode": "balanced",
+    "strategiesTried": 2,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1055.0,
+    "verseMedianDurationMs": 1162.0
+  }
+}

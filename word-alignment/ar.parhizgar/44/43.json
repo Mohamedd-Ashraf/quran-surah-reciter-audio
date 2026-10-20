@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.parhizgar",
+  "surah": 44,
+  "ayah": 43,
+  "audioFile": "044043.mp3",
+  "durationMs": 3135,
+  "words": [
+    {
+      "index": 1,
+      "text": "إِنَّ",
+      "startMs": 380,
+      "endMs": 1060,
+      "score": -0.3372,
+      "durationMs": 680,
+      "baselineMs": 917.5,
+      "baselineSource": "verse",
+      "durationRatio": 0.741
+    },
+    {
+      "index": 2,
+      "text": "شَجَرَتَ",
+      "startMs": 1300,
+      "endMs": 2030,
+      "score": -3.7829,
+      "durationMs": 730,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 892.5,
+      "baselineSource": "verse",
+      "durationRatio": 0.818
+    },
+    {
+      "index": 3,
+      "text": "ٱلزَّقُّومِ",
+      "startMs": 2030,
+      "endMs": 3135,
+      "score": -1.0792,
+      "durationMs": 1105,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_madd",
+            "clusterIndex": 4,
+            "reason": "damma_waw"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 3,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 705.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.567,
+      "extensionLevel": "slightlyExtended",
+      "confidence": 0.654
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 31.223,
+    "alignMode": "balanced",
+    "strategiesTried": 5,
+    "earlyExit": false,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 838.3,
+    "verseMedianDurationMs": 730.0
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.muhammadayyoub",
+  "surah": 20,
+  "ayah": 31,
+  "audioFile": "020031.mp3",
+  "durationMs": 4624,
+  "words": [
+    {
+      "index": 1,
+      "text": "ٱشۡدُدۡ",
+      "startMs": 120,
+      "endMs": 680,
+      "score": -0.0211,
+      "durationMs": 560,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1904.5,
+      "baselineSource": "verse",
+      "durationRatio": 0.294
+    },
+    {
+      "index": 2,
+      "text": "بِهِۦٓ",
+      "startMs": 815,
+      "endMs": 2042,
+      "score": -0.0014,
+      "durationMs": 1227,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 1,
+            "reason": "maddah"
+          },
+          {
+            "type": "ya_madd",
+            "clusterIndex": 1,
+            "reason": "sila_yeh"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1571.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.781,
+      "extensionLevel": "normal",
+      "confidence": 0.707
+    },
+    {
+      "index": 3,
+      "text": "أَزۡرِي",
+      "startMs": 2042,
+      "endMs": 4624,
+      "score": -0.3237,
+      "durationMs": 2582,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_madd",
+            "clusterIndex": 3,
+            "reason": "kasra_ya"
+          }
+        ]
+      },
+      "baselineMs": 893.5,
+      "baselineSource": "verse",
+      "durationRatio": 2.89,
+      "extensionLevel": "highlyExtended",
+      "confidence": 0.691
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 37.736,
+    "alignMode": "balanced",
+    "strategiesTried": 2,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1456.3,
+    "verseMedianDurationMs": 1227.0
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.muhammadayyoub",
+  "surah": 81,
+  "ayah": 10,
+  "audioFile": "081010.mp3",
+  "durationMs": 3788,
+  "words": [
+    {
+      "index": 1,
+      "text": "وَإِذَا",
+      "startMs": 498,
+      "endMs": 883,
+      "score": -3.494,
+      "durationMs": 385,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 3,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "baselineMs": 1452.5,
+      "baselineSource": "verse",
+      "durationRatio": 0.265,
+      "extensionLevel": "normal",
+      "confidence": 0.533
+    },
+    {
+      "index": 2,
+      "text": "ٱلصُّحُفُ",
+      "startMs": 883,
+      "endMs": 1699,
+      "score": -1.9356,
+      "durationMs": 816,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1237.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.66
+    },
+    {
+      "index": 3,
+      "text": "نُشِرَتۡ",
+      "startMs": 1699,
+      "endMs": 3788,
+      "score": -0.608,
+      "durationMs": 2089,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 600.5,
+      "baselineSource": "verse",
+      "durationRatio": 3.479
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 33.735,
+    "alignMode": "balanced",
+    "strategiesTried": 2,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1096.7,
+    "verseMedianDurationMs": 816.0
+  }
+}
