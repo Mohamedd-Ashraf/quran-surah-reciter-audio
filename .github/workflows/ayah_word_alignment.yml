@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       reciter_id:
-        description: EveryAyah reciter id (e.g. ar.alijaber, ar.alafasy). Must exist in tool/ayah_word_alignment/reciters.yaml
+        description: EveryAyah reciter id (e.g. ar.alijaber, ar.alafasy). Must exist in noor/tool/ayah_word_alignment/reciters.yaml
         required: true
         type: string
         default: ar.alijaber
@@ -64,6 +64,11 @@ permissions:
 env:
   PYTHON_VERSION: "3.11"
   ALIGN_MODEL: jonatasgrosman/wav2vec2-large-xlsr-53-arabic
+  TOOL_ROOT: noor/tool/ayah_word_alignment
+  GIT_AUTHOR_NAME: Mohamedd-Ashraf
+  GIT_AUTHOR_EMAIL: 110347603+Mohamedd-Ashraf@users.noreply.github.com
+  GIT_COMMITTER_NAME: Mohamedd-Ashraf
+  GIT_COMMITTER_EMAIL: 110347603+Mohamedd-Ashraf@users.noreply.github.com
 
 jobs:
   plan:
@@ -93,7 +98,17 @@ jobs:
       fail-fast: false
       matrix: ${{ fromJson(needs.plan.outputs.shard_matrix) }}
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout dest (resume from word-alignment/)
+        uses: actions/checkout@v4
+
+      - name: Checkout private alignment tool
+        uses: actions/checkout@v4
+        with:
+          repository: Mohamedd-Ashraf/Noor-Al-Imaan
+          token: ${{ secrets.NOOR_READ_TOKEN }}
+          path: noor
+          sparse-checkout: tool/ayah_word_alignment
+          sparse-checkout-cone-mode: true
 
       - name: Free disk
         run: |
@@ -110,20 +125,20 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: pip
-          cache-dependency-path: tool/ayah_word_alignment/requirements.txt
+          cache-dependency-path: noor/tool/ayah_word_alignment/requirements.txt
 
       - name: Cache HuggingFace models
         uses: actions/cache@v4
         with:
           path: ~/.cache/huggingface
-          key: hf-${{ env.ALIGN_MODEL }}-${{ hashFiles('tool/ayah_word_alignment/requirements.txt') }}
+          key: hf-${{ env.ALIGN_MODEL }}-${{ hashFiles('noor/tool/ayah_word_alignment/requirements.txt') }}
           restore-keys: |
             hf-${{ env.ALIGN_MODEL }}-
 
       - name: Install Python deps
         run: |
           python -m pip install --upgrade pip
-          pip install -r tool/ayah_word_alignment/requirements.txt
+          pip install -r "$TOOL_ROOT/requirements.txt"
           pip install "git+https://github.com/MahmoudAshraf97/ctc-forced-aligner.git"
 
       - name: Restore prior alignment JSON from repo tree (resume)
@@ -136,7 +151,6 @@ jobs:
           DEST="build/word_alignment/alignment/$ED"
           mkdir -p "$DEST"
           if [ -d "$SRC" ]; then
-            # Nested layout: {surah}/{ayah}.json (+ legacy flat SSSAAA.json)
             find "$SRC" -type f -name '*.json' ! -name '_meta.json' | while read -r f; do
               rel="${f#$SRC/}"
               mkdir -p "$DEST/$(dirname "$rel")"
@@ -148,7 +162,6 @@ jobs:
           fi
 
       - name: Run shard
-        working-directory: tool/ayah_word_alignment
         run: |
           FORCE=""
           if [ "${{ inputs.force_rebuild }}" = "true" ]; then FORCE="--force-rebuild"; fi
@@ -156,16 +169,16 @@ jobs:
           if [ -n "${{ inputs.only_ayahs }}" ]; then ONLY="--only-ayahs ${{ inputs.only_ayahs }}"; fi
           TIMING="--enable-timing-analysis"
           if [ "${{ inputs.enable_timing_analysis }}" = "false" ]; then TIMING="--no-timing-analysis"; fi
-          python runner/run_shard.py \
+          python "$TOOL_ROOT/runner/run_shard.py" \
             --reciter-id "${{ inputs.reciter_id }}" \
             --surahs "${{ inputs.surahs }}" \
             $ONLY \
             --shard-index "${{ matrix.shard_index }}" \
             --shard-count "${{ matrix.shard_count }}" \
             --align-mode "${{ inputs.align_mode }}" \
-            --output-root ../../build/word_alignment/alignment \
-            --failed-root ../../build/word_alignment/failed \
-            --tmp-dir ../../build/word_alignment/tmp \
+            --output-root build/word_alignment/alignment \
+            --failed-root build/word_alignment/failed \
+            --tmp-dir build/word_alignment/tmp \
             --model "$ALIGN_MODEL" \
             $FORCE \
             $TIMING
@@ -188,7 +201,17 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout dest
+        uses: actions/checkout@v4
+
+      - name: Checkout private alignment tool
+        uses: actions/checkout@v4
+        with:
+          repository: Mohamedd-Ashraf/Noor-Al-Imaan
+          token: ${{ secrets.NOOR_READ_TOKEN }}
+          path: noor
+          sparse-checkout: tool/ayah_word_alignment
+          sparse-checkout-cone-mode: true
 
       - uses: actions/setup-python@v5
         with:
@@ -217,7 +240,6 @@ jobs:
               */failed/*) mkdir -p "build/word_alignment/failed/$ED"; cp -a "$d/." "build/word_alignment/failed/$ED/" ;;
             esac
           done
-          # Flat artifact layout: files may sit directly under shards/
           shopt -s nullglob
           for f in build/word_alignment/shards/*.json; do
             base=$(basename "$f")
@@ -225,17 +247,17 @@ jobs:
             cp -f "$f" "build/word_alignment/alignment/$ED/$base"
           done
           pip install -q pyyaml requests
-          python tool/ayah_word_alignment/runner/merge_reports.py \
+          python "$TOOL_ROOT/runner/merge_reports.py" \
             --failed-root build/word_alignment/failed \
             --max-fail-rate "${{ inputs.max_fail_rate }}" \
             --no-gate
           if [ "${{ inputs.enable_timing_analysis }}" != "false" ]; then
-            python tool/ayah_word_alignment/runner/enrich_timing.py \
+            python "$TOOL_ROOT/runner/enrich_timing.py" \
               --alignment-root "build/word_alignment/alignment/$ED" \
-              --config tool/ayah_word_alignment/reciters.yaml \
+              --config "$TOOL_ROOT/reciters.yaml" \
               --enable-timing-analysis
           fi
-          python tool/ayah_word_alignment/runner/sync_tree.py \
+          python "$TOOL_ROOT/runner/sync_tree.py" \
             --alignment-root "build/word_alignment/alignment/$ED" \
             --tree-dir . \
             --reciter-id "$ED"
@@ -255,12 +277,18 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          chmod +x tool/ayah_word_alignment/scripts/commit_alignment_tree.sh
-          bash tool/ayah_word_alignment/scripts/commit_alignment_tree.sh \
-            "${{ inputs.reciter_id }}"
+          ED="${{ inputs.reciter_id }}"
+          git add "word-alignment/_index.json"
+          chmod +x "$TOOL_ROOT/scripts/commit_alignment_tree.sh"
+          bash "$TOOL_ROOT/scripts/commit_alignment_tree.sh" "$ED"
+          if ! git diff --cached --quiet; then
+            git commit --trailer "Co-authored-by: Cursor <cursoragent@cursor.com>" \
+              -m "chore(word-alignment): update $ED [skip ci]"
+            git push
+          fi
 
       - name: Fail-rate gate
         run: |
-          python tool/ayah_word_alignment/runner/merge_reports.py \
+          python "$TOOL_ROOT/runner/merge_reports.py" \
             --failed-root build/word_alignment/failed \
             --max-fail-rate "${{ inputs.max_fail_rate }}"
