@@ -276,16 +276,72 @@ jobs:
         if: ${{ inputs.commit_tree == true }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ED: ${{ inputs.reciter_id }}
         run: |
-          ED="${{ inputs.reciter_id }}"
-          git add "word-alignment/_index.json"
-          chmod +x "$TOOL_ROOT/scripts/commit_alignment_tree.sh"
-          bash "$TOOL_ROOT/scripts/commit_alignment_tree.sh" "$ED"
-          if ! git diff --cached --quiet; then
+          set -euo pipefail
+          upsert_index() {
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          ed = "${{ inputs.reciter_id }}"
+          root = Path("word-alignment")
+          idx_path = root / "_index.json"
+          try:
+              data = json.loads(idx_path.read_text(encoding="utf-8"))
+          except (OSError, json.JSONDecodeError, TypeError):
+              data = {"schemaVersion": 1, "reciters": []}
+          reciters = []
+          for raw in data.get("reciters") or []:
+              if isinstance(raw, dict) and raw.get("reciterId") and raw.get("reciterId") != ed:
+                  reciters.append({"reciterId": str(raw["reciterId"]), "ayahJsonCount": int(raw.get("ayahJsonCount") or 0)})
+          dest = root / ed
+          count = 0
+          meta = dest / "_meta.json"
+          if meta.is_file():
+              try:
+                  count = int(json.loads(meta.read_text(encoding="utf-8")).get("ayahJsonCount") or 0)
+              except (OSError, json.JSONDecodeError, TypeError, ValueError):
+                  count = 0
+          if count <= 0 and dest.is_dir():
+              count = sum(1 for p in dest.rglob("*.json") if p.name != "_meta.json" and not p.name.startswith("_"))
+          reciters.append({"reciterId": ed, "ayahJsonCount": count})
+          reciters.sort(key=lambda row: str(row["reciterId"]))
+          idx_path.write_text(json.dumps({"schemaVersion": 1, "reciters": reciters}, indent=2) + "\n", encoding="utf-8")
+          print(f"upserted {ed} count={count} reciters={len(reciters)}")
+          PY
+          }
+          git add "word-alignment/_index.json" "word-alignment/$ED"
+          if git diff --cached --quiet; then
+            echo "No tree changes for $ED"
+          else
             git commit --trailer "Co-authored-by: Cursor <cursoragent@cursor.com>" \
               -m "chore(word-alignment): update $ED [skip ci]"
-            git push
           fi
+          # Other reciter merges and AlignLocal may push main at the same time.
+          # Dest YAML is self-sufficient even if the Noor commit script is still a bare push.
+          for attempt in $(seq 1 12); do
+            git fetch origin main
+            if git rebase origin/main; then
+              if git push origin HEAD:main; then
+                echo "pushed $ED"
+                exit 0
+              fi
+            else
+              git rebase --abort >/dev/null 2>&1 || true
+              git reset --soft origin/main
+              git checkout origin/main -- word-alignment/_index.json || true
+              upsert_index
+              git add "word-alignment/_index.json" "word-alignment/$ED"
+              if ! git diff --cached --quiet; then
+                git commit --trailer "Co-authored-by: Cursor <cursoragent@cursor.com>" \
+                  -m "chore(word-alignment): update $ED [skip ci]"
+              fi
+            fi
+            echo "push rejected (attempt ${attempt}/12); retrying"
+            sleep $((attempt * 3))
+          done
+          echo "gave up pushing $ED after 12 attempts" >&2
+          exit 1
 
       - name: Fail-rate gate
         run: |
