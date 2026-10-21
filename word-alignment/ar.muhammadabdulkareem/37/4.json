@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.muhammadabdulkareem",
+  "surah": 37,
+  "ayah": 4,
+  "audioFile": "037004.mp3",
+  "durationMs": 3420,
+  "words": [
+    {
+      "index": 1,
+      "text": "إِنَّ",
+      "startMs": 120,
+      "endMs": 800,
+      "score": -0.0846,
+      "durationMs": 680,
+      "baselineMs": 840.0,
+      "baselineSource": "word",
+      "durationRatio": 0.81
+    },
+    {
+      "index": 2,
+      "text": "إِلَٰهَكُمۡ",
+      "startMs": 800,
+      "endMs": 1940,
+      "score": -0.3282,
+      "durationMs": 1140,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 1,
+            "reason": "dagger_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1080.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.056,
+      "extensionLevel": "normal",
+      "confidence": 0.691
+    },
+    {
+      "index": 3,
+      "text": "لَوَٰحِدٞ",
+      "startMs": 1940,
+      "endMs": 3420,
+      "score": -0.1668,
+      "durationMs": 1480,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 1,
+            "reason": "dagger_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 910.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.626,
+      "extensionLevel": "slightlyExtended",
+      "confidence": 0.699
+    }
+  ],
+  "meta": {
+    "strategy": "mms_roman_edges",
+    "quality": 38.5,
+    "alignMode": "balanced",
+    "strategiesTried": 1,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1100.0,
+    "verseMedianDurationMs": 1140.0,
+    "surahAverageDurationMs": 1091.7,
+    "surahMedianDurationMs": 980.0
+  }
+}
