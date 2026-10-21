@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.alafasy",
+  "surah": 81,
+  "ayah": 11,
+  "audioFile": "081011.mp3",
+  "durationMs": 3840,
+  "words": [
+    {
+      "index": 1,
+      "text": "وَإِذَا",
+      "startMs": 318,
+      "endMs": 703,
+      "score": -3.1962,
+      "durationMs": 385,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 3,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "baselineMs": 1560.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.247,
+      "extensionLevel": "normal",
+      "confidence": 0.548
+    },
+    {
+      "index": 2,
+      "text": "ٱلسَّمَآءُ",
+      "startMs": 720,
+      "endMs": 2230,
+      "score": -0.5777,
+      "durationMs": 1510,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 4,
+            "reason": "maddah"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 3,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 997.5,
+      "baselineSource": "verse",
+      "durationRatio": 1.514,
+      "extensionLevel": "slightlyExtended",
+      "confidence": 0.679
+    },
+    {
+      "index": 3,
+      "text": "كُشِطَتۡ",
+      "startMs": 2230,
+      "endMs": 3840,
+      "score": -0.9831,
+      "durationMs": 1610,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 947.5,
+      "baselineSource": "verse",
+      "durationRatio": 1.699
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 35.718,
+    "alignMode": "balanced",
+    "strategiesTried": 2,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1168.3,
+    "verseMedianDurationMs": 1510.0
+  }
+}
