@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.yaserslama",
+  "surah": 20,
+  "ayah": 33,
+  "audioFile": "020033.mp3",
+  "durationMs": 3762,
+  "words": [
+    {
+      "index": 1,
+      "text": "كَيۡ",
+      "startMs": 50,
+      "endMs": 270,
+      "score": -1.2364,
+      "durationMs": 220,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_lin",
+            "clusterIndex": 1,
+            "reason": "madd_lin"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 360.0,
+      "baselineSource": "word",
+      "durationRatio": 0.611,
+      "extensionLevel": "normal",
+      "confidence": 0.782
+    },
+    {
+      "index": 2,
+      "text": "نُسَبِّحَكَ",
+      "startMs": 378,
+      "endMs": 1331,
+      "score": -1.6835,
+      "durationMs": 953,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1325.5,
+      "baselineSource": "verse",
+      "durationRatio": 0.719
+    },
+    {
+      "index": 3,
+      "text": "كَثِيرٗا",
+      "startMs": 1331,
+      "endMs": 3762,
+      "score": -0.3549,
+      "durationMs": 2431,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_madd",
+            "clusterIndex": 2,
+            "reason": "kasra_ya"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1340.0,
+      "baselineSource": "word",
+      "durationRatio": 1.814,
+      "extensionLevel": "extended",
+      "confidence": 0.982
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 37.774,
+    "alignMode": "balanced",
+    "strategiesTried": 2,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1201.3,
+    "verseMedianDurationMs": 953.0,
+    "surahAverageDurationMs": 1026.0,
+    "surahMedianDurationMs": 880.0
+  }
+}
