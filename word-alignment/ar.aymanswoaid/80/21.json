@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.aymanswoaid",
+  "surah": 80,
+  "ayah": 21,
+  "audioFile": "080021.mp3",
+  "durationMs": 6672,
+  "words": [
+    {
+      "index": 1,
+      "text": "ثُمَّ",
+      "startMs": 1000,
+      "endMs": 2220,
+      "score": -0.3181,
+      "durationMs": 1220,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1580.0,
+      "baselineSource": "word",
+      "durationRatio": 0.772
+    },
+    {
+      "index": 2,
+      "text": "أَمَاتَهُۥ",
+      "startMs": 2220,
+      "endMs": 4370,
+      "score": -0.5203,
+      "durationMs": 2150,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 2,
+            "reason": "fatha_alif"
+          },
+          {
+            "type": "waw_madd",
+            "clusterIndex": 4,
+            "reason": "sila_waw"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1761.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.221,
+      "extensionLevel": "normal",
+      "confidence": 0.681
+    },
+    {
+      "index": 3,
+      "text": "فَأَقۡبَرَهُۥ",
+      "startMs": 4370,
+      "endMs": 6672,
+      "score": -0.8268,
+      "durationMs": 2302,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_madd",
+            "clusterIndex": 5,
+            "reason": "sila_waw"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 0,
+            "priority": 3,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 3,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1685.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.366,
+      "extensionLevel": "normal",
+      "confidence": 0.666
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 33.727,
+    "alignMode": "balanced",
+    "strategiesTried": 2,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1890.7,
+    "verseMedianDurationMs": 2150.0,
+    "surahAverageDurationMs": 1797.8,
+    "surahMedianDurationMs": 1890.0
+  }
+}
