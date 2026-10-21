@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.alafasy",
+  "surah": 68,
+  "ayah": 3,
+  "audioFile": "068003.mp3",
+  "durationMs": 6635,
+  "words": [
+    {
+      "index": 1,
+      "text": "وَإِنَّ",
+      "startMs": 360,
+      "endMs": 1460,
+      "score": -0.5594,
+      "durationMs": 1100,
+      "baselineMs": 835.5,
+      "baselineSource": "verse",
+      "durationRatio": 1.317
+    },
+    {
+      "index": 2,
+      "text": "لَكَ",
+      "startMs": 1680,
+      "endMs": 2101,
+      "score": -0.5377,
+      "durationMs": 421,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 987.5,
+      "baselineSource": "verse",
+      "durationRatio": 0.426
+    },
+    {
+      "index": 3,
+      "text": "لَأَجۡرًا",
+      "startMs": 2101,
+      "endMs": 2976,
+      "score": -2.0296,
+      "durationMs": 875,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 2,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 948.0,
+      "baselineSource": "verse",
+      "durationRatio": 0.923
+    },
+    {
+      "index": 4,
+      "text": "غَيۡرَ",
+      "startMs": 2976,
+      "endMs": 3772,
+      "score": -1.0401,
+      "durationMs": 796,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_lin",
+            "clusterIndex": 1,
+            "reason": "madd_lin"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 987.5,
+      "baselineSource": "verse",
+      "durationRatio": 0.806,
+      "extensionLevel": "normal",
+      "confidence": 0.718
+    },
+    {
+      "index": 5,
+      "text": "مَمۡنُونٖ",
+      "startMs": 3772,
+      "endMs": 6635,
+      "score": -0.3036,
+      "durationMs": 2863,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_madd",
+            "clusterIndex": 3,
+            "reason": "damma_waw"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 2,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 835.5,
+      "baselineSource": "verse",
+      "durationRatio": 3.427,
+      "extensionLevel": "highlyExtended",
+      "confidence": 0.755
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 36.056,
+    "alignMode": "balanced",
+    "strategiesTried": 2,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1211.0,
+    "verseMedianDurationMs": 875.0
+  }
+}
