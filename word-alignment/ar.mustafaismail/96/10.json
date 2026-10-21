@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.mustafaismail",
+  "surah": 96,
+  "ayah": 10,
+  "audioFile": "096010.mp3",
+  "durationMs": 6139,
+  "words": [
+    {
+      "index": 1,
+      "text": "عَبۡدًا",
+      "startMs": 1680,
+      "endMs": 2620,
+      "score": -0.1309,
+      "durationMs": 940,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1759.5,
+      "baselineSource": "verse",
+      "durationRatio": 0.534
+    },
+    {
+      "index": 2,
+      "text": "إِذَا",
+      "startMs": 2620,
+      "endMs": 3710,
+      "score": -0.6394,
+      "durationMs": 1090,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 2,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "baselineMs": 730.0,
+      "baselineSource": "word",
+      "durationRatio": 1.493,
+      "extensionLevel": "slightlyExtended",
+      "confidence": 0.968
+    },
+    {
+      "index": 3,
+      "text": "صَلَّىٰٓ",
+      "startMs": 3710,
+      "endMs": 6139,
+      "score": -0.2617,
+      "durationMs": 2429,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 2,
+            "reason": "dagger_alif"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1015.0,
+      "baselineSource": "verse",
+      "durationRatio": 2.393,
+      "extensionLevel": "extended",
+      "confidence": 0.694
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 28.882,
+    "alignMode": "balanced",
+    "strategiesTried": 5,
+    "earlyExit": false,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1486.3,
+    "verseMedianDurationMs": 1090.0,
+    "surahAverageDurationMs": 1486.9,
+    "surahMedianDurationMs": 1380.0
+  }
+}

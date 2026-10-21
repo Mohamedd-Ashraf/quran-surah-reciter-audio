@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.mustafaismail",
+  "surah": 56,
+  "ayah": 4,
+  "audioFile": "056004.mp3",
+  "durationMs": 5042,
+  "words": [
+    {
+      "index": 1,
+      "text": "إِذَا",
+      "startMs": 500,
+      "endMs": 1160,
+      "score": -0.811,
+      "durationMs": 660,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "alif_madd",
+            "clusterIndex": 2,
+            "reason": "fatha_alif"
+          }
+        ]
+      },
+      "baselineMs": 750.0,
+      "baselineSource": "word",
+      "durationRatio": 0.88,
+      "extensionLevel": "normal",
+      "confidence": 0.959
+    },
+    {
+      "index": 2,
+      "text": "رُجَّتِ",
+      "startMs": 1160,
+      "endMs": 2306,
+      "score": -0.5574,
+      "durationMs": 1146,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1008.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.137
+    },
+    {
+      "index": 3,
+      "text": "ٱلۡأَرۡضُ",
+      "startMs": 2306,
+      "endMs": 3314,
+      "score": -1.9365,
+      "durationMs": 1008,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1019.0,
+      "baselineSource": "word",
+      "durationRatio": 0.989
+    },
+    {
+      "index": 4,
+      "text": "رَجّٗا",
+      "startMs": 3314,
+      "endMs": 5042,
+      "score": -0.3136,
+      "durationMs": 1728,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1008.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.714
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 35.581,
+    "alignMode": "balanced",
+    "strategiesTried": 2,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1135.5,
+    "verseMedianDurationMs": 1077.0,
+    "surahAverageDurationMs": 1460.3,
+    "surahMedianDurationMs": 1382.5
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.mustafaismail",
+  "surah": 104,
+  "ayah": 9,
+  "audioFile": "104009.mp3",
+  "durationMs": 5460,
+  "words": [
+    {
+      "index": 1,
+      "text": "فِي",
+      "startMs": 960,
+      "endMs": 1290,
+      "score": -0.957,
+      "durationMs": 330,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "ya_madd",
+            "clusterIndex": 1,
+            "reason": "kasra_ya"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 1,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 380.0,
+      "baselineSource": "word",
+      "durationRatio": 0.868,
+      "extensionLevel": "normal",
+      "confidence": 0.952
+    },
+    {
+      "index": 2,
+      "text": "عَمَدٖ",
+      "startMs": 1290,
+      "endMs": 2800,
+      "score": -0.528,
+      "durationMs": 1510,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 1495.0,
+      "baselineSource": "verse",
+      "durationRatio": 1.01
+    },
+    {
+      "index": 3,
+      "text": "مُّمَدَّدَةِۭ",
+      "startMs": 2800,
+      "endMs": 5460,
+      "score": -0.4446,
+      "durationMs": 2660,
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 0,
+            "priority": 2,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 1,
+            "priority": 3,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 920.0,
+      "baselineSource": "verse",
+      "durationRatio": 2.891
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 32.645,
+    "alignMode": "balanced",
+    "strategiesTried": 2,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 1500.0,
+    "verseMedianDurationMs": 1510.0,
+    "surahAverageDurationMs": 1379.5,
+    "surahMedianDurationMs": 1290.0
+  }
+}
