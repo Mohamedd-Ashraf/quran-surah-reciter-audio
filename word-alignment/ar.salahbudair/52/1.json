@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "reciterId": "ar.salahbudair",
+  "surah": 52,
+  "ayah": 1,
+  "audioFile": "052001.mp3",
+  "durationMs": 914,
+  "words": [
+    {
+      "index": 1,
+      "text": "وَٱلطُّورِ",
+      "startMs": 100,
+      "endMs": 914,
+      "score": -1.1255,
+      "durationMs": 814,
+      "madd": {
+        "hasCandidate": true,
+        "candidates": [
+          {
+            "type": "waw_madd",
+            "clusterIndex": 4,
+            "reason": "damma_waw"
+          }
+        ]
+      },
+      "stretch": {
+        "positions": [
+          {
+            "afterClusterIndex": 3,
+            "priority": 1,
+            "maxRecommended": 4
+          },
+          {
+            "afterClusterIndex": 2,
+            "priority": 2,
+            "maxRecommended": 4
+          }
+        ]
+      },
+      "baselineMs": 920.0,
+      "baselineSource": "surah",
+      "durationRatio": 0.885,
+      "extensionLevel": "normal",
+      "confidence": 0.769
+    }
+  ],
+  "meta": {
+    "strategy": "xlsr_nodiac_segment",
+    "quality": 35.061,
+    "alignMode": "balanced",
+    "strategiesTried": 2,
+    "earlyExit": true,
+    "timingAnalysis": {
+      "enabled": true
+    }
+  },
+  "timing": {
+    "verseAverageDurationMs": 814.0,
+    "verseMedianDurationMs": 814.0,
+    "surahAverageDurationMs": 997.8,
+    "surahMedianDurationMs": 920.0
+  }
+}
